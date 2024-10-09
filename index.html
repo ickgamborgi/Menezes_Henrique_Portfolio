@@ -1,16 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Document Heading -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="css/grid.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
+    <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
-    <title>Henrique's Portfolio</title>
+    <!-- Document Title -->
+    <title>Henrique Gamborgi: Portfolio</title> 
 </head>
+
+<!-- Documemnt Body -->
 <body>
+    <h1 class="hidden">Henrique Gamborgi: Portfolio</h1>
+
+    <!-- Header -->
+    <header>
+        <h2 class="hidden">Header</h2>
+        <!-- Main Navigation -->
+        <nav class="navbar-header grid-con">
+            <h3 class="hidden">Main Navigation</h3>
+
+            <div class="logo-header col-start-1">
+                <h4 class="hidden">Logo</h4>
+                <a href="index.html"><img src="" alt="Henrique Gamborgi Horizontal Logo"></a>
+            </div>
+
+            <button id="burger-button"></button>
+
+            <div class="links-header">
+                <h4 class="hidden">Links Header</h4>
+                <ul>
+                    <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
+                    <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
+                    <li><a href="#" class="nav-item"><h5>Resume</h5></a></li>
+                    <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h2 class="hidden">Main Content</h2>
+
+        <!-- Hero Section -->
+        <section class="home-hero">
+            <h3 class="hidden">Hero Section</h3>
+            <div class="hero-title">
+                <h4>
+                    <span>Hello!</span> Nice to have you here.
+                </h4>
+            </div>
+            <div class="hero-con">
+                <div class="hero-bio">
+                    <div class="hero-subtitle">
+                        <img>
+                        <h5>I am a designer <span>@ London, ON</span></h5>
+                    </div>
+                    <ul class="hero-tags">
+                        <li><a><h6 class="design-tag">Ux and Web Design</h6></a></li>
+                        <li><a><h6 class="design-tag">Branding</h6></a></li>
+                        <li><a><h6 class="design-tag">Product</h6></a></li>
+                    </ul>
+                </div>
+                
+                <div class="hero-roulette">
+                    <h5>I design for</h5>
+                    <ul class="roulette-list">
+                        <li><h6 class="roulette-item">Brands</h6></li>
+                        <li><h6 class="roulette-item">Screens</h6></li>
+                        <li><h6 class="roulette-item">People</h6></li>
+                        <li><h6 class="roulette-item">Print</h6></li>
+                        <li><h6 class="roulette-item">Experiences</h6></li>
+                        <li><h6 class="roulette-item">Love</h6></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section class="home-intro">
+            <h3 class="hidden">Introduction Section</h3>
+
+            <!-- Video Player -->
+            <video controls>
+            </video>
+
+            <div class="intro-text">
+                <h4>Welcome to my little corner of the world!</h4>
+                <p>
+                    I'm a designer passionate about how people connect with brands, products, and media. With 6+ years of experience, I've contributed to various projects, and I might be just who you're looking for in your next design journey. <br>
+                    <br>
+                    Scroll down to explore my portfolio, I hope you enjoy it!
+                </p>
+                <a href="about.html"><h5 class="small-button">More about me</h5></a>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio">
+            <h3 class="hidden">Portfolio Section</h3>
+
+            <div class="portfolio-title">
+                <h4>Discover my portfolio</h4>
+                <div>
+                    <h5 class="hidden">Design area filters</h5>
+                    <ul class="portfolio-tags">
+                        <li><a><h6 class="portfolio-tag">All Projects</h6></a></li>
+                        <li><a><h6 class="portfolio-tag">Web / Ux</h6></a></li>
+                        <li><a><h6 class="portfolio-tag">Branding</h6></a></li>
+                        <li><a><h6 class="portfolio-tag">Product</h6></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Portfolio Gallery -->
+            <div class="portfolio-gallery">
+                <h4 class="hidden">Projects gallery</h4>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 1</h5>
+                </div>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 2</h5>
+                </div>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 3</h5>
+                </div>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 4</h5>
+                </div>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 5</h5>
+                </div>
+
+                <div class="portfolio-item">
+                    <h5 class="hidden">Project 6</h5>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h3 class="hidden">Testimonials Section</h3>
+
+            <div class="testimonial">
+                <h4>Feedbacks from clients and colleagues</h4>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card</h5>
+                    <p>
+                        “Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.”
+                    </p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img>
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Gabriel Albrecht</h6>
+                            <h6><span>Colleague and business partner</span></h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="hidden">Testimonial Navigation</h5>
+                    <div class="previous-testimonial-button"><h6 class="hidden">Previous Testimonial</h6></div>
+                    <div class="next-testimonial-button"><h6 class="hidden">Next Testimonial</h6></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="home-skills">
+            <h3 class="hidden">Skills and Tools</h3>
+
+            <div class="skill-col-1">
+                <div class="skill-item">
+                    <img>
+                    <h4>Figma &amp; Adobe XD</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Adobe Illustrator</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Adobe Photoshop</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Adobe InDesign</h4>
+                </div>
+            </div>
+            <div class="skill-col-2">
+                <div class="skill-item">
+                    <img>
+                    <h4>HTML, CSS, js &amp; php</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Cinema 4D</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Adobe Premiere Pro</h4>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <h4>Adobe After Effects</h4>
+                </div>
+            </div>
+            <div class="skill-col-3">
+                <div class="skill-item">
+                    <img>
+                    <div class="lang-item">
+                        <h4>English</h4>
+                        <h5>Fluent</h5>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <div class="lang-item">
+                        <h4>Portuguese</h4>
+                        <h5>Native speaker</h5>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <img>
+                    <div class="lang-item">
+                        <h4>Spanish</h4>
+                        <h5>Intermediary</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h3 class="hidden">Let's bring your ideas to life?</h3>
+    
+            <div class="redux-form-section">
+                <h4 class="hidden">Contact Form</h4>
+                <form id="newsletterForm" method="post" enctype="text/plain">
+                    <input name="name" type="text"  placeholder="Full Name">
+                    <input name="email" type="email"  placeholder="E-mail Address">
+                    <input name="message" type="text"  placeholder="Message">
+                    <button name="submit" type="submit" value="Send"><span>Submit Form</span></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <h3 class="hidden">Footer</h3>
+
+            <div class="footer-copy">
+                <h4 class="hidden">Copyright Information</h4>
+                <img>
+                <h5>2024 Copyright &copy;</h5>
+                <h5>Henrique Gamborgi Design</h5>
+            </div>
+
+            <div class="footer-social">
+                <h4 class="hidden">Links</h4>
+
+                <div>
+                    <a href="https://github.com/ickgamborgi/">
+                        <div class="social-media-item">
+                            <h5 class="hidden">GitHub</h5>
+                            <img>
+                        </div>
+                    </a>
+    
+                    <a href="https://behance.com/ickgamborgi">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Behance</h5>
+                            <img>
+                        </div>
+                    </a>
+    
+                    <a href="https://instagram.com/inkgamborgi">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Instagram</h5>
+                            <img>
+                        </div>
+                    </a>
+    
+                    <a href="https://linkedin.com/in/ickgamborgi/">
+                        <div class="social-media-item">
+                            <h5 class="hidden">LinkedIn</h5>
+                            <img>
+                        </div>
+                    </a>
+                </div>
+                
+                <div>
+                    <a href="about.html">
+                        <h5 class="small-button">Resume</h5>
+                    </a>
+                </div>
+
+            </div>
+        </footer>
+
+    </main>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
