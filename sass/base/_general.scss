@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as a;
+
+h1 {
+    color: a.$primary-cyan;
+}
+
+div {
+    background-color: a.$yellow;
+}

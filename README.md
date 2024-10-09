@@ -1,6 +1,8 @@
 # Henrique Gamborgi Menezes — Portfolio
 This project is My Portfolio, designed during the Interactive Media Design (IDP3) graduation program on Fanshawe College, Fall term, 2024.
 
+Our Final Integrated Project this year will feature our own Portfolio design and development. To assist with this project documentation, I've brought all important information regarding the development of my portfolio in this file. The process for this was based on researching references, structuring the project, building my own personal brand, designing the wireframes for the respective portfolio pages and then developing my website. In parallel, a demo reel video will also be produced, featuring motion and video projects.
+
 ## Installation
 1. Click on the link to the sample repository provided;
 2. On the repo, click on the green button "< > Code";
