@@ -59,3 +59,16 @@ footer {
         border-left: 2px solid a.$primary-cyan;
     }
 }
+
+// Video Player
+
+:root {
+    --plyr-color-main: #39a3bc;
+    --plyr-control-icon-size: 1rem;
+    --plyr-control-radius: 35px;
+    --plyr-font-family: "Ubuntu", sans-serif;
+  }
+  
+  .plyr--video .plyr__controls {
+    padding: 25px;
+  }

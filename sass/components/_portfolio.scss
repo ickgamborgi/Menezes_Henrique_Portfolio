@@ -41,6 +41,12 @@
     }
 }
 
+.selected {
+    background-color: a.$light-cyan;
+    color: white;
+    box-shadow: a.$blur-shadow;
+}
+
 .portfolio-item {
     border-radius: a.$round-border;
     background-image: url(../images/placeholder.jpg);

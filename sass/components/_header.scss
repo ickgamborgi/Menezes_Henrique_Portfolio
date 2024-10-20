@@ -25,6 +25,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    width: fit-content;
 }
 
 .links-header ul li {
@@ -40,15 +41,12 @@
     display: block;
     cursor: pointer;
     color: a.$primary-cyan;
+    background-color: white;
 
     &:hover {
     text-decoration: underline;
+    background-color: #39a4bc28;
     }
-}
-
-.links-header ul li:hover {
-    background-color: #39a4bc19;
-
 }
 
 .navbar-header button {

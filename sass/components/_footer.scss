@@ -43,6 +43,7 @@ footer {
     &:hover {
         transform: scale(1.1);
         box-shadow: a.$blur-shadow;
+        background-color: a.$primary-cyan;
     }
 }
 

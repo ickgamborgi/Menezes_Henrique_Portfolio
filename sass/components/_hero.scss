@@ -25,7 +25,7 @@
     margin-top: 10px;
     height: 5px;
     width: 115px;
-    background: rgb(57,163,188) linear-gradient(90deg, rgba(57,163,188,1) 59%, rgba(242,180,70,1) 100%);
+    background: a.$gradient;
 }
 
 .hero-subtitle {
@@ -60,7 +60,7 @@
     border: 1.5px solid a.$light-cyan;
     border-radius: a.$round-border;
     padding: 10px 25px;
-    font-size: a.$h5;
+    font-size: a.$text;
     font-weight: 400;
     text-transform: uppercase;
     color: a.$light-cyan;
@@ -72,4 +72,33 @@
         background-color: a.$light-cyan;
         color: white;
     }
+}
+
+.hero-roulette {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    h5 {
+        font-size: a.$h3;
+        color: a.$primary-cyan;
+        font-family: a.$ubuntu;
+        text-transform: uppercase;
+        border-bottom: 4px solid a.$yellow;
+    }
+}
+
+.roulette-list {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.roulette-item {
+    font-size: a.$h4;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: a.$light-cyan;
 }

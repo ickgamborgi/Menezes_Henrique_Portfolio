@@ -3,4 +3,54 @@
 .contact-section {
     padding-top: a.$section-gap;
     padding-bottom: a.$section-gap;
+
+    h3 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$h2;
+        color: a.$primary-cyan;
+        margin-bottom: 25px;
+    }
+}
+
+.redux-form-section {
+    
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: a.$light-cyan;
+
+        input {
+            background-color: white;
+            border-radius: a.$round-border;
+            height: 50px;
+            padding: 15px 20px;
+            color: a.$primary-cyan;
+            box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        button {
+            background-color: a.$light-cyan;
+            margin-top: 10px;
+            padding: 15px 20px;
+            height: 50px;
+            border-radius: a.$round-border;
+            color: white;
+            font-size: a.$text;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: a.$blur-shadow;
+            transition: a.$basic-transition;
+            cursor: pointer;
+
+            &:hover {
+                background-color: a.$primary-cyan;
+                transform: scale(1.05);
+                box-shadow: a.$click-shadow;
+            }
+        }
+    }
 }
