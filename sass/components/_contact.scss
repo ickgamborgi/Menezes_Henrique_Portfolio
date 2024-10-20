@@ -1,0 +1,6 @@
+@use '../abstracts/variables' as a;
+
+.contact-section {
+    padding-top: a.$section-gap;
+    padding-bottom: a.$section-gap;
+}

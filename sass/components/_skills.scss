@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as a;
+
+.home-skills {
+    padding-top: a.$section-gap;
+
+    h3 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$h2;
+        color: a.$primary-cyan;
+        margin-bottom: 25px;
+    }
+}
+
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h4 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$text;
+        color: a.$primary-cyan;
+    }
+
+    h5 {
+        font-weight: 400;
+        padding-top: 2.5px;
+        color: a.$light-cyan;
+    }
+}
+
+.skill-icon {
+    background-color: a.$light-cyan;
+    padding: 7px;
+    width: fit-content;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    transition: a.$basic-transition;
+}
+
+.skill-col-1, .skill-col-2, .skill-col-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}

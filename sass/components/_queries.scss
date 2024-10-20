@@ -1,0 +1,45 @@
+@use '../abstracts/variables' as a;
+
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+
+}
+
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+
+    .footer {
+
+    }
+    .footer-copy {
+        flex-direction: row;
+        align-items: center;
+
+         img {
+            width: 20px;
+            margin-bottom: 5px;
+            margin-right: 10px;
+         }
+
+         h5 {
+            padding-right: 5px;
+         }
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+    }
+
+    .footer-social-media {
+        margin-top: 5px;
+    }
+
+    .resume {
+        margin-bottom: 0px;
+        margin-left: 15px;
+    }
+}
