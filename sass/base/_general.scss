@@ -1,15 +1,5 @@
 @use '../abstracts/variables' as a;
 
-h1 {
-    color: a.$primary-cyan;
-    font-family: 'ubuntubold', sans-serif;
-}
-
-div {
-    background-color: a.$yellow;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: a.$primary-cyan;
+.hidden {
+    display: none;
 }
