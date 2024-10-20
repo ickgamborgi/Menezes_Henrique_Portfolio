@@ -1,0 +1,33 @@
+@use '../abstracts/variables' as a;
+
+.testimonials {
+    padding-top: a.$section-gap;
+}
+
+.testimonial {
+
+    h4 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$h2;
+        color: a.$primary-cyan;
+        margin-bottom: 25px;
+    }
+}
+
+.testimonial-card {
+    padding: 25px 15px;
+    background-color: #f4fdff;
+    box-shadow: a.$blur-shadow;
+}
+
+.testimonial-bio {
+    display: flex;
+}
+
+.testimonial-pic {
+
+    img {
+        width: 75px;
+    }
+}

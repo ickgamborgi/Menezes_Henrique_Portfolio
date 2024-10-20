@@ -1,5 +1,61 @@
 @use '../abstracts/variables' as a;
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
 .hidden {
     display: none;
+}
+
+a {
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+}
+
+input, textarea {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+ main {
+    margin: 0;
+}
+
+footer {
+    width: 100%;
+}
+
+.simple-btn {
+    margin-top: 10px;
+    font-size: a.$h5;
+    display: flex;
+    gap: 5px;
+    align-items: end;
+    color: a.$primary-cyan;
+    cursor: pointer;
+    transition: ease-in-out padding .25s;
+
+    &:hover {
+        padding-left: 10px;
+        border-left: 2px solid a.$primary-cyan;
+    }
 }

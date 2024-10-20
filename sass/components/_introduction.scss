@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as a;
+
+.home-intro {
+    margin-top: 150px;
+}
+
+.intro-text {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h4 {
+        font-size: a.$h3;
+        color: a.$primary-cyan;
+    }
+
+    p {
+        margin-top: 15px;
+        font-family: a.$ubuntu;
+        line-height: 1.5em;
+        font-size: a.$text;
+        color: a.$grey;
+    }
+}

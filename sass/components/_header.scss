@@ -1,0 +1,101 @@
+@use '../abstracts/variables' as a;
+
+#sticky-nav-con {
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 1000;
+    box-shadow: a.$blur-shadow;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+
+.logo-header img {
+    width: 225px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.links-header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.links-header ul li {
+    transition: .25s ease-in all;
+
+}
+
+.links-header ul li a {
+    padding: 20px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: a.$ubuntu;
+    display: block;
+    cursor: pointer;
+    color: a.$primary-cyan;
+
+    &:hover {
+    text-decoration: underline;
+    }
+}
+
+.links-header ul li:hover {
+    background-color: #39a4bc19;
+
+}
+
+.navbar-header button {
+    height: 40px;
+    width: 60px;
+    background: url(../images/burger-button.svg) no-repeat center;
+    transition: all .5s ease;
+    border: 0;
+    position: absolute;
+    top: 0px;
+    right: 9.5%;
+    cursor: pointer;
+    display: none;
+ }
+
+
+//  Responsive
+@media (max-width: 768px) {
+    
+    .navbar-header button {
+        margin-top: 10px;
+        display: flex;
+     }
+
+     .navbar-header {
+        align-items: flex-start;;
+        flex-direction: column;
+     }
+
+     .links-header {
+        width: 100%;
+        z-index: 100;
+        display: none;
+     }
+
+     .links-header ul {
+        flex-direction: column;
+        width: 100%;
+     }
+
+     .links-header ul li {
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .links-header.active {
+        display: flex;
+    }
+
+}

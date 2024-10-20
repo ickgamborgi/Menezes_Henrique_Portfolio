@@ -1,0 +1,75 @@
+@use '../abstracts/variables' as a;
+
+.home-hero {
+    margin-top: 100px;
+    margin-bottom: a.$section-gap;
+}
+
+.hero-title {
+
+    padding-bottom: 15px;
+    
+    h4 {
+        font-size: a.$h1;
+        color: a.$light-cyan;
+        font-weight: 400;
+
+        span {
+            color: a.$primary-cyan;
+            font-weight: 600;
+        }
+    }
+}
+
+.hero-div {
+    margin-top: 10px;
+    height: 5px;
+    width: 115px;
+    background: rgb(57,163,188) linear-gradient(90deg, rgba(57,163,188,1) 59%, rgba(242,180,70,1) 100%);
+}
+
+.hero-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+
+    img {
+        width: 20px;
+    }
+
+    h5 {
+        font-size: a.$h4;
+        font-weight: 400;
+
+        span {
+            color: a.$light-cyan;
+        }
+    }
+}
+
+.hero-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.design-tag {
+    border: 1.5px solid a.$light-cyan;
+    border-radius: a.$round-border;
+    padding: 10px 25px;
+    font-size: a.$h5;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: a.$light-cyan;
+    transition: a.$basic-transition;
+
+    &:hover {
+        box-shadow: a.$click-shadow;
+        transform: scale(1.1);
+        background-color: a.$light-cyan;
+        color: white;
+    }
+}
