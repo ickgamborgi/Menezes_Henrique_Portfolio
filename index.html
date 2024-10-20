@@ -9,6 +9,8 @@
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/symbol-color.svg">
 
@@ -92,7 +94,14 @@
 
             <!-- Video Player -->
             <div class="video-holder col-span-full l-col-start-1 l-col-end-8">
-                <video src="videos/test-video.mp4" controls>
+                <h4 class="hidden">Demo Reel</h4>
+                <video
+                    id="demoreel"
+                    class="player" 
+                    controls
+                    preload="metadata"
+                    >
+                    <source src="videos/test-video.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -119,7 +128,7 @@
                 <div>
                     <h5 class="hidden">Design area filters</h5>
                     <ul class="portfolio-tags">
-                        <li><a><h6 class="portfolio-tag">All Projects</h6></a></li>
+                        <li><a><h6 class="portfolio-tag selected">All Projects</h6></a></li>
                         <li><a><h6 class="portfolio-tag">Web / Ux</h6></a></li>
                         <li><a><h6 class="portfolio-tag">Branding</h6></a></li>
                         <li><a><h6 class="portfolio-tag">Product</h6></a></li>
@@ -178,15 +187,15 @@
                         </div>
                         <div class="testimonial-name">
                             <h6>Gabriel Albrecht</h6>
-                            <h6><span>Colleague and business partner</span></h6>
+                            <h7>Colleague and business partner</h7>
                         </div>
                     </div>
                 </div>
 
-                <div>
+                <div class="testimonial-controls col-span-full">
                     <h5 class="hidden">Testimonial Navigation</h5>
-                    <div class="previous-testimonial-button"><h6 class="hidden">Previous Testimonial</h6></div>
-                    <div class="next-testimonial-button"><h6 class="hidden">Next Testimonial</h6></div>
+                    <button class="testimonial-button" id="prev-btn">&#10094;</button>
+                    <button class="testimonial-button" id="next-btn">&#10095;</button>
                 </div>
             </div>
         </section>
@@ -197,57 +206,54 @@
 
             <div class="skill-col-1 col-span-full m-col-span-4">
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">
                     <h4>Figma &amp; Adobe XD</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
-                    <h4>Adobe Illustrator</h4>
+                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">                    <h4>Adobe Illustrator</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
-                    <h4>Adobe Photoshop</h4>
+                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">                    <h4>Adobe Photoshop</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
-                    <h4>Adobe InDesign</h4>
+                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">                    <h4>Adobe InDesign</h4>
                 </div>
             </div>
             <div class="skill-col-2 col-span-full m-col-span-4">
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/code-icon.svg" alt="Code language icon" class="skill-icon">
                     <h4>HTML, CSS, js &amp; php</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/code-icon.svg" alt="Code language icon" class="skill-icon">
                     <h4>Cinema 4D</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/code-icon.svg" alt="Code language icon" class="skill-icon">
                     <h4>Adobe Premiere Pro</h4>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/code-icon.svg" alt="Code language icon" class="skill-icon">
                     <h4>Adobe After Effects</h4>
                 </div>
             </div>
             <div class="skill-col-3 col-span-full m-col-span-4">
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/uk-flag.svg" alt="UK flag" class="lang-icon">
                     <div class="lang-item">
                         <h4>English</h4>
                         <h5>Fluent</h5>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/brazil-flag.svg" alt="Brazil flag" class="lang-icon">
                     <div class="lang-item">
                         <h4>Portuguese</h4>
                         <h5>Native speaker</h5>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <img src="./images/icon-white.svg" alt="Behance icon" class="skill-icon">
+                    <img src="./images/spain-flag.svg" alt="Spain flag" class="lang-icon">
                     <div class="lang-item">
                         <h4>Spanish</h4>
                         <h5>Intermediary</h5>
@@ -326,7 +332,8 @@
         </footer>
 
     </main>
-
+    
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
 </body>
 

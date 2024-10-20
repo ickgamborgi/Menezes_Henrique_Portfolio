@@ -13,6 +13,8 @@ $light-yellow: #F9E193;
 $grey: #8E8E8E;
 $light-grey: #EFEFEF;
 
+$gradient: rgb(57,163,188) linear-gradient(90deg, rgba(57,163,188,1) 59%, rgba(242,180,70,1) 100%);
+
 // Fonts
 $ubuntu: 'Ubuntu', sans-serif;
 
@@ -28,5 +30,5 @@ $blur-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 $click-shadow: 0 3px 6px rgba(0,0,0,0.2);
 
 $round-border: 35px;
-$section-gap: 100px;
+$section-gap: 150px;
 $basic-transition: all .25s ease-in-out;

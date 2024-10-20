@@ -8,3 +8,6 @@ const navbarLinks = document.querySelector(".links-header")
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
+
+// Video Player
+const player = new Plyr("#demoreel");

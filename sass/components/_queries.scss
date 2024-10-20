@@ -10,9 +10,31 @@
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
 
-    .footer {
+    .redux-form-section {
+    
+    
+        form {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+    
+            input {
+                background-color: white;
+                border-radius: a.$round-border;
+                padding: 15px 25px;
+                font-family: a.$ubuntu;
+                font-size: a.$text;
+                box-shadow: inset 2px 4px 4px 2px rgba(0, 0, 0, 0.15);
+                width: 100%;
+            }
 
+            button {
+                margin-top: 0;
+                width: 50%;
+            }
+        }
     }
+
     .footer-copy {
         flex-direction: row;
         align-items: center;
