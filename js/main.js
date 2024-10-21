@@ -3,10 +3,11 @@ console.log("javascript file is linked");
 // VARIABLES
 
 // Header
-const toggleButton = document.querySelector("#burger-button")
+const burgerButton = document.querySelector("#burger-button")
 const navbarLinks = document.querySelector(".links-header")
-toggleButton.addEventListener('click', () => {
-    navbarLinks.classList.toggle('active')
+burgerButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active');
+    burgerButton.classList.toggle('active');
 })
 
 // Video Player
@@ -38,3 +39,27 @@ document.querySelector("#test-next-btn").addEventListener("click", () => {
 document.querySelector("#test-prev-btn").addEventListener("click", () => {
   showTestimonial(testimonialIndex - 1);
 });
+
+// Contact Form
+const form = document.getElementById('newsletterForm');
+const popup = document.getElementById('popup');
+const popupCloseBtn = document.querySelector('.close-btn');
+
+form.addEventListener('submit', function(event) {
+  console.log("User submitted information on " + this.id) // console log it out
+  event.preventDefault(); // prevent default behavior from form
+  popup.style.display = 'flex'; // show pop-up
+  form.reset(); // reset the form
+});
+
+popupCloseBtn.addEventListener('click', function() {
+  popup.style.display = 'none';
+  console.log("User closed subscription confirmation");
+}); // when user clicks on close button
+
+window.addEventListener('click', function(event) {
+  if (event.target == popup) {
+      popup.style.display = 'none';
+      console.log("User closed subscription confirmation");
+  }
+}); // when user clicks outside the popup to close
