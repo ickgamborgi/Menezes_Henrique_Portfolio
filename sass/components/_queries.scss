@@ -3,6 +3,19 @@
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
+    .links-header ul li a {
+        &:hover {
+            border-radius: 0px;
+        }
+    }
+
+    .popup-content {
+        width: 50vw;
+    }
+
+    .close-btn {
+        right: 50px;
+    }
 
 }
 
@@ -35,6 +48,10 @@
         }
     }
 
+    .popup-content {
+        width: 40vw;
+    }
+
     .footer-copy {
         flex-direction: row;
         align-items: center;
@@ -63,5 +80,9 @@
     .resume {
         margin-bottom: 0px;
         margin-left: 15px;
+    }
+
+    .close-btn {
+        right: 30px;
     }
 }
