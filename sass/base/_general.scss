@@ -50,11 +50,12 @@ footer {
     display: flex;
     gap: 5px;
     align-items: end;
-    color: a.$primary-cyan;
+    color: a.$light-cyan;
     cursor: pointer;
     transition: ease-in-out padding .25s;
 
     &:hover {
+        color: a.$primary-cyan;
         padding-left: 10px;
         border-left: 2px solid a.$primary-cyan;
     }
@@ -66,9 +67,18 @@ footer {
     --plyr-color-main: #39a3bc;
     --plyr-control-icon-size: 1rem;
     --plyr-control-radius: 35px;
+    --plyr-video-controls-background: rgba(255, 255, 255, 0);
     --plyr-font-family: "Ubuntu", sans-serif;
-  }
-  
-  .plyr--video .plyr__controls {
-    padding: 25px;
-  }
+}
+
+.video-holder {
+    height: fit-content;
+    box-shadow: a.$blur-shadow;
+    padding: 0;
+    border-radius: a.$round-border;
+    overflow: hidden;
+}
+
+.video-holder .plyr__controls {
+    margin: 15px;
+}

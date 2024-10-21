@@ -11,12 +11,13 @@
 .navbar-header {
     display: flex;
     justify-content: space-between;
+    align-content: center;
     color: white;
 }
 
 
 .logo-header img {
-    width: 225px;
+    width: 200px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -67,12 +68,12 @@
 @media (max-width: 768px) {
     
     .navbar-header button {
-        margin-top: 10px;
         display: flex;
+        margin-top: 5px;
      }
 
      .navbar-header {
-        align-items: flex-start;;
+        align-items: flex-start;
         flex-direction: column;
      }
 

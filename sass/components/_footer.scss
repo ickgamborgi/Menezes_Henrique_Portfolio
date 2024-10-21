@@ -2,7 +2,7 @@
 
 footer {
     background-color: white;
-    padding-top: a.$section-gap;
+    padding-top: 75px;
     padding-bottom: a.$section-gap;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -53,11 +53,12 @@ footer {
     display: flex;
     gap: 5px;
     align-items: end;
-    color: a.$primary-cyan;
+    color: a.$light-cyan;
     cursor: pointer;
     transition: ease-in-out padding .25s;
 
     &:hover {
+        color: a.$primary-cyan;
         padding-left: 10px;
         border-left: 2px solid a.$primary-cyan;
     }

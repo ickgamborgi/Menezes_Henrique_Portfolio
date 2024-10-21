@@ -5,6 +5,8 @@
 }
 
 .testimonial {
+    position: relative;
+    overflow: hidden;
 
     h4 {
         font-family: a.$ubuntu;
@@ -21,14 +23,28 @@
     border-radius: a.$round-border;
     background-color: #f4fdff;
     box-shadow: a.$blur-shadow;
+    position: relative;
+    display: none;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.5s ease;
 
     p {
         font-family: a.$ubuntu;
         font-weight: 400;
-        font-size: a.$text;
+        font-size: a.$h5;
+        line-height: 150%;
         color: a.$grey;
+        padding-top: 10px;
+        text-indent: 45px;
     }
 }
+
+.testimonial-card.visible {
+    display: block;
+    flex-direction: column;
+    opacity: 1;
+  }
 
 .testimonial-bio {
     margin-top: 25px;
@@ -41,6 +57,7 @@
     background: a.$gradient;
     padding: 6px 6px 3px 6px;
     border-radius: 100%;
+    box-shadow: a.$click-shadow;
 
     img {
         object-fit: cover;
@@ -66,10 +83,20 @@
     }
 }
 
+.testimonial-quote-mark {
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    font-size: 75px;
+    color: #39A3BC;
+    opacity: .15;
+    z-index: 0;
+}
+
 .testimonial-controls {
     margin-top: 40px;
     display: flex;
-    gap: 25px;
+    gap: 10px;
 }
 
 .testimonial-button {
@@ -82,6 +109,8 @@
     font-size: a.$h4;
     transition: a.$basic-transition;
     cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 10px;
 
     &:hover {
         transform: scale(1.1);
