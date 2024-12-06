@@ -1,4 +1,9 @@
+// Component for TESTIMONIALS
+
 @use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
+
 
 .testimonials {
     padding-top: a.$section-gap;
@@ -116,4 +121,12 @@
         transform: scale(1.1);
         background-color: a.$primary-cyan;
     }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
 }

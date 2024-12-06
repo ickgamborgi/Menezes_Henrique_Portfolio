@@ -1,4 +1,8 @@
+// Component for FOOTER
+
 @use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
 
 footer {
     background-color: white;
@@ -61,5 +65,42 @@ footer {
         color: a.$primary-cyan;
         padding-left: 10px;
         border-left: 2px solid a.$primary-cyan;
+    }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+    .footer-copy {
+        flex-direction: row;
+        align-items: center;
+
+         img {
+            width: 20px;
+            margin-bottom: 5px;
+            margin-right: 10px;
+         }
+
+         h5 {
+            padding-right: 5px;
+         }
+    }
+
+    .footer-social {
+        display: flex;
+        flex-direction: row;
+        align-items: top;
+    }
+
+    .footer-social-media {
+        margin-top: 5px;
+    }
+
+    .resume {
+        margin-bottom: 0px;
+        margin-left: 15px;
     }
 }

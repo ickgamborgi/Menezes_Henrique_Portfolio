@@ -1,0 +1,70 @@
+// Component for TOOLS and SKILLS
+
+@use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
+
+.home-skills {
+    padding-top: a.$section-gap;
+
+    h3 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$h2;
+        color: a.$primary-cyan;
+        margin-bottom: 25px;
+    }
+}
+
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h4 {
+        font-family: a.$ubuntu;
+        font-weight: 600;
+        font-size: a.$text;
+        color: a.$primary-cyan;
+    }
+
+    h5 {
+        font-weight: 400;
+        padding-top: 2.5px;
+        color: a.$light-cyan;
+    }
+}
+
+.skill-icon {
+    background-color: a.$light-cyan;
+    padding: 4px;
+    width: fit-content;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.lang-icon {
+    background-color: a.$primary-cyan;
+    padding: 2px;
+    width: fit-content;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.skill-col-1, .skill-col-2, .skill-col-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+}

@@ -1,26 +1,51 @@
-# Henrique Gamborgi Menezes — Portfolio
-This project is My Portfolio, designed during the Interactive Media Design (IDP3) graduation program on Fanshawe College, Fall term, 2024.
+# Henrique Gamborgi's Portfolio
 
-Our Final Integrated Project this year will feature our own Portfolio design and development. To assist with this project documentation, I've brought all important information regarding the development of my portfolio in this file. The process for this was based on researching references, structuring the project, building my own personal brand, designing the wireframes for the respective portfolio pages and then developing my website. In parallel, a demo reel video will also be produced, featuring motion and video projects.
+Welcome to my personal portfolio! This repository and project showcases all my best works, skills and information regarding my adventures as a Designer and Front-End Web Developer. Here you will find everything you need about me and my journey! 👋 
 
-## Installation
+You can visit it in: 
+<br>
+[Live] (https://ickgamborgi.github.io/Menezes_Henrique_Portfolio/)
+
+## Table of Contents 📚
+[About ℹ](#about)<br/>
+[Skills 🍳](#skills)<br/>
+[Installation 💾](#installation)<br/>
+[Usage 🖥️](#usage)<br/>
+[Credits ✍️](#credits)<br/>
+[Contact ☎️](#contact)<br/>
+
+## About ℹ <a id="about"></a>
+My portfolio was created in 2024 to demonstrade my experience and growth throughout my projects and improvements. Each project shows a detailed case study, demonstrating how my process works, my problem-solving techniques and approaches with different tools and softwares. There is also a section that talks a bit about me, my life and journey. Hopefully, my portfolio can present a bit more of Henrique to the world!
+
+## Skills 🍳 <a id="skills"></a>
+Here are a few of the tools in my arsenal:
+
+#### Abilities
+Project management, responsive design, brand creation, motion graphics and front-end development.
+
+#### Softwares
+Adobe Suite, Figma, Cinema 4D, VS Code and GitHub.
+
+#### Coding
+HTML5, CSS5, javascript, PHP, AJAX, GreenSock and WordPress.
+
+#### Languages
+Portuguese (native speaker), English (fluent) and Spanish (intermediary).
+ 
+## Installation  💾 <a id="installation"></a>
 1. Click on the link to the sample repository provided;
 2. On the repo, click on the green button "< > Code";
-3. On the last option, click on "Download zip";
+3. On the last option, click on "Download zip" or clone the repository;
 4. Unzip the folder.
 
-## Usage
+## Usage 🖥️ <a id="usage"></a>
 1. Download the folder on your device;
-2. Open the index.html file on the browser of your choice.
+2. Open the index.html file on the browser of your choice, or if using a local server, start the server and navigate to localhost to view.
 
-## Credits
+## Credits ✍️ <a id="credits"></a>
 The credits are due to Henrique Gamborgi Menezes, student of the Interactive Media Design program at Fanshawe College.
 
-## License
-Copyright (c) 2024 Henrique Gamborgi
+## Contact ☎️ <a id="contact"></a>
+Feel free to reach out to me if you have any questions, want to collaborate or simply to connect! LinkedIn [Henrique] (https://www.linkedin.com/in/ickgamborgi/)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Thank you for stopping by!

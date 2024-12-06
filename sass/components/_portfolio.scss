@@ -1,4 +1,8 @@
+// Component for PORTFOLIO elements and CASE STUDY PAGE
+
 @use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
 
 #portfolio-sec {
     padding-top: a.$section-gap;
@@ -135,4 +139,12 @@
 
 .portfolio-item:hover .portfolio-item-info {
     opacity: 1;
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
 }
