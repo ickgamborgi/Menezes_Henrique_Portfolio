@@ -18,12 +18,13 @@ $gradient: rgb(57,163,188) linear-gradient(90deg, rgba(57,163,188,1) 59%, rgba(2
 // Fonts
 $ubuntu: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
 
-$h1: 2.5em;
-$h2: 2.1em;
-$h3: 1.6em;
-$h4: 1.35em;
-$h5: 1.1em;
-$text: .9em;
+$h1: 62px;
+$h2: 45px;
+$h3: 36px;
+$h4: 26px;
+$h5: 18px;
+$text: 16px;
+$small-text: 14px;
 
 //Others
 $blur-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
@@ -31,4 +32,4 @@ $click-shadow: 0 3px 6px rgba(0,0,0,0.2);
 
 $round-border: 35px;
 $section-gap: 150px;
-$basic-transition: all .25s ease-in-out;
+$basic-transition: all .3s ease-in-out;

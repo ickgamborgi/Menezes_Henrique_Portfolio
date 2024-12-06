@@ -1,4 +1,8 @@
+// Component for CONTACT PAGE and FORM
+
 @use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
 
 .contact-section {
     padding-top: a.$section-gap;
@@ -137,4 +141,50 @@
     color: white;
     transform: scale(1.1);
     cursor:pointer;
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+    .popup-content {
+        width: 50vw;
+    }
+
+    .close-btn {
+        right: 50px;
+    }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+
+    .redux-form-section {
+        form {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+    
+            input {
+                background-color: white;
+                border-radius: a.$round-border;
+                padding: 15px 25px;
+                font-family: a.$ubuntu;
+                font-size: a.$text;
+                box-shadow: inset 2px 4px 4px 2px rgba(0, 0, 0, 0.15);
+                width: 100%;
+            }
+
+            button {
+                margin-top: 0;
+                width: 50%;
+            }
+        }
+    }
+
+    .popup-content {
+        width: 40vw;
+    }
+
+    .close-btn {
+        right: 30px;
+    }
 }
