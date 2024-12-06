@@ -8,17 +8,19 @@
     top: 0;
     z-index: 1000;
     box-shadow: a.$blur-shadow;
+    animation: headerSlide 1s forwards;
 }
 
 .navbar-header {
     display: flex;
     justify-content: space-between;
+    align-content: center;
     color: white;
 }
 
 
 .logo-header img {
-    width: 225px;
+    width: 200px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -44,9 +46,11 @@
     cursor: pointer;
     color: a.$primary-cyan;
     background-color: white;
+    transition: a.$basic-transition;
 
     &:hover {
     text-decoration: underline;
+    border-radius: a.$round-border;
     background-color: #39a4bc28;
     }
 }
@@ -69,24 +73,29 @@
 @media (max-width: 768px) {
     
     .navbar-header button {
-        margin-top: 10px;
         display: flex;
+        margin-top: 5px;
      }
 
      .navbar-header {
-        align-items: flex-start;;
+        align-items: flex-start;
         flex-direction: column;
      }
 
      .links-header {
         width: 100%;
         z-index: 100;
-        display: none;
+        height: 0;
+        overflow: hidden;
+        transition: height .5s ease-in-out;
      }
 
      .links-header ul {
         flex-direction: column;
         width: 100%;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity .5s ease-in-out, transform .5s ease-in-out;
      }
 
      .links-header ul li {
@@ -95,12 +104,22 @@
     }
     
     .links-header.active {
+        height: 240px;
         display: flex;
+    }
+
+    .links-header.active ul {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #burger-button.active {
+        transform: rotate(90deg);
     }
 
 }
 
-// Animations
+// Animation
 @keyframes headerSlide {
     from {
         transform: translateY(-100px);
