@@ -12,10 +12,12 @@
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    align-content: center;
+    text-align: center;
     gap: 15px;
 
     h4 {
-        font-size: a.$h3;
+        font-size: a.$h4;
         color: a.$primary-cyan;
     }
 
@@ -28,8 +30,40 @@
     }
 }
 
+.intro-btn {
+    margin-top: 10px;
+    font-size: a.$h5;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    color: a.$light-cyan;
+    cursor: pointer;
+    transition: a.$basic-transition;
+    text-transform: uppercase;
+    letter-spacing: .75px;
+
+    &:hover {
+        color: a.$primary-cyan;
+        gap: 16px;
+    }
+}
+
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
+    .intro-text {
+        align-content: left;
+        text-align: left;
+
+        h4 {
+            max-width: 300px;
+        }
+    }
+    
+    .intro-btn {
+        align-items: left;
+        justify-content: left;
+    }
 }
 
 // ---Desktop Styles---

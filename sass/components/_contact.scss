@@ -7,6 +7,7 @@
 .contact-section {
     padding-top: a.$section-gap;
     padding-bottom: a.$section-gap;
+    text-align: center;
 
     h3 {
         font-family: a.$ubuntu;
@@ -18,7 +19,6 @@
 }
 
 .redux-form-section {
-    
     
     form {
         display: flex;
@@ -45,7 +45,6 @@
         button {
             background-color: a.$light-cyan;
             margin-top: 10px;
-            padding: 15px 20px;
             height: 50px;
             border-radius: a.$round-border;
             color: white;
@@ -93,18 +92,18 @@
     margin-right: 50px;
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
     gap: 15px;
     width: 75vw;
 
     h4 {
-        text-align: left;
+        text-align: center;
         font-size: a.$h4;
         color: a.$primary-cyan
     }
 
     p {
-        text-align: left;
+        text-align: center;
         font-size: a.$text;
         line-height: 140%;
         color: a.$grey;
@@ -145,8 +144,21 @@
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
+    .contact-section {
+        text-align: left;
+    }
+
     .popup-content {
         width: 50vw;
+        align-items: start;
+
+        h4 {
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+        }
     }
 
     .close-btn {
@@ -176,6 +188,7 @@
             button {
                 margin-top: 0;
                 width: 50%;
+                padding: 15px 10px;
             }
         }
     }

@@ -32,8 +32,15 @@ body {
     margin: 0;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ubuntu', sans-serif;
+p {
+    font-family: a.$ubuntu;
+    line-height: 150%;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: a.$ubuntu;
+    line-height: 120%;
 }
 
  main {
@@ -42,24 +49,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 footer {
     width: 100%;
-}
-
-.simple-btn {
-    margin-top: 10px;
-    font-size: a.$h5;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    color: a.$light-cyan;
-    cursor: pointer;
-    transition: a.$basic-transition;
-    text-transform: uppercase;
-    letter-spacing: .75px;
-
-    &:hover {
-        color: a.$primary-cyan;
-        gap: 16px;
-    }
 }
 
 // Video Player
