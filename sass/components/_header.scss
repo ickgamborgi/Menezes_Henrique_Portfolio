@@ -50,7 +50,7 @@
 
     &:hover {
     text-decoration: underline;
-    border-radius: a.$round-border;
+    border-radius: 0px;
     background-color: #39a4bc28;
     }
 }
@@ -101,6 +101,10 @@
      .links-header ul li {
         text-align: center;
         cursor: pointer;
+
+        a:hover {
+            border-radius: a.$round-border;
+        }
     }
     
     .links-header.active {
