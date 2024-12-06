@@ -2,9 +2,6 @@
 
 @use '../abstracts/variables' as a;
 
-/* --First: Mobile Styles--- */
-
-
 #sticky-nav-con {
     position: sticky;
     background-color: white;
@@ -53,7 +50,7 @@
 
     &:hover {
     text-decoration: underline;
-    border-radius: a.$round-border;
+    border-radius: 0px;
     background-color: #39a4bc28;
     }
 }
@@ -72,8 +69,9 @@
  }
 
 
-/* ---Tablet Styles--- */
-@media screen and (min-width: 768px) {
+//  Responsive
+@media (max-width: 768px) {
+    
     .navbar-header button {
         display: flex;
         margin-top: 5px;
@@ -103,11 +101,9 @@
      .links-header ul li {
         text-align: center;
         cursor: pointer;
-    }
 
-    .links-header ul li a {
-        &:hover {
-            border-radius: 0px;
+        a:hover {
+            border-radius: a.$round-border;
         }
     }
     
@@ -124,13 +120,10 @@
     #burger-button.active {
         transform: rotate(90deg);
     }
-} 
 
-// ---Desktop Styles---
-@media screen and (min-width: 1200px) {
 }
 
-// Animations
+// Animation
 @keyframes headerSlide {
     from {
         transform: translateY(-100px);
