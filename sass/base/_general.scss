@@ -45,19 +45,20 @@ footer {
 }
 
 .simple-btn {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: a.$h5;
     display: flex;
-    gap: 5px;
-    align-items: end;
+    gap: 8px;
+    align-items: center;
     color: a.$light-cyan;
     cursor: pointer;
-    transition: ease-in-out padding .25s;
+    transition: a.$basic-transition;
+    text-transform: uppercase;
+    letter-spacing: .75px;
 
     &:hover {
         color: a.$primary-cyan;
-        padding-left: 10px;
-        border-left: 2px solid a.$primary-cyan;
+        gap: 16px;
     }
 }
 
