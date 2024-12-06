@@ -7,13 +7,14 @@
 footer {
     background-color: white;
     padding-top: 75px;
-    padding-bottom: a.$section-gap;
+    padding-bottom: 75px;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .footer-copy {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     img {
         width: 25px;
@@ -32,6 +33,7 @@ footer {
     margin-top: 25px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -52,11 +54,12 @@ footer {
 }
 
 .resume {
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: a.$h5;
     display: flex;
     gap: 8px;
     align-items: end;
+    justify-content: center;
     color: a.$light-cyan;
     cursor: pointer;
     transition: a.$basic-transition;
@@ -75,37 +78,42 @@ footer {
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
+    .footer-copy {
+        flex-direction: row;
+        align-content: center;
+        gap: 7px;
+
+        h5 {
+            padding-bottom: 12px;
+        }
+    }
+    
+    .footer-social-media {
+        justify-content: start;
+    }
+
+    .resume {
+        justify-content: start;
+    }
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
-    .footer-copy {
-        flex-direction: row;
-        align-items: center;
+    footer {
+        align-items: start;
+    }
 
-         img {
-            width: 20px;
-            margin-bottom: 5px;
-            margin-right: 10px;
-         }
-
-         h5 {
-            padding-right: 5px;
-         }
+    .footer-social-media {
+        margin-top: 0px;
     }
 
     .footer-social {
         display: flex;
-        flex-direction: row;
-        align-items: top;
-    }
-
-    .footer-social-media {
-        margin-top: 5px;
+        gap: 25px;
+        align-items: center;
     }
 
     .resume {
-        margin-bottom: 0px;
-        margin-left: 15px;
+        margin-top: 0px;
     }
 }

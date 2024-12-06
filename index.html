@@ -101,26 +101,27 @@
             <h3 class="hidden">Introduction Section</h3>
 
             <!-- Video Player -->
-            <div class="video-holder col-span-full l-col-start-1 l-col-end-8">
+            <div class="video-holder col-span-full m-col-start-1 m-col-end-9 l-col-end-8">
                 <h4 class="hidden">Demo Reel</h4>
                 <video
                     id="demoreel"
                     class="player" 
                     controls
+                    loop
                     preload="metadata"
                     >
                     <source src="videos/demoreel.mp4" type="video/mp4">
                 </video>
             </div>
 
-            <div class="intro-text col-span-full l-col-start-8 l-col-end-13">
+            <div class="intro-text col-span-full m-col-start-1 m-col-end-9 l-col-start-8 l-col-end-13">
                 <h4>Welcome to my little corner of the world!</h4>
                 <p>
                     I'm a designer passionate about how people connect with brands, products, and media. With 6+ years of experience, I've contributed to various projects, and I might be just who you're looking for in your next design journey. <br>
                     <br>
                     Scroll down to explore my portfolio, I hope you enjoy it!
                 </p>
-                <a href="about.html" class="simple-btn">
+                <a href="about.html" class="intro-btn">
                     <h5 class="small-button">More About Me</h5>
                     <i>&#10140;</i>
                 </a>
@@ -132,8 +133,8 @@
             <h3 class="hidden">Portfolio Section</h3>
 
             <div class="portfolio-title col-span-full">
-                <h4>Discover my portfolio</h4>
-                <div>
+                <h4>Discover my portfolio!</h4>
+                <!-- <div>
                     <h5 class="hidden">Design area filters</h5>
                     <ul class="portfolio-tags">
                         <li><a><h6 class="portfolio-tag selected">All Projects</h6></a></li>
@@ -142,120 +143,59 @@
                         <li><a><h6 class="portfolio-tag">Product</h6></a></li>
                         <li><a><h6 class="portfolio-tag">Editorial</h6></a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
+
+            <!-- Portfolio Gallery -->
+            <article class="portfolio-gallery col-span-full">
+                <h4 class="hidden">Projects gallery</h4>
+
+                <!-- Project Item -->
+                <div class="portfolio-item">
+                    <h5 class="hidden">Portfolio item</h5>
+
+                    <!-- thumbnail -->
+                    <img class="project-thumb" src="./images/thumb_airpods.webp" alt="Project Thumbnail">
+
+                    <div class="portfolio-item-info">
+                        <!-- Title and Subtitle -->
+                        <h6 class="project-title"><span>Haka</span> Burguer &amp; Beer</h6>
+
+                        <!-- Areas -->
+                        <p class="project-areas">Branding and Product Design</p>
+
+                        <!-- Date -->
+                        <p class="project-date">Jan, 2020</p>
+
+                        <!-- Recap -->
+                        <p class="project-recap">Project developed for the new brand of the Haka restaurant, located in the heart of Florianópolis and serving shakes, burgers and beer. This project proposed the rebranding of the already existing bar into a new and enhanced cultural experience, with menu, products and environmental redesign. Developed for the Branding Project Course during my UFSC graduation.</p>
+                    
+                        <a href="casestudy.html" class="intro-btn">
+                            <h5 class="small-button">Case Study</h5>
+                            <i>&#10140;</i>
+                        </a>
+                    </div>
+                </div>
+
+            </article>
+
         </section>
-
-
-        <!-- Portfolio Gallery -->
-        <article class="portfolio-gallery grid-con">
-            <h3 class="hidden">Projects gallery</h3>
-
-            <!-- Project 1 -->
-            <div class="portfolio-item col-span-full m-col-span-7">
-                <img src="./images/haka.webp" alt="Haka Burger Project">
-                <div class="portfolio-item-info">
-                    <h3><span>Haka</span> Burger, Beer &amp; Shakes</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Jan, 2021</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Branding</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="portfolio-item col-span-full m-col-span-5">
-                <img src="./images/jorge-ben.webp" alt="Jorge Ben Project">
-                <div class="portfolio-item-info">
-                    <h3><span>Jorge Ben Jor</span> Illustration</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Feb, 2023</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Product</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="portfolio-item col-span-full m-col-span-5">
-                <img src="./images/dr-nut.jpg" alt="Dr. Nut Project">
-                <div class="portfolio-item-info">
-                    <h3><span>Dr. Nut</span> Drink</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Aug, 2024</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Branding</h4>
-                            <h4>Ux | Web</h4>
-                            <h4>Product</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="portfolio-item col-span-full m-col-span-7">
-                <img src="./images/strategic-branding-management.webp" alt="Strategic Branding Management Project">
-                <div class="portfolio-item-info">
-                    <h3><span>Strategic Branding</span> Management</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Dec, 2023</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Branding</h4>
-                            <h4>Product</h4>
-                            <h4>Editorial</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="portfolio-item col-span-full m-col-span-6">
-                <img src="./images/boqueirao.png" alt="Boqueirão Project">
-                <div class="portfolio-item-info">
-                    <h3><span>Boqueirão</span> Farm Hotel</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Jan, 2022</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Branding</h4>
-                            <h4>Ux | Web</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="portfolio-item col-span-full m-col-span-6">
-                <img src="./images/to-go.webp" alt="To Go, Please Project">
-                <div class="portfolio-item-info">
-                    <h3><span>To Go, Please</span> Book Series</h3>
-                    <div class="portfolio-item-con">
-                        <h4>Dec, 2019</h4>
-                        <div class="portfolio-item-tags">
-                            <h4>Editorial</h4>
-                            <h4>Product</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-
-        </article>
 
         <!-- Testimonials Section -->
         <section class="testimonials grid-con">
-            <h3 class="hidden">Testimonials Section</h3>
+            <h3 class="hidden">Testimonial Section</h3>
+
+            <div class="testimonial-title col-span-full">
+                <h4>That's what they said!</h4>
+            </div>
 
             <div class="testimonial col-span-full">
-                <h4>Feedbacks from clients and colleagues</h4>
 
                 <div class="testimonial-card visible">
                     <h5 class="hidden">Testimonial Card 1</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
                     <p>
-                        Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.”
+                        Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.
                     </p>
     
                     <div class="testimonial-bio">
@@ -273,7 +213,7 @@
                     <h5 class="hidden">Testimonial Card 2</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, doloribus labore? Consequatur exercitationem magni inventore perspiciatis at. Modi maiores qui atque sunt minima sint quisquam unde voluptatem, eligendi dolorem quibusdam autem porro eius totam rem aut laudantium veritatis eveniet ut temporibus.”
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, doloribus labore? Consequatur exercitationem magni inventore perspiciatis at. Modi maiores qui atque sunt minima sint quisquam unde voluptatem, eligendi dolorem quibusdam autem porro eius totam rem aut laudantium veritatis eveniet ut temporibus.
                     </p>
     
                     <div class="testimonial-bio">
@@ -292,7 +232,7 @@
                     <h6 class="testimonial-quote-mark">"</h6>
 
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nihil velit? Necessitatibus, nulla aliquam illum quos fugit quo. Placeat maiores doloribus quos molestiae totam dolorum? Pariatur ex enim nesciunt modi dolores illum, vero deleniti sequi quas aut tenetur optio fugiat.”
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nihil velit? Necessitatibus, nulla aliquam illum quos fugit quo. Placeat maiores doloribus quos molestiae totam dolorum? Pariatur ex enim nesciunt modi dolores illum, vero deleniti sequi quas aut tenetur optio fugiat.
                     </p>
     
                     <div class="testimonial-bio">
@@ -389,7 +329,7 @@
                     <input name="name" type="text"  placeholder="Full Name">
                     <input name="email" type="email" placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Message">
-                    <button name="submit" type="submit" value="Send"><span>Submit Form</span></button>
+                    <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
             </div>
 
@@ -409,14 +349,14 @@
         <footer class="grid-con">
             <h3 class="hidden">Footer</h3>
 
-            <div class="footer-copy col-span-full m-col-start-1 m-col-end-8">
+            <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
                 <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
                 <h5>2024 Copyright &copy;</h5>
                 <h5>Henrique Gamborgi Design</h5>
             </div>
 
-            <div class="footer-social col-span-4 l-col-start-10">
+            <div class="footer-social col-span-full m-col-start-1 l-col-start-9">
                 <h4 class="hidden">Links</h4>
 
                 <div class="footer-social-media">
@@ -449,7 +389,7 @@
                     </a>
                 </div>
                 
-                <div class="footer-resume col-span-1">
+                <div class="footer-resume">
                     <a href="about.html" class="resume">
                         <h5 class="small-button">Resume</h5>
                         <i>&#10140;</i>
