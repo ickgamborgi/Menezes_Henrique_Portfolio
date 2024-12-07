@@ -36,6 +36,7 @@ p {
     font-family: a.$ubuntu;
     line-height: 150%;
     font-weight: 400;
+    max-width: 800px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,4 +76,8 @@ footer {
 
 .video-holder .plyr__controls {
     margin: 15px;
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
 }

@@ -8,7 +8,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     align-items: end;
-    gap: 25px;
+    gap: 40px;
 }
 
 .bio-text {
@@ -64,6 +64,15 @@
             font-weight: 800;
             color: a.$primary-cyan;
             font-size: a.$text;
+            text-align: center;
+        }
+
+        p {
+            font-weight: 400;
+            color: a.$grey;
+            font-size: a.$text;
+            text-align: center;
+            margin-left: 0;
         }
     }
 }
@@ -170,6 +179,15 @@ margin-bottom: 25px;
 
         div {
             align-items: start;
+
+            h5 {
+                text-align: left;
+            }
+    
+            p {
+                text-align: left;
+                margin-left: 1%;
+            }
         }
     }
 
@@ -186,4 +204,16 @@ margin-bottom: 25px;
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
+
+    .subtitle-wrap {
+
+    
+        div {
+
+    
+            p {
+                margin-left: 0;
+            }
+        }
+    }
 }
