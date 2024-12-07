@@ -66,6 +66,10 @@ footer {
     text-transform: uppercase;
     letter-spacing: .75p;
 
+    i {
+        color: a.$light-cyan;
+    }
+
     h5 {
         padding-bottom: 1px;
     }
@@ -73,6 +77,10 @@ footer {
     &:hover {
         color: a.$primary-cyan;
         gap: 16px;
+    }
+
+    &:hover i {
+        color: a.$primary-cyan;
     }
 }
 

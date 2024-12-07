@@ -27,7 +27,7 @@ Project management, responsive design, brand creation, motion graphics and front
 Adobe Suite, Figma, Cinema 4D, VS Code and GitHub.
 
 #### Coding
-HTML5, CSS5, javascript, PHP, AJAX, GreenSock and WordPress.
+HTML5, CSS3, javascript, PHP, AJAX, GreenSock and WordPress.
 
 #### Languages
 Portuguese (native speaker), English (fluent) and Spanish (intermediary).

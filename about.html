@@ -9,6 +9,22 @@
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
+    <!-- Ubuntu Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <!-- plyr.io library-->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <!-- Font awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Script tags with defer attribute -->
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
+    <script src="js/about.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
+
     <!-- Document Title -->
     <title>Henrique Gamborgi: About</title> 
 </head>
@@ -18,16 +34,364 @@
     <h1 class="hidden">Henrique Gamborgi: About</h1>
 
     <!-- Header -->
-    <header>
-
-    </header>
+    <div id="sticky-nav-con">
+        <h2 class="hidden">Header</h2>
+        <header>
+            <!-- Main Navigation -->
+            <nav class="navbar-header grid-con">
+                <h3 class="hidden">Main Navigation</h3>
+    
+                <div class="logo-header col-start-1">
+                    <a href="index.html"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
+                </div>
+    
+                <button id="burger-button"></button>
+    
+                <div class="links-header">
+                    <h4 class="hidden">Links Header</h4>
+                    <ul>
+                        <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
+                        <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
+                        <li><a href="#" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
+                        <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
 
     <!-- Main Content -->
     <main>
+        <h2 class="hidden">Main Content</h2>
+
+        <section class="full-width-grid-con banner" id="about-banner">
+            <div class="full-width-grid-con banner-cover"></div>
+            
+            <div class="banner-about-wrap col-span-full">
+                <img src="../images/about-profile.jpg" alt="Henrique's About Me Picture">
+
+                <div class="col-span-full banner-title">
+                    <h3 class="col-span-6">About</h3>
+                    <div class="col-span-6 banner-divisory" id="about-divisory"></div>
+                    <a href="#" class="banner-btn col-span-3">
+                        <h4 class="small-button">Visit My Resume</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section class="bio grid-con bio">
+            <h3 class="hidden">About Section</h3>
+
+            
+            <div class="col-span-full subtitle-wrap">
+                <h4>Live In</h4>
+                <div>
+                    <img src="../images/canada-flag.svg" alt="Canada Flag">
+                    <h5>London, ON, Canada</h5>
+                </div>
+            </div>
+
+            <div class="col-span-full subtitle-wrap">
+                <h4>From</h4>
+                <div>
+                    <img src="../images/brazil-flag.svg" alt="Canada Flag">
+                    <h5>Florianópolis, SC, Brasil</h5>
+                </div>
+            </div>
+
+            <div class="col-span-full l-col-end-7 bio-text">
+                <h4>Hello there, I'm Henrique!</h4>
+                <p>
+                    <span>I'm a passionate designer from Brasil, who not only loves studying, but never forgot that child whose drawings would change the world.</span> My creative dreams always empowered me to bring ideas to life, and I absolutely love understanding why and how people interact with products, technologies and media. While my curious mindset wonders about these experiences, my designer side wants to create. And before I even knew it had a name, I fell in love and grew fascinated with design. Today, I have more than 6 years of experience in the design market. I started my studies at the Federal University of Santa Catarina (UFSC), where I graduated as a graphic designer, with main focus on building and managing brands.
+                </p>
+            </div>
+
+            <div class="col-span-full l-col-start-8 bio-text">
+                <p>
+                    After that, I adventured myself taking part on a few freelance projects, which also gave me great knowledge on marketing and sale strategies. In 2023, my journey led me to Canada, where I currently study Interactive Media Design at Fanshawe College. Throughout these years, I have proudly worked in many projects, and capacitated myself to become a rare type of breed, a designer that loves branding, UX, marketing, coding, video editing, motion, print and project management. It is true, design is my passion!
+                </p>
+            </div>
+
+            <div class="col-span-full l-col-end-7 bio-images">
+                <div class="bio-image" id="bio-image-1">
+                    <div class="bio-cover"></div>
+                    <p>First Winter in Canada</p>
+                </div>
+                <div class="bio-image" id="bio-image-2">
+                    <div class="bio-cover"></div>
+                    <p>Graduation at UFSC</p>
+                </div>
+                <div class="bio-image" id="bio-image-3">
+                    <div class="bio-cover"></div>
+                    <p>Day of my marriage</p>
+                </div>
+            </div>
+
+            <div class="col-span-full l-col-start-8 bio-hobbies">
+                <h4>In my spare time, I love</h4>
+                <div class="hobbies-list">
+                    <h5><span>&#x1F3AC;</span> Movies &amp; TV</h5>
+                    <h5><span>&#x1F3A7;</span> All kinds of music</h5>
+                    <h5><span>&#x1F94A;</span> Mixed Martial Arts</h5>
+                    <h5><span>&#x1F60E;</span> Design &amp; Coding</h5>
+                    <h5><span>&#x1F33A;</span> Gardening</h5>
+                    <h5><span>&#x1F30D;</span> Traveling</h5>
+                </div>
+
+            </div>
+            
+        </section>
+
+        <!-- Tools Section -->
+        <section class="home-tools grid-con">
+            <h3 class="col-span-full">My Favorite Tools</h3>
+
+            <img class="mug-image col-span-4" src="./images/mug-best-boss.svg" alt="World's Best Designer Coffee Mug">
+
+            <div class="tools-list col-span-4 m-col-start-5">
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Softwares</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+
+                    <div class="tools-open hidden">
+                        <div class="tool">
+                            <img src="./images/icon-ai.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe Illustrator</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-figma.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe XD &amp; Figma</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-ps.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe Photoshop</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-ae.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe AfterEffects</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-c4d.svg" alt="Software icon" class="skill-icon">
+                            <h4>Cinema 4D &amp; Blender</h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Coding</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+
+                    <div class="tools-open hidden">
+                        <div class="tool">
+                            <img src="./images/icon-html.svg" alt="Coding icon" class="skill-icon">
+                            <h4>HTML5</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-css.svg" alt="Coding icon" class="skill-icon">
+                            <h4>CSS3 &amp; SASS</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-js.svg" alt="Coding icon" class="skill-icon">
+                            <h4>Javascript</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-php.svg" alt="Coding icon" class="skill-icon">
+                            <h4>PHP &amp; WordPress</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-git.svg" alt="Coding icon" class="skill-icon">
+                            <h4>GitHub Workflow</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Languages</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+                    <div class="tools-open">
+                        <div class="tool">
+                            <img src="./images/brazil-flag.svg" alt="Brazilian flag" class="skill-icon">
+                            <h4>Portuguese (native)</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/uk-flag.svg" alt="UK flag" class="skill-icon">
+                            <h4>English (fluent)</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/spain-flag.svg" alt="Spanish flag" class="skill-icon">
+                            <h4>Spanish (intermediary)</h4>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials grid-con">
+            <h3 class="hidden">Testimonial Section</h3>
+
+            <div class="testimonial-title col-span-full">
+                <h4>That's what they said!</h4>
+            </div>
+
+            <div class="testimonial col-span-full">
+
+                <div class="testimonial-card visible">
+                    <h5 class="hidden">Testimonial Card 1</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+                    <p>
+                        Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.
+                    </p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-1.jpg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Charles Crimson</h6>
+                            <h7>Colleague and business partner</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 2</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, doloribus labore? Consequatur exercitationem magni inventore perspiciatis at. Modi maiores qui atque sunt minima sint quisquam unde voluptatem, eligendi dolorem quibusdam autem porro eius totam rem aut laudantium veritatis eveniet ut temporibus.
+                    </p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-2.jpg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Mary Jane Monroe</h6>
+                            <h7>Client for freelance project</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 3</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nihil velit? Necessitatibus, nulla aliquam illum quos fugit quo. Placeat maiores doloribus quos molestiae totam dolorum? Pariatur ex enim nesciunt modi dolores illum, vero deleniti sequi quas aut tenetur optio fugiat.
+                    </p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-3.jpg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>James Dean</h6>
+                            <h7>Professor at UFSC</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls col-span-full">
+                    <h5 class="hidden">Testimonial Navigation</h5>
+                    <button class="testimonial-button" id="test-prev-btn">&#10094;</button>
+                    <button class="testimonial-button" id="test-next-btn">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section grid-con">
+            <h3 class="col-span-full">Let's bring your ideas to life?</h3>
+    
+            <div class="redux-form-section col-span-full">
+                <h4 class="hidden">Contact Form</h4>
+                <form class="form" method="post" enctype="text/plain">
+                    <input name="name" type="text"  placeholder="Full Name">
+                    <input name="email" type="email" placeholder="E-mail Address">
+                    <input name="message" type="text"  placeholder="Message">
+                    <button name="submit" type="submit" value="Send"><span>Submit</span></button>
+                </form>
+            </div>
+
+            <div id="popup" class="popup">
+                <h3 class="hidden">Newsletter Form Confirmation Popup</h3>
+                <div class="popup-content">
+                    <span class="close-btn">&times;</span>
+                    <img src="./images/icon-white.svg" alt="Icon Confirmatoin Email">
+                    <h4>Your form was sent!   <span> &#10004</span></h4>
+                    <p>Your message is in my inbox, and I'll get back to you within 24 hours. Thanks for reaching out!</p>
+                    <p><span>Talk to you soon!</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="grid-con">
+            <h3 class="hidden">Footer</h3>
+
+            <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
+                <h4 class="hidden">Copyright Information</h4>
+                <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
+                <h5>2024 Copyright &copy;</h5>
+                <h5>Henrique Gamborgi Design</h5>
+            </div>
+
+            <div class="footer-social col-span-full m-col-start-1 l-col-start-9">
+                <h4 class="hidden">Links</h4>
+
+                <div class="footer-social-media">
+                    <a href="https://github.com/ickgamborgi/" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">GitHub</h5>
+                            <img src="./images/github.svg" alt="GitHub icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://behance.com/ickgamborgi" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Behance</h5>
+                            <img src="./images/behance.svg" alt="Behance icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://instagram.com/inkgamborgi" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Instagram</h5>
+                            <img src="./images/instagram.svg" alt="Instagram icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://linkedin.com/in/ickgamborgi/" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">LinkedIn</h5>
+                            <img src="./images/linkedin.svg" alt="LinkedIn icon" class="social-media-icon">
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="footer-resume">
+                    <a href="about.html" class="resume" target="_blank">
+                        <h5 class="small-button">Resume</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </a>
+                </div>
+
+            </div>
+        </footer>
 
     </main>
-
-    <script src="js/main.js"></script>
 </body>
 
 </html>
