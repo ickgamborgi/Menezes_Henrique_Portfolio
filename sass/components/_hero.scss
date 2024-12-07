@@ -75,7 +75,7 @@ gap: 50px;
     }
 
     h6 {
-        font-size: a.$h5;
+        font-size: a.$text;
         color: a.$grey;
         font-weight: 500;
     }
@@ -86,6 +86,7 @@ gap: 50px;
     .home-hero {
         flex-direction: row;
         align-items: center;
+        justify-content: start;
         margin-top: 75px;
         gap: 50px;
         text-align: left;
@@ -94,6 +95,7 @@ gap: 50px;
     .hero-image {
         padding-left: 0;
         padding-right: 0;
+        max-width: 300px;
     }
 
     .hero-bio {
@@ -104,11 +106,26 @@ gap: 50px;
         }
     }
 
+    .hero-availability {
+    
+        h6 {
+            font-size: a.$h5;
+            color: a.$grey;
+            font-weight: 500;
+        }
+    }
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
     .home-hero {
+        margin-top: 5%;
         gap: 75px;
     }
+
+    .hero-image {
+        max-width: 350px;
+    }
+
+
 }

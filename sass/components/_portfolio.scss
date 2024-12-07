@@ -102,6 +102,90 @@
     font-size: a.$small-text;
 }
 
+.case-text {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    text-align: center;
+
+    h4 {
+        font-size: a.$h3;
+        color: a.$primary-cyan;
+    }
+
+    p {
+        color: a.$grey;
+
+        span {
+            color: a.$light-cyan;
+            font-weight: 600;
+        }
+    }
+}
+
+.case-title-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    i {
+        color: a.$light-cyan;
+    }
+
+    h4 {
+        font-size: a.$h4;
+        color: a.$light-cyan;
+    }
+}
+
+.project-media-con {
+    margin-top: 50px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #39a4bc2e;
+    background: .5;
+    padding: 5px;
+    border-radius: a.$round-border;
+    box-shadow: a.$click-shadow;
+}
+
+.project-media-image {
+    object-fit: cover;
+}
+
+.project-media-image:first-of-type {
+    border-top-left-radius: a.$round-border;
+    border-top-right-radius: a.$round-border;
+}
+
+.project-media-image:last-of-type {
+    border-bottom-left-radius: a.$round-border;
+    border-bottom-right-radius: a.$round-border;
+}
+
+.project-thank {
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    h4 {
+        font-size: a.$h3;
+        color: a.$light-cyan;
+    }
+
+    img {
+        width: 250px;
+        object-fit: contain;
+    }
+}
+
 
 
 
@@ -129,6 +213,36 @@
         text-align: left;
         padding-left: 25px;
     }
+
+    .case-text {
+        text-align: left;
+        align-items: start;
+    }
+
+    .project-thank {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        text-align: left;
+    
+        h4 {
+            font-size: a.$h3;
+            color: a.$light-cyan;
+            margin-bottom: 30px;
+            align-self: end;
+        }
+    
+        img {
+            padding-left: 0;
+            padding-right: 0;
+            object-fit: contain;
+        }
+    }
+    
+    .project-media-con {
+        padding: 15px;
+    }
 }
 
 // ---Desktop Styles---
@@ -147,5 +261,15 @@
     
     .portfolio-item-info {
         width: 60%;
+    }
+
+    .case-text-con {
+        display: flex;
+        gap: 75px;
+    }
+
+        
+    .project-media-con {
+        padding: 20px;
     }
 }
