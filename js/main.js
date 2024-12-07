@@ -1,5 +1,7 @@
 console.log("javascript file is linked");
 
+const player = new Plyr("#demoreel");
+
 // Header
 (()=> {
 const burgerButton = document.querySelector("#burger-button")
