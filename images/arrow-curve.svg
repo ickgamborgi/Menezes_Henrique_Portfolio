@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-arrow-curve">
+      <rect width="16" height="16"/>
+    </clipPath>
+  </defs>
+  <g id="arrow-curve" clip-path="url(#clip-arrow-curve)">
+    <rect width="16" height="16" fill="#fff"/>
+    <g id="arrow-forward" transform="translate(1.107 1.873)">
+      <g id="Group_19" data-name="Group 19">
+        <path id="Path_26" data-name="Path 26" d="M128,40l3.83,3.83L128,47.659" transform="translate(-118.043 -40)" fill="none" stroke="#38a3bc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_27" data-name="Path 27" d="M37.786,80H31.659A7.659,7.659,0,0,0,24,87.659v.766" transform="translate(-24 -76.17)" fill="none" stroke="#38a3bc" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

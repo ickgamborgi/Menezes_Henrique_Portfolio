@@ -65,6 +65,84 @@
     }
 }
 
+#contact-form {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+
+    h4 {
+        color: a.$primary-cyan;
+        font-size: a.$h4;
+    }
+
+    p {
+        color: a.$grey;
+        font-size: a.$text;
+        max-width: 650px;
+
+        span {
+            font-weight: 800;
+        }
+    }
+}
+
+.form-section {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        color: a.$light-cyan;
+
+        input, textarea {
+            background-color: white;
+            border-radius: a.$round-border;
+            height: 50px;
+            font-size: a.$text;
+            font-family: a.$ubuntu;
+            padding: 15px 20px;
+            color: a.$primary-cyan;
+            box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        input::placeholder, textarea::placeholder {
+            font-family: a.$ubuntu;
+            font-size: a.$text;
+            color: a.$grey;
+            opacity: .75;
+        }
+
+        button {
+            background-color: a.$light-cyan;
+            margin-top: 10px;
+            height: 50px;
+            border-radius: a.$round-border;
+            color: white;
+            font-size: a.$text;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: a.$blur-shadow;
+            transition: a.$basic-transition;
+            cursor: pointer;
+
+            &:hover {
+                background-color: a.$primary-cyan;
+                transform: scale(1.05);
+                box-shadow: a.$click-shadow;
+            }
+        }
+    }
+}
+
+#contact-test {
+    margin-bottom: a.$section-gap;
+}
+
+
+
 .popup {
     display: none;
     position: fixed;
@@ -148,6 +226,16 @@
         text-align: left;
     }
 
+    #contact-form {
+        text-align: left;
+    }
+
+    form {
+        button {
+            width: 40%;
+        }
+    }
+
     .popup-content {
         width: 50vw;
         align-items: start;
@@ -190,6 +278,12 @@
                 width: 50%;
                 padding: 15px 10px;
             }
+        }
+    }
+
+    form {
+        button {
+            width: 25%;
         }
     }
 

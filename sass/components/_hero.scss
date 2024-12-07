@@ -3,116 +3,112 @@
 @use '../abstracts/variables' as a;
 
 /* --First: Mobile Styles--- */
-
 .home-hero {
-    margin-top: 100px;
-    margin-bottom: a.$section-gap;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+gap: 50px;
 }
 
-.hero-title {
-
-    padding-bottom: 15px;
-    
-    h4 {
-        font-size: a.$h1;
-        color: a.$light-cyan;
-        font-weight: 400;
-
-        span {
-            color: a.$primary-cyan;
-            font-weight: 600;
-        }
-    }
-}
-
-.hero-div {
-    margin-top: 10px;
-    height: 5px;
-    width: 115px;
-    background: a.$gradient;
-}
-
-.hero-subtitle {
+.hero-image-con {
     display: flex;
-    align-items: start;
-    gap: 10px;
-    margin-top: 30px;
-
-    img {
-        padding-top: 4px;
-        width: 20px;
-    }
-
-    h5 {
-        font-size: a.$h4;
-        font-weight: 400;
-        color: a.$primary-cyan;
-
-        span {
-            color: a.$light-cyan;
-        }
-    }
+    flex-direction: column;
 }
 
-.hero-tags {
+.hero-image {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.hero-social-media {
+    margin-top: -35px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 40px;
+    justify-content: center;
+    gap: 10px;
 }
 
-.design-tag {
-    border: 1.5px solid a.$light-cyan;
-    border-radius: a.$round-border;
-    padding: 10px 25px;
-    font-size: a.$text;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: a.$light-cyan;
-    transition: a.$basic-transition;
-
-    &:hover {
-        box-shadow: a.$click-shadow;
-        transform: scale(1.1);
-        background-color: a.$light-cyan;
-        color: white;
-    }
-}
-
-.hero-roulette {
-    margin-top: 20px;
+.hero-bio {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-
+    gap: 35px;
+    
     h5 {
         font-size: a.$h3;
         color: a.$primary-cyan;
-        font-family: a.$ubuntu;
-        text-transform: uppercase;
-        border-bottom: 4px solid a.$yellow;
+        font-weight: 400;
+        max-width: 400px;
+
+        span {
+            font-weight: 800;
+        }
+    }
+
+    p {
+        color: a.$grey;
+        font-size: a.$h5;
+        font-weight: 400;
+
+        span {
+            font-weight: 800;
+        }
     }
 }
 
-.roulette-list {
-    padding-top: 30px;
+.hero-availability {
+    background-color: white;
+    box-shadow: a.$click-shadow;
+    padding: 15px 25px;
+    border-radius: a.$round-border;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    align-items: center;
+    gap: 15px;
 
-.roulette-item {
-    font-size: a.$h4;
-    font-weight: 200;
-    text-transform: uppercase;
-    color: a.$light-cyan;
+    div {
+        width: 7px;
+        height: 7px;
+        background-color: rgb(18, 217, 18);
+        border-radius: 100%;
+    }
+
+    h6 {
+        font-size: a.$h5;
+        color: a.$grey;
+        font-weight: 500;
+    }
 }
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
+    .home-hero {
+        flex-direction: row;
+        align-items: center;
+        margin-top: 75px;
+        gap: 50px;
+        text-align: left;
+        }
+
+    .hero-image {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-bio {
+        align-items: start;
+
+        h5 {
+            max-width: fit-content;
+        }
+    }
+
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
+    .home-hero {
+        gap: 75px;
+    }
 }

@@ -15,6 +15,9 @@
     <!-- plyr.io library-->
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
+    <!-- Font awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <!-- Script tags with defer attribute -->
     <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script defer src="js/main.js"></script>
@@ -49,7 +52,7 @@
                     <ul>
                         <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="#" class="nav-item"><h5>Resume</h5></a></li>
+                        <li><a href="#" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
                         <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
                     </ul>
                 </div>
@@ -64,36 +67,53 @@
         <!-- Hero Section -->
         <section class="home-hero grid-con">
             <h3 class="hidden">Hero Section</h3>
-            <div class="hero-title col-span-full">
-                <h4>
-                    <span>Hello!</span> Nice to have you here.
-                </h4>
-                <div class="hero-div"></div>
-            </div>
-            <div class="hero-con col-span-full m-col-start-1 m-col-end-7">
-                <div class="hero-bio">
-                    <div class="hero-subtitle">
-                        <img src="./images/symbol-color.svg" alt="Henrique Gamborgi Symbol">
-                        <h5>I am a designer <span>@ Canada and Brasil</span></h5>
-                    </div>
-                    <ul class="hero-tags">
-                        <li><a href="#portfolio-sec"><h6 class="design-tag">Ux | Web Design</h6></a></li>
-                        <li><a href="#portfolio-sec"><h6 class="design-tag">Branding</h6></a></li>
-                        <li><a href="#portfolio-sec"><h6 class="design-tag">Product</h6></a></li>
-                    </ul>
+            
+            <div class="hero-image-con col-span-full m-col-span-4">
+                <h4 class="hidden">Profile Image</h4>
+                <img class="hero-image" src="./images/hero-picture.webp" alt="Profile Image">
+
+                <div class="hero-social-media">
+                    <h5 class="hidden">Social Media Links</h5>
+                    <a href="https://github.com/ickgamborgi/" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">GitHub</h5>
+                            <img src="./images/github.svg" alt="GitHub icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://behance.com/ickgamborgi" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Behance</h5>
+                            <img src="./images/behance.svg" alt="Behance icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://instagram.com/inkgamborgi" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">Instagram</h5>
+                            <img src="./images/instagram.svg" alt="Instagram icon" class="social-media-icon">
+                        </div>
+                    </a>
+    
+                    <a href="https://linkedin.com/in/ickgamborgi/" target="_blank">
+                        <div class="social-media-item">
+                            <h5 class="hidden">LinkedIn</h5>
+                            <img src="./images/linkedin.svg" alt="LinkedIn icon" class="social-media-icon">
+                        </div>
+                    </a>
                 </div>
             </div>
-            <!-- <div class="hero-roulette col-span-full l-col-start-8 l-col-end-13">
-                <h5>I design for</h5>
-                <ul class="roulette-list">
-                    <li><h6 class="roulette-item">Brands</h6></li>
-                    <li><h6 class="roulette-item">Screens</h6></li>
-                    <li><h6 class="roulette-item">People</h6></li>
-                    <li><h6 class="roulette-item">Print</h6></li>
-                    <li><h6 class="roulette-item">Experiences</h6></li>
-                    <li><h6 class="roulette-item">Love</h6></li>
-                </ul>
-            </div> -->
+
+            <div class="hero-bio col-span-full m-col-start-5">
+                <h5><span>I am a Designer</span> @ Canada and Brasil</h5>
+                <p>
+                    And truthfully, design is my passion. I do all kinds of it: <span>user experience and web, branding, product, video and front-end development.</span>
+                </p>
+                <div class="hero-availability">
+                    <div></div>
+                    <h6>Available for Work</h6>
+                </div>
+            </div>
         </section>
 
         <!-- Introduction Section -->
@@ -123,7 +143,7 @@
                 </p>
                 <a href="about.html" class="intro-btn">
                     <h5 class="small-button">More About Me</h5>
-                    <i>&#10140;</i>
+                    <i class="fa-solid fa-square-caret-right arrow"></i>
                 </a>
             </div>
         </section>
@@ -172,7 +192,7 @@
                     
                         <a href="casestudy.html" class="intro-btn">
                             <h5 class="small-button">Case Study</h5>
-                            <i>&#10140;</i>
+                            <i class="fa-solid fa-square-caret-right arrow"></i>
                         </a>
                     </div>
                 </div>
@@ -254,68 +274,96 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="home-skills grid-con">
-            <h3 class="col-span-full">Skills and Tools</h3>
+        <!-- Tools Section -->
+        <section class="home-tools grid-con">
+            <h3 class="col-span-full">My Favorite Tools</h3>
 
-            <div class="skill-col-1 col-span-full m-col-span-4">
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">
-                    <h4>Figma &amp; Adobe XD</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">
-                    <h4>Adobe Illustrator</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">
-                    <h4>Adobe Photoshop</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Software icon" class="skill-icon">
-                    <h4>Adobe InDesign</h4>
-                </div>
-            </div>
-            <div class="skill-col-2 col-span-full m-col-span-4">
-                <div class="skill-item">
-                    <img src="./images/code-icon.svg" alt="Code language icon" class="skill-icon">
-                    <h4>HTML, CSS, js &amp; php</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Code language icon" class="skill-icon">
-                    <h4>Cinema 4D</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Code language icon" class="skill-icon">
-                    <h4>Adobe Premiere Pro</h4>
-                </div>
-                <div class="skill-item">
-                    <img src="./images/software-icon.svg" alt="Code language icon" class="skill-icon">
-                    <h4>Adobe After Effects</h4>
-                </div>
-            </div>
-            <div class="skill-col-3 col-span-full m-col-span-4">
-                <div class="skill-item">
-                    <img src="./images/uk-flag.svg" alt="UK flag" class="lang-icon">
-                    <div class="lang-item">
-                        <h4>English</h4>
-                        <h5>Fluent</h5>
+            <img class="mug-image col-span-4" src="./images/mug-best-boss.svg" alt="World's Best Designer Coffee Mug">
+
+            <div class="tools-list col-span-4 m-col-start-5">
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Softwares</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+
+                    <div class="tools-open hidden">
+                        <div class="tool">
+                            <img src="./images/icon-ai.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe Illustrator</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-figma.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe XD &amp; Figma</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-ps.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe Photoshop</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-ae.svg" alt="Software icon" class="skill-icon">
+                            <h4>Adobe AfterEffects</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-c4d.svg" alt="Software icon" class="skill-icon">
+                            <h4>Cinema 4D &amp; Blender</h4>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <img src="./images/brazil-flag.svg" alt="Brazil flag" class="lang-icon">
-                    <div class="lang-item">
-                        <h4>Portuguese</h4>
-                        <h5>Native speaker</h5>
+
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Coding</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+
+                    <div class="tools-open hidden">
+                        <div class="tool">
+                            <img src="./images/icon-html.svg" alt="Coding icon" class="skill-icon">
+                            <h4>HTML5</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-css.svg" alt="Coding icon" class="skill-icon">
+                            <h4>CSS3 &amp; SASS</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-js.svg" alt="Coding icon" class="skill-icon">
+                            <h4>Javascript</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-php.svg" alt="Coding icon" class="skill-icon">
+                            <h4>PHP &amp; WordPress</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-git.svg" alt="Coding icon" class="skill-icon">
+                            <h4>GitHub Workflow</h4>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-item">
-                    <img src="./images/spain-flag.svg" alt="Spain flag" class="lang-icon">
-                    <div class="lang-item">
-                        <h4>Spanish</h4>
-                        <h5>Intermediary</h5>
+
+                <div class="tools-item">
+                    <div class="tools-btn">
+                        <h5 class="small-button">Languages</h5>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
+                    </div>
+                    <div class="tools-open">
+                        <div class="tool">
+                            <img src="./images/brazil-flag.svg" alt="Brazilian flag" class="skill-icon">
+                            <h4>Portuguese (native)</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/uk-flag.svg" alt="UK flag" class="skill-icon">
+                            <h4>English (fluent)</h4>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/spain-flag.svg" alt="Spanish flag" class="skill-icon">
+                            <h4>Spanish (intermediary)</h4>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -325,7 +373,7 @@
     
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
-                <form id="newsletterForm" method="post" enctype="text/plain">
+                <form class="form" method="post" enctype="text/plain">
                     <input name="name" type="text"  placeholder="Full Name">
                     <input name="email" type="email" placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Message">
@@ -360,28 +408,28 @@
                 <h4 class="hidden">Links</h4>
 
                 <div class="footer-social-media">
-                    <a href="https://github.com/ickgamborgi/">
+                    <a href="https://github.com/ickgamborgi/" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">GitHub</h5>
                             <img src="./images/github.svg" alt="GitHub icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://behance.com/ickgamborgi">
+                    <a href="https://behance.com/ickgamborgi" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">Behance</h5>
                             <img src="./images/behance.svg" alt="Behance icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://instagram.com/inkgamborgi">
+                    <a href="https://instagram.com/inkgamborgi" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">Instagram</h5>
                             <img src="./images/instagram.svg" alt="Instagram icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://linkedin.com/in/ickgamborgi/">
+                    <a href="https://linkedin.com/in/ickgamborgi/" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">LinkedIn</h5>
                             <img src="./images/linkedin.svg" alt="LinkedIn icon" class="social-media-icon">
@@ -390,9 +438,9 @@
                 </div>
                 
                 <div class="footer-resume">
-                    <a href="about.html" class="resume">
+                    <a href="about.html" class="resume" target="_blank">
                         <h5 class="small-button">Resume</h5>
-                        <i>&#10140;</i>
+                        <i class="fa-solid fa-square-caret-right arrow"></i>
                     </a>
                 </div>
 
