@@ -15,6 +15,11 @@
 a {
     transition: all .5s ease-in-out;
     text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }
 
 input, textarea {
@@ -76,6 +81,7 @@ footer {
 
 .video-holder .plyr__controls {
     margin: 15px;
+    cursor: pointer;
 }
 
 // ---Desktop Styles---
