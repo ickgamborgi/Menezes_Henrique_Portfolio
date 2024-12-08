@@ -18,6 +18,14 @@
     }
 }
 
+textarea[name="message"] {
+    height: auto;
+    min-height: 250px;
+    resize: none;
+    overflow: hidden;
+}
+
+
 .redux-form-section {
     
     form {
@@ -34,7 +42,6 @@
             color: a.$primary-cyan;
             box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
         }
-
         input::placeholder {
             font-family: a.$ubuntu;
             font-size: a.$text;
@@ -102,7 +109,7 @@
             height: 50px;
             font-size: a.$text;
             font-family: a.$ubuntu;
-            padding: 15px 20px;
+            padding: 25px 25px;
             color: a.$primary-cyan;
             box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
         }

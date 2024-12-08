@@ -59,9 +59,14 @@
     align-items: center;
     gap: 50px;
 
+    a {
+        cursor: pointer;
+    }
+
     img {
         aspect-ratio: 1/1;
-        width: 80%;
+        width: 100%;
+        cursor: pointer;
     }
 }
 
@@ -252,10 +257,14 @@
         flex-direction: row;
         align-items: center;
         gap: 40px;
+
+        a {
+            width: 40%;
+        }
     
         img {
             aspect-ratio: 1/1;
-            width: 40%;
+            width: 100%
         }
     }
     
