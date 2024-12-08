@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+//conect to the running database server and the specific database EX: $connect = new mysqli('localhost','root','root','bookstore');
+require_once('includes/connect.php');
+
+//create a query to run in SQL
+$query = 'SELECT project.id AS id, thumb, title, subtitle, date, areas, recap, title FROM project';
+
+ //run the query to get back the content
+$results = mysqli_query($connect,$query);
+// print_r($results);
+
+?>
+
 <!-- Document Heading -->
 <head>
     <meta charset="UTF-8">
@@ -42,7 +55,7 @@
                 <h3 class="hidden">Main Navigation</h3>
     
                 <div class="logo-header col-start-1">
-                    <a href="index.html"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
+                    <a href="index.php"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
     
                 <button id="burger-button"></button>
@@ -50,7 +63,7 @@
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
@@ -170,34 +183,41 @@
             <article class="portfolio-gallery col-span-full">
                 <h4 class="hidden">Projects gallery</h4>
 
+                <?php
+
+                while($row = mysqli_fetch_array($results)) {
+
+                echo '
                 <!-- Project Item -->
                 <div class="portfolio-item">
                     <h5 class="hidden">Portfolio item</h5>
 
                     <!-- thumbnail -->
-                    <a href="casestudy.html">
-                        <img class="project-thumb" src="./images/thumb_airpods.webp" alt="Project Thumbnail">
+                    <a href="casestudy.php?id='.$row['id'].'">
+                        <img class="project-thumb" src="./images/'.$row['thumb'].'" alt="Project Thumbnail">
                     </a>
 
                     <div class="portfolio-item-info">
                         <!-- Title and Subtitle -->
-                        <h6 class="project-title"><span>Haka</span> Burguer &amp; Beer</h6>
+                        <h6 class="project-title"><span>'.$row['title'].'</span> '.$row['subtitle'].'</h6>
 
                         <!-- Areas -->
-                        <p class="project-areas">Branding and Product Design</p>
+                        <p class="project-areas">'.$row['areas'].'</p>
 
                         <!-- Date -->
-                        <p class="project-date">Jan, 2020</p>
+                        <p class="project-date">'.$row['date'].'</p>
 
                         <!-- Recap -->
-                        <p class="project-recap">Project developed for the new brand of the Haka restaurant, located in the heart of Florianópolis and serving shakes, burgers and beer. This project proposed the rebranding of the already existing bar into a new and enhanced cultural experience, with menu, products and environmental redesign. Developed for the Branding Project Course during my UFSC graduation.</p>
+                        <p class="project-recap">'.$row['recap'].'</p>
                     
-                        <a href="casestudy.html" class="intro-btn">
+                        <a href="casestudy.php?id='.$row['id'].'" class="intro-btn">
                             <h5 class="small-button">Case Study</h5>
                             <i class="fa-solid fa-square-caret-right arrow"></i>
                         </a>
                     </div>
-                </div>
+                </div>';
+
+                }?>
 
             </article>
 
@@ -402,7 +422,7 @@
 
             <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
-                <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
+                <a href="index.php"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
                 <h5>2024 Copyright &copy;</h5>
                 <h5>Henrique Gamborgi Design</h5>
             </div>

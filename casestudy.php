@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+//conect to the running database server and the specific database EX: $connect = new mysqli('localhost','root','root','bookstore');
+require_once('includes/connect.php');
+
+//create a query to run in SQL
+$query = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
+
+ //run the query to get back the content
+$results = mysqli_query($connect,$query);
+// print_r($results);
+
+$row = mysqli_fetch_assoc($results);
+
+$mediaquery = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
+$mediaresults = mysqli_query($connect, $mediaquery);
+
+?>
+
 <!-- Document Heading -->
 <head>
     <meta charset="UTF-8">
@@ -42,7 +60,7 @@
                 <h3 class="hidden">Main Navigation</h3>
     
                 <div class="logo-header col-start-1">
-                    <a href="index.html"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
+                    <a href="index.php"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
     
                 <button id="burger-button"></button>
@@ -50,7 +68,7 @@
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
@@ -66,21 +84,21 @@
         <h2 class="hidden">Main Content</h2>
 
         <section class="full-width-grid-con banner" id="case-banner">
-            <img class="project-cover" src="./images/cover_haka.webp" alt="Project Cover">
+            <img class="project-cover" src="./images/<?php echo $row['cover']?>" alt="Project Cover">
             <div class="full-width-grid-con banner-cover"></div>
             
             <div class="banner-about-wrap col-span-full">
 
                 <div class="col-span-full banner-title">
-                    <h3 class="col-span-6"><span>Haka</span> Burguer &amp; Beer</h3>                    
+                    <h3 class="col-span-6"><span><?php echo $row['title']?></span> Burguer &amp; Beer</h3>                    
                     <div class="col-span-6 banner-divisory" id="about-divisory"></div>
                     <div class="col-span-full case-wrap">
-                        <a href="https://www.behance.net/gallery/111067891/Branding-Haka-Burger" target="_blank" class="banner-btn">
+                        <a href="<?php echo $row['prototype_link']?>" target="_blank" class="banner-btn">
                             <h4 class="small-button">Open Creation</h4>
                         </a>
                         <div class="case-type">
                             <i class="fa-solid fa-earth-americas icon"></i>
-                            <h4>This is a real project</h4>
+                            <h4><?php echo $row['type']?> project</h4>
                         </div>
                     </div>
                 </div>
@@ -95,28 +113,28 @@
             <div class="col-span-full subtitle-wrap">
                 <h4>Date</h4>
                 <div>
-                    <h5>5 months — Sep 2020 to Jan 2021</h5>
+                    <h5><?php echo $row['duration']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Role</h4>
                 <div>
-                    <h5>Part of a 5 designers team, responsible for Branding and Applications</h5>
+                    <h5><?php echo $row['role']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Areas</h4>
                 <div>
-                    <h5>Branding and Product Design</h5>
+                    <h5><?php echo $row['areas']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Recap</h4>
                 <div>
-                    <p>Project developed for the new brand of the Haka restaurant, located in the heart of Florianópolis and serving shakes, burgers and beer. This project proposed the rebranding of the already existing bar into a new and enhanced cultural experience, with menu, products and environmental redesign. Developed for the Branding Project Course during my UFSC graduation.</p>
+                    <p><?php echo $row['recap']?></p>
                 </div>
             </div>
 
@@ -127,9 +145,7 @@
                         <i class="fa-solid fa-magnifying-glass icon"></i>
                         <h4>Briefing</h4>
                     </div>
-                    <p>
-                        Haka was an academic project focused on rebranding a popular restaurant in Florianópolis. The goal was to transform Haka from a simple lunch spot into a cultural experience that resonated with its customers, blending local identity and a vibrant atmosphere. This project aimed to redefine the brand’s visual identity, update the menu design, and redesign the restaurant’s interior to create an engaging experience. The rebranding emphasized not just aesthetics, but an immersive journey for customers, reflecting the culture and energy of the city. Developed as part of the Branding Project course during my UFSC graduation, it was an opportunity to explore comprehensive branding strategies and application design.                    
-                    </p>
+                    <p><?php echo $row['briefing']?></p>
                 </div>
                 
                 <!-- Process -->
@@ -138,29 +154,19 @@
                         <i class="fa-regular fa-lightbulb icon"></i>
                         <h4>Process</h4>
                     </div>
-                    <p>
-                        I collaborated with four other designers on the Haka project, where we divided the tasks to maximize our creative output. My primary role was focused on helping to develop the brand identity, designing various applications to enhance the overall experience and making a complete guide for usage. The process used is a design approach called TXM, (Think - Experience - Manage). And it begins with intensive research and analysis to understand target audience, strengths and weaknesses, competitors, and market positioning. We then worked on conceptualizing the new visual identity, which included logo design, color palette, typography and various applications. Moving forward, we worked to apply these materials in complete experiences to the customer, such as menus, merchandise, and environmental graphics to ensure consistency across all touchpoints.
-                    </p>
+                    <p><?php echo $row['process']?></p>
                 </div>
             </div>
 
             <!-- Project Media -->
             <div class="col-span-full project-media-con">
-                <img src="./images/haka-1.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-2.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-3.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-4.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-5.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-6.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-7.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-8.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-9.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-10.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-12.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-11.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-13.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-14.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-15.jpg" alt="Project Media Asset" class="project-media-image">
+
+                <?php
+                while($media = mysqli_fetch_assoc($mediaresults)) {
+                echo '
+                <img src="./images/'.$media['url'].'" alt="Project Media Asset" class="project-media-image">
+                ';
+                }?>
             </div>
             
             <div class="col-span-full l-col-span-10 case-text-con">
@@ -170,9 +176,7 @@
                         <i class="fa-solid fa-seedling icon"></i>
                         <h4>Takeaways</h4>
                     </div>
-                    <p>
-                        This project was very important to develop skills in collaboration, teamwork and dealing with real world situations. Working with a team of designers taught me how to balance individual creativity with collective objectives to produce a unified design language. It also deepened my understanding of how branding extends beyond digital and print materials to physical environments, creating a complete brand experience. The process helped refine my ability to translate brand concepts into practical applications that resonate with customers, and it improved my proficiency in applying design principles in a real-world context. The project was a valuable exercise in taking a brand through a comprehensive transformation, from ideation to execution, with a real business.
-                    </p>
+                    <p><?php echo $row['takeaways']?></p>
                 </div>
                 
                 <!-- Tools -->
@@ -181,9 +185,7 @@
                         <i class="fa-solid fa-gears icon"></i>
                         <h4>Tools and Softwares</h4>
                     </div>
-                    <p>
-                        Adobe Illustrator, Adobe Photoshop, Adobe InDesign and Figma. For team collaboration Trello and Google Drive were used.
-                    </p>
+                    <p><?php echo $row['tools']?></p>
                 </div>
             </div>
 
@@ -301,7 +303,7 @@
 
             <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
-                <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
+                <a href="index.php"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
                 <h5>2024 Copyright &copy;</h5>
                 <h5>Henrique Gamborgi Design</h5>
             </div>
