@@ -51,8 +51,8 @@
                     <h4 class="hidden">Links Header</h4>
                     <ul>
                         <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
-                        <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
+                        <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
+                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
 
                     </ul>
@@ -66,10 +66,16 @@
         <h2 class="hidden">Main Content</h2>
 
         
-        <section class="grid-con">
-            <div class="project-thank col-span-full">
-                <img src="./images/thank-you.webp" alt="Thank You Humaaan" class="thank-you">
-                <h4>Thank you for viewing!</h4>
+        <section class="grid-con" id="form-success">
+            <div class="thank-php col-span-full">
+                <img src="./images/illustration-2.webp" alt="Thank You Humaaan" class="thank-you">
+                <div class=thank-php-wrap>
+                    <h4>Your message was received!</h4>
+                    <p>Thanks for reaching out! Your e-mail is already with me, and I'll get back to you super fast — that's a promise! <br><br><span>Cheers, Henri</span></p>
+                    <a href="index.php" class="thank-btn col-span-3">
+                        <h5 class="small-button">Back to Homepage</h5>
+                    </a>
+                </div>
             </div>
         </section>
 

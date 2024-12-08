@@ -38,7 +38,7 @@ gap: 50px;
     
     h5 {
         font-size: a.$h3;
-        color: a.$primary-cyan;
+        color: a.$light-cyan;
         font-weight: 400;
         max-width: 400px;
 
@@ -48,7 +48,7 @@ gap: 50px;
     }
 
     p {
-        color: a.$grey;
+        color: a.$primary-cyan;
         font-size: a.$h5;
         font-weight: 400;
 
@@ -60,12 +60,13 @@ gap: 50px;
 
 .hero-availability {
     background-color: white;
-    box-shadow: a.$click-shadow;
+    box-shadow: a.$blur-shadow;
     padding: 15px 25px;
     border-radius: a.$round-border;
     display: flex;
     align-items: center;
     gap: 15px;
+    transform: a.$basic-transition;
 
     div {
         width: 7px;
@@ -78,6 +79,11 @@ gap: 50px;
         font-size: a.$text;
         color: a.$grey;
         font-weight: 500;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: a.$click-shadow;
     }
 }
 
@@ -110,7 +116,6 @@ gap: 50px;
     
         h6 {
             font-size: a.$h5;
-            color: a.$grey;
             font-weight: 500;
         }
     }

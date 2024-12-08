@@ -47,13 +47,13 @@
 
     i {
         color: a.$light-cyan;
-        transition: transform .5s cubic-bezier(.71,.43,.55,.97);
+        transition: all .5s cubic-bezier(.71,.43,.55,.97);
     }
 
     &:hover {
         color: a.$primary-cyan;
         gap: 16px;
-        transition: transform .5s cubic-bezier(.71,.43,.55,.97);
+        transition: all .5s cubic-bezier(.71,.43,.55,.97);
     }
 
     &:hover i {
@@ -152,5 +152,9 @@
 @media screen and (min-width: 1200px) {
     .tools-list {
         margin-top: 60px;
+    }
+
+    .mug-image {
+        max-width: 300px;
     }
 }
