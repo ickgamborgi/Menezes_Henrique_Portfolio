@@ -13,7 +13,7 @@
 }
 
 a {
-    transition: all .5s ease-in-out;
+    transition: a.$basic-transition;
     text-decoration: none;
     cursor: pointer;
 }

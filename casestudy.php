@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+//conect to the running database server and the specific database EX: $connect = new mysqli('localhost','root','root','bookstore');
+require_once('includes/connect.php');
+
+//create a query to run in SQL
+$query = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
+
+ //run the query to get back the content
+$results = mysqli_query($connect,$query);
+// print_r($results);
+
+$row = mysqli_fetch_assoc($results);
+
+$mediaquery = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
+$mediaresults = mysqli_query($connect, $mediaquery);
+
+?>
+
 <!-- Document Heading -->
 <head>
     <meta charset="UTF-8">
@@ -42,7 +60,7 @@
                 <h3 class="hidden">Main Navigation</h3>
     
                 <div class="logo-header col-start-1">
-                    <a href="index.html"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
+                    <a href="index.php"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
     
                 <button id="burger-button"></button>
@@ -50,9 +68,9 @@
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
-                        <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
+                        <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
+                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
 
                     </ul>
@@ -66,21 +84,21 @@
         <h2 class="hidden">Main Content</h2>
 
         <section class="full-width-grid-con banner" id="case-banner">
-            <img class="project-cover" src="./images/cover_haka.webp" alt="Project Cover">
+            <img class="project-cover" src="./images/<?php echo $row['cover']?>" alt="Project Cover">
             <div class="full-width-grid-con banner-cover"></div>
             
             <div class="banner-about-wrap col-span-full">
 
                 <div class="col-span-full banner-title">
-                    <h3 class="col-span-6"><span>Haka</span> Burguer &amp; Beer</h3>                    
+                    <h3 class="col-span-6"><span><?php echo $row['title']?></span> <?php echo $row['subtitle']?></h3>                    
                     <div class="col-span-6 banner-divisory" id="about-divisory"></div>
                     <div class="col-span-full case-wrap">
-                        <a href="https://www.behance.net/gallery/111067891/Branding-Haka-Burger" target="_blank" class="banner-btn">
+                        <a href="<?php echo $row['prototype_link']?>" target="_blank" class="banner-btn">
                             <h4 class="small-button">Open Creation</h4>
                         </a>
                         <div class="case-type">
                             <i class="fa-solid fa-earth-americas icon"></i>
-                            <h4>This is a real project</h4>
+                            <h4><?php echo $row['type']?> project</h4>
                         </div>
                     </div>
                 </div>
@@ -95,28 +113,28 @@
             <div class="col-span-full subtitle-wrap">
                 <h4>Date</h4>
                 <div>
-                    <h5>5 months — Sep 2020 to Jan 2021</h5>
+                    <h5><?php echo $row['duration']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Role</h4>
                 <div>
-                    <h5>Part of a 5 designers team, responsible for Branding and Applications</h5>
+                    <h5><?php echo $row['role']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Areas</h4>
                 <div>
-                    <h5>Branding and Product Design</h5>
+                    <h5><?php echo $row['areas']?></h5>
                 </div>
             </div>
 
             <div class="col-span-full subtitle-wrap">
                 <h4>Recap</h4>
                 <div>
-                    <p>Project developed for the new brand of the Haka restaurant, located in the heart of Florianópolis and serving shakes, burgers and beer. This project proposed the rebranding of the already existing bar into a new and enhanced cultural experience, with menu, products and environmental redesign. Developed for the Branding Project Course during my UFSC graduation.</p>
+                    <p><?php echo $row['recap']?></p>
                 </div>
             </div>
 
@@ -127,9 +145,7 @@
                         <i class="fa-solid fa-magnifying-glass icon"></i>
                         <h4>Briefing</h4>
                     </div>
-                    <p>
-                        Haka was an academic project focused on rebranding a popular restaurant in Florianópolis. The goal was to transform Haka from a simple lunch spot into a cultural experience that resonated with its customers, blending local identity and a vibrant atmosphere. This project aimed to redefine the brand’s visual identity, update the menu design, and redesign the restaurant’s interior to create an engaging experience. The rebranding emphasized not just aesthetics, but an immersive journey for customers, reflecting the culture and energy of the city. Developed as part of the Branding Project course during my UFSC graduation, it was an opportunity to explore comprehensive branding strategies and application design.                    
-                    </p>
+                    <p><?php echo $row['briefing']?></p>
                 </div>
                 
                 <!-- Process -->
@@ -138,29 +154,19 @@
                         <i class="fa-regular fa-lightbulb icon"></i>
                         <h4>Process</h4>
                     </div>
-                    <p>
-                        I collaborated with four other designers on the Haka project, where we divided the tasks to maximize our creative output. My primary role was focused on helping to develop the brand identity, designing various applications to enhance the overall experience and making a complete guide for usage. The process used is a design approach called TXM, (Think - Experience - Manage). And it begins with intensive research and analysis to understand target audience, strengths and weaknesses, competitors, and market positioning. We then worked on conceptualizing the new visual identity, which included logo design, color palette, typography and various applications. Moving forward, we worked to apply these materials in complete experiences to the customer, such as menus, merchandise, and environmental graphics to ensure consistency across all touchpoints.
-                    </p>
+                    <p><?php echo $row['process']?></p>
                 </div>
             </div>
 
             <!-- Project Media -->
             <div class="col-span-full project-media-con">
-                <img src="./images/haka-1.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-2.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-3.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-4.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-5.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-6.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-7.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-8.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-9.gif" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-10.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-12.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-11.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-13.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-14.jpg" alt="Project Media Asset" class="project-media-image">
-                <img src="./images/haka-15.jpg" alt="Project Media Asset" class="project-media-image">
+
+                <?php
+                while($media = mysqli_fetch_assoc($mediaresults)) {
+                echo '
+                <img src="./images/'.$media['url'].'" alt="Project Media Asset" class="project-media-image">
+                ';
+                }?>
             </div>
             
             <div class="col-span-full l-col-span-10 case-text-con">
@@ -170,9 +176,7 @@
                         <i class="fa-solid fa-seedling icon"></i>
                         <h4>Takeaways</h4>
                     </div>
-                    <p>
-                        This project was very important to develop skills in collaboration, teamwork and dealing with real world situations. Working with a team of designers taught me how to balance individual creativity with collective objectives to produce a unified design language. It also deepened my understanding of how branding extends beyond digital and print materials to physical environments, creating a complete brand experience. The process helped refine my ability to translate brand concepts into practical applications that resonate with customers, and it improved my proficiency in applying design principles in a real-world context. The project was a valuable exercise in taking a brand through a comprehensive transformation, from ideation to execution, with a real business.
-                    </p>
+                    <p><?php echo $row['takeaways']?></p>
                 </div>
                 
                 <!-- Tools -->
@@ -181,27 +185,30 @@
                         <i class="fa-solid fa-gears icon"></i>
                         <h4>Tools and Softwares</h4>
                     </div>
-                    <p>
-                        Adobe Illustrator, Adobe Photoshop, Adobe InDesign and Figma. For team collaboration Trello and Google Drive were used.
-                    </p>
+                    <p><?php echo $row['tools']?></p>
                 </div>
             </div>
 
             <div class="project-thank col-span-full">
-                <img src="./images/thank-you.webp" alt="Thank You Humaaan" class="thank-you">
-                <h4>Thank you for viewing!</h4>
+                <img src="./images/illustration-1.webp" alt="Thank You Humaaan" class="thank-you">
+                <div class=back-wrap>
+                    <h4>Thank you for viewing!</h4>
+                    <a href="index.php#portfolio-sec" class="back-btn col-span-3">
+                            <h5 class="small-button">Back to Portfolio</h5>
+                    </a>
+                </div>
             </div>
 
         </section>
 
     
 
-        <!-- Testimonials Section -->
-        <section class="testimonials grid-con">
+                <!-- Testimonials Section -->
+                <section class="testimonials grid-con">
             <h3 class="hidden">Testimonial Section</h3>
 
             <div class="testimonial-title col-span-full">
-                <h4>Hear some feedback</h4>
+                <h4>That's what they said!</h4>
             </div>
 
             <div class="testimonial col-span-full">
@@ -209,16 +216,13 @@
                 <div class="testimonial-card visible">
                     <h5 class="hidden">Testimonial Card 1</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
-                    <p>
-                        Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.
-                    </p>
-    
+                    <p>Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects, including university, junior enterprise and market. He is extremely dedicated and engaged, always eager to learn and reach high-quality results.</p>
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-1.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-gabriel.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>Charles Crimson</h6>
+                            <h6>Gabriel Albrecht</h6>
                             <h7>Colleague and business partner</h7>
                         </div>
                     </div>
@@ -227,17 +231,15 @@
                 <div class="testimonial-card">
                     <h5 class="hidden">Testimonial Card 2</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, doloribus labore? Consequatur exercitationem magni inventore perspiciatis at. Modi maiores qui atque sunt minima sint quisquam unde voluptatem, eligendi dolorem quibusdam autem porro eius totam rem aut laudantium veritatis eveniet ut temporibus.
-                    </p>
+                    <p>Working with Henrique has always been a great pleasure. His type of work is rare: fast, precise and high-quality. Not only we made dozens of university projects together, we also shared many professional experiences. I always felt (and still do) that Henrique is the type of person you can rely any project on. He is not only an awesome designer, but a remarkable human being!</p>
     
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-2.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-joaopedro.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>Mary Jane Monroe</h6>
-                            <h7>Client for freelance project</h7>
+                            <h6>João Pedro Ribas</h6>
+                            <h7>Colleague and former client</h7>
                         </div>
                     </div>
                 </div>
@@ -246,17 +248,49 @@
                     <h5 class="hidden">Testimonial Card 3</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
 
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nihil velit? Necessitatibus, nulla aliquam illum quos fugit quo. Placeat maiores doloribus quos molestiae totam dolorum? Pariatur ex enim nesciunt modi dolores illum, vero deleniti sequi quas aut tenetur optio fugiat.
-                    </p>
+                    <p>I had the opportunity to work with Henrique in different situations. First, when I was his professor at UFSC, where he already showed to be intelligent, committed, creative and with an excellent business thinking. After that, we worked together in an international project. On that occasion, in the addition of the requirements for the position: design, marketing and english communication, Henrique also demonstrated to be very professional, a people person and with great proactivity.</p>
     
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-3.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-julio.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>James Dean</h6>
-                            <h7>Professor at UFSC</h7>
+                            <h6>Júlio Monteiro</h6>
+                            <h7>Former client and professor</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 4</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+
+                    <p>Working with Henrique has been a source of great pride and knowledge! Besides being an unique person, he is experienced in lots of areas, including design, UX/UI, marketing and strategy — he takes care of his client's business as if it were his own. The numbers and results we eventually achieved can prove Henrique's performance and dedication.</p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-rafael.jpeg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Rafael Del Frari</h6>
+                            <h7>Colleague and Business partner</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 5</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+
+                    <p>Henrique was always very talented and engaged! During the time we worked together, both at University and in business, it was easy to witness the quality of his work: polished, well-thought and incredible. All fruit os his effort and dedication to design. He is very open and can navigate with knowledge the unpredictable paths of the deep creative processes of any project!</p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-gustavo.jpeg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Gustavo Silva</h6>
+                            <h7>Colleague and former client</h7>
                         </div>
                     </div>
                 </div>
@@ -275,23 +309,12 @@
     
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
-                <form class="form" method="post" enctype="text/plain">
-                    <input name="name" type="text"  placeholder="Full Name">
-                    <input name="email" type="email" placeholder="E-mail Address">
+                <form class="form" method="post" action="sendmail.php">
+                    <input name="name" type="text" required placeholder="Full Name">
+                    <input name="email" type="email" required placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Subject">
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
-            </div>
-
-            <div id="popup" class="popup">
-                <h3 class="hidden">Newsletter Form Confirmation Popup</h3>
-                <div class="popup-content">
-                    <span class="close-btn">&times;</span>
-                    <img src="./images/icon-white.svg" alt="Icon Confirmatoin Email">
-                    <h4><i class="fa-solid fa-check"></i> Your form was sent!</h4>
-                    <p>Your message is in my inbox, and I'll get back to you within 24 hours. Thanks for reaching out!</p>
-                    <p><span>Talk to you soon!</span></p>
-                </div>
             </div>
         </section>
 
@@ -301,7 +324,7 @@
 
             <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
-                <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
+                <a href="index.php"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
                 <h5>2024 Copyright &copy;</h5>
                 <h5>Henrique Gamborgi Design</h5>
             </div>

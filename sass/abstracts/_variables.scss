@@ -7,7 +7,7 @@
 // Colors
 $primary-cyan: #125668;
 $light-cyan: #39A3BC;
-$dark-cyan: #05303A;
+$dark-cyan: #054b5b;
 $black-cyan:  #001014;
 $yellow: #F2B446;
 $light-yellow: #F9E193;
@@ -33,4 +33,4 @@ $click-shadow: 0 3px 6px rgba(0,0,0,0.2);
 
 $round-border: 35px;
 $section-gap: 150px;
-$basic-transition: all .3s ease-in-out;
+$basic-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);

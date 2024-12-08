@@ -148,83 +148,78 @@ textarea[name="message"] {
     margin-bottom: a.$section-gap;
 }
 
-
-
-.popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
+#form-success {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.popup img {
-    width: 50px;
-}
-
-.popup-content {
-    background-color:  #f4fdff;
-    padding: 50px;
-    border-radius: 20px;
+.thank-php {
     text-align: center;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
-    margin-left: 50px;
-    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    h4 {
+        font-size: a.$h3;
+        color: a.$light-cyan;
+    }
+
+    img {
+        width: 250px;
+        object-fit: contain;
+    }
+}
+
+.thank-php-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    width: 75vw;
-
-    h4 {
-        text-align: center;
-        font-size: a.$h4;
-        color: a.$primary-cyan
-    }
+    gap: 20px;
 
     p {
-        text-align: center;
         font-size: a.$text;
-        line-height: 140%;
         color: a.$grey;
+        max-width: 500px;
 
         span {
+            font-size: a.$h5;
+            color: a.$light-cyan;
             font-weight: 800;
         }
     }
 }
 
-.close-btn {
-    position: absolute;
-    z-index: 10000;
-    top: 80px;
-    right: 57px;
-    padding: 7px 10px 10px 10px;
-    background-color: a.$light-cyan;
-    box-shadow: inset 2px 4px 4px 2px rgba(0, 0, 0, 0.15);
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
+.thank-btn {
+    font-size: a.$h5;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
     color: white;
-    font-size: a.$h4;
-    transition: a.$basic-transition;
+    background-color: a.$light-cyan;
     cursor: pointer;
+    transition: a.$basic-transition;
+    text-transform: uppercase;
+    letter-spacing: .75px;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: a.$round-border;
+    box-shadow: a.$blur-shadow;
+
+    i {
+        color: a.$light-cyan;
+    }
 
     &:hover {
-        transform: scale(1.1);
         background-color: a.$primary-cyan;
+        transform: scale(1.05);
+        box-shadow: a.$click-shadow;
     }
-}
 
-.close-btn:hover {
-    color: white;
-    transform: scale(1.1);
-    cursor:pointer;
+    &:hover i {
+        color: a.$primary-cyan;
+    }
 }
 
 /* ---Tablet Styles--- */
@@ -243,21 +238,38 @@ textarea[name="message"] {
         }
     }
 
-    .popup-content {
-        width: 50vw;
+    .thank-php-wrap {
         align-items: start;
+    }
 
+    
+
+    .thank-php {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        text-align: left;
+    
         h4 {
-            text-align: left;
+            font-size: a.$h3;
+            color: a.$light-cyan;
         }
-
-        p {
-            text-align: left;
+    
+        img {
+            padding-left: 0;
+            padding-right: 0;
+            object-fit: contain;
         }
     }
 
-    .close-btn {
-        right: 50px;
+    .thank-btn {
+        align-items: left;
+        justify-content: left;
+    }
+
+    #form-success {
+        padding-top: 100px;
+        padding-bottom: 100px;
     }
 }
 
@@ -292,13 +304,5 @@ textarea[name="message"] {
         button {
             width: 25%;
         }
-    }
-
-    .popup-content {
-        width: 40vw;
-    }
-
-    .close-btn {
-        right: 30px;
     }
 }

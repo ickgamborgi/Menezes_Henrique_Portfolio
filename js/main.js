@@ -1,6 +1,6 @@
 console.log("javascript file is linked");
 
-const player = new Plyr("#demoreel");
+const player = new Plyr("#demoreel"); // demoreel video plyr.io
 
 // Header
 (()=> {
@@ -59,25 +59,11 @@ toolsItems.forEach(item => {
 // Contact Form
 (() => {
   const form = document.querySelector('.form');
-  const popup = document.querySelector('.popup');
-  const closeBtn = document.querySelector('.close-btn');
   
   form.addEventListener('submit', (event) => {
     console.log("User submitted information on " + form.id) // console log it out
-    event.preventDefault(); // prevent default behavior from form
-    popup.style.display = 'flex'; // show pop-up
-    form.reset(); // reset the form
   });
   
-  closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-    console.log("User closed subscription confirmation");
-  }); // when user clicks on close button
-  
-  window.addEventListener('click', function(event) {
-    if (event.target == popup) {
-        popup.style.display = 'none';
-        console.log("User closed subscription confirmation");
-    }
-  }); // when user clicks outside the popup to close
 })();
+
+// GSAP Animations

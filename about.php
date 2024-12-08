@@ -42,7 +42,7 @@
                 <h3 class="hidden">Main Navigation</h3>
     
                 <div class="logo-header col-start-1">
-                    <a href="index.html"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
+                    <a href="index.php"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
     
                 <button id="burger-button"></button>
@@ -50,9 +50,9 @@
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.html" class="nav-item"><h5>Portfolio</h5></a></li>
-                        <li><a href="about.html" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.html" class="nav-item"><h5>Contact</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
+                        <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
+                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
 
                     </ul>
@@ -238,6 +238,17 @@
                 </div>
 
             </div>
+
+            <div class="project-thank col-span-full">
+                <img src="./images/illustration-4.webp" alt="Thank You Humaaan" class="thank-you">
+                <div class=back-wrap>
+                    <h4>Or if you prefer, here's a fancy piece of paper</h4>
+                    <a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="back-btn col-span-3">
+                            <h5 class="small-button">Visit My Resume</h5>
+                    </a>
+                </div>
+            </div>
+        
         </section>
 
         <!-- Testimonials Section -->
@@ -253,16 +264,13 @@
                 <div class="testimonial-card visible">
                     <h5 class="hidden">Testimonial Card 1</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
-                    <p>
-                        Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects and different contexts - including university, junior enterprise and market. He is dedicated and engaged, always eager to learn and reach high-quality results.
-                    </p>
-    
+                    <p>Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects, including university, junior enterprise and market. He is extremely dedicated and engaged, always eager to learn and reach high-quality results.</p>
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-1.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-gabriel.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>Charles Crimson</h6>
+                            <h6>Gabriel Albrecht</h6>
                             <h7>Colleague and business partner</h7>
                         </div>
                     </div>
@@ -271,17 +279,15 @@
                 <div class="testimonial-card">
                     <h5 class="hidden">Testimonial Card 2</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, doloribus labore? Consequatur exercitationem magni inventore perspiciatis at. Modi maiores qui atque sunt minima sint quisquam unde voluptatem, eligendi dolorem quibusdam autem porro eius totam rem aut laudantium veritatis eveniet ut temporibus.
-                    </p>
+                    <p>Working with Henrique has always been a great pleasure. His type of work is rare: fast, precise and high-quality. Not only we made dozens of university projects together, we also shared many professional experiences. I always felt (and still do) that Henrique is the type of person you can rely any project on. He is not only an awesome designer, but a remarkable human being!</p>
     
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-2.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-joaopedro.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>Mary Jane Monroe</h6>
-                            <h7>Client for freelance project</h7>
+                            <h6>João Pedro Ribas</h6>
+                            <h7>Colleague and former client</h7>
                         </div>
                     </div>
                 </div>
@@ -290,17 +296,49 @@
                     <h5 class="hidden">Testimonial Card 3</h5>
                     <h6 class="testimonial-quote-mark">"</h6>
 
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, nihil velit? Necessitatibus, nulla aliquam illum quos fugit quo. Placeat maiores doloribus quos molestiae totam dolorum? Pariatur ex enim nesciunt modi dolores illum, vero deleniti sequi quas aut tenetur optio fugiat.
-                    </p>
+                    <p>I had the opportunity to work with Henrique in different situations. First, when I was his professor at UFSC, where he already showed to be intelligent, committed, creative and with an excellent business thinking. After that, we worked together in an international project. On that occasion, in the addition of the requirements for the position: design, marketing and english communication, Henrique also demonstrated to be very professional, a people person and with great proactivity.</p>
     
                     <div class="testimonial-bio">
                         <div class="testimonial-pic">
-                            <img src="./images/test-3.jpg" alt="Testimonial Giver">
+                            <img src="./images/test-julio.jpeg" alt="Testimonial Giver">
                         </div>
                         <div class="testimonial-name">
-                            <h6>James Dean</h6>
-                            <h7>Professor at UFSC</h7>
+                            <h6>Júlio Monteiro</h6>
+                            <h7>Former client and professor</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 4</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+
+                    <p>Working with Henrique has been a source of great pride and knowledge! Besides being an unique person, he is experienced in lots of areas, including design, UX/UI, marketing and strategy — he takes care of his client's business as if it were his own. The numbers and results we eventually achieved can prove Henrique's performance and dedication.</p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-rafael.jpeg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Rafael Del Frari</h6>
+                            <h7>Colleague and Business partner</h7>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <h5 class="hidden">Testimonial Card 5</h5>
+                    <h6 class="testimonial-quote-mark">"</h6>
+
+                    <p>Henrique was always very talented and engaged! During the time we worked together, both at University and in business, it was easy to witness the quality of his work: polished, well-thought and incredible. All fruit os his effort and dedication to design. He is very open and can navigate with knowledge the unpredictable paths of the deep creative processes of any project!</p>
+    
+                    <div class="testimonial-bio">
+                        <div class="testimonial-pic">
+                            <img src="./images/test-gustavo.jpeg" alt="Testimonial Giver">
+                        </div>
+                        <div class="testimonial-name">
+                            <h6>Gustavo Silva</h6>
+                            <h7>Colleague and former client</h7>
                         </div>
                     </div>
                 </div>
@@ -319,23 +357,12 @@
     
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
-                <form class="form" method="post" enctype="text/plain">
-                    <input name="name" type="text"  placeholder="Full Name">
-                    <input name="email" type="email" placeholder="E-mail Address">
+                <form class="form" method="post" action="sendmail.php">
+                    <input name="name" type="text" required placeholder="Full Name">
+                    <input name="email" type="email" required placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Subject">
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
-            </div>
-
-            <div id="popup" class="popup">
-                <h3 class="hidden">Newsletter Form Confirmation Popup</h3>
-                <div class="popup-content">
-                    <span class="close-btn">&times;</span>
-                    <img src="./images/icon-white.svg" alt="Icon Confirmatoin Email">
-                    <h4><i class="fa-solid fa-check"></i> Your form was sent!</h4>
-                    <p>Your message is in my inbox, and I'll get back to you within 24 hours. Thanks for reaching out!</p>
-                    <p><span>Talk to you soon!</span></p>
-                </div>
             </div>
         </section>
 
@@ -345,7 +372,7 @@
 
             <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
-                <a href="index.html"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
+                <a href="index.php"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
                 <h5>2024 Copyright &copy;</h5>
                 <h5>Henrique Gamborgi Design</h5>
             </div>
