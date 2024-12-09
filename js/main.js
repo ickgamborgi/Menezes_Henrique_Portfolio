@@ -14,28 +14,52 @@ burgerButton.addEventListener('click', () => {
 
 // Testimonials
 (() => {
+  gsap.registerPlugin(ScrollTrigger);
+
   let testimonialIndex = 0;
   const testimonialCards = document.querySelectorAll(".testimonial-card");
-  
+
   function showTestimonial(index) {
     testimonialCards.forEach((card, i) => {
-      if (i === testimonialIndex) {
-        card.classList.remove("visible"); // Remove the visible class from the default testimonials
-      }
+      card.classList.remove("visible");
+      gsap.set(card, { x: 0, opacity: 0 });
     });
-  
+
     testimonialIndex = (index + testimonialCards.length) % testimonialCards.length;
-  
+
     const newCard = testimonialCards[testimonialIndex];
-    newCard.classList.add("visible"); // Add the visible class to selected testimonial
+    newCard.classList.add("visible");
+
+    gsap.fromTo(
+      newCard,
+      { opacity: 0, x: 200 },
+      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+    );
   }
-  
-  showTestimonial(testimonialIndex); // Show the first testimonial as default
-  
+
+  showTestimonial(testimonialIndex);
+
+  ScrollTrigger.create({
+    trigger: ".testimonials",
+    start: "top bottom",
+    end: "bottom 50%",
+    toggleActions: "play none none reset",
+    markers: false,
+    onEnter: () => {
+      showTestimonial(0);
+    },
+    onLeaveBack: () => {
+      testimonialCards.forEach(card => {
+        gsap.set(card, { x: 0, opacity: 0 });
+        card.classList.remove("visible");
+      });
+    }
+  });
+
   document.querySelector("#test-next-btn").addEventListener("click", () => {
     showTestimonial(testimonialIndex + 1);
   });
-  
+
   document.querySelector("#test-prev-btn").addEventListener("click", () => {
     showTestimonial(testimonialIndex - 1);
   });
@@ -67,3 +91,239 @@ toolsItems.forEach(item => {
 })();
 
 // GSAP Animations
+(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".hero-image", 2, {
+    scrollTrigger: {
+      trigger: ".home-hero",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    delay: .2,
+    ease: "ease2.in",
+  });
+
+  gsap.from(".hero-bio", {
+    scrollTrigger: {
+      trigger: ".home-hero",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    x: 200,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from(".intro-text", {
+    scrollTrigger: {
+      trigger: ".intro-text",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    x: 200,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.utils.toArray(".portfolio-item").forEach((item) => {
+    gsap.from(item.querySelector(".portfolio-item-info"), {
+      scrollTrigger: {
+        trigger: item,
+        start: "top bottom",
+        end: "bottom 50%",
+        toggleActions: "play none none reset",
+        markers: false,
+      },
+      opacity: 0,
+      x: 200,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
+
+  gsap.from(".portfolio-item a", {
+    scrollTrigger: {
+      trigger: ".project-thumb",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    scale: 0.5,
+    stagger: .15,
+    ease: "power2.out",
+  });
+
+  gsap.to(".hero-social-media a", {
+    scrollTrigger: {
+      trigger: ".hero-social-media",
+      start: "top 80%",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 1,
+    y: -40,
+    ease: "ease2.in",
+    stagger: .1,
+    delay: .25
+  });
+
+  gsap.from(".tools-item", {
+    scrollTrigger: {
+      trigger: ".tools-item",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    duration: 1,
+    opacity: 0,
+    x: 50,
+    stagger: .2,
+    ease: "power2.out",
+  });
+
+  gsap.from(".footer-social-media a", {
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    y: -50,
+    ease: "bounce2.out",
+    stagger: .1,
+  });
+
+  gsap.from(".resume", {
+    scrollTrigger: {
+      trigger: "footer",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    duration: 1,
+    delay: .1,
+    opacity: 0,
+    x: 50,
+    ease: "power2.out",
+  });
+
+  gsap.from(".subtitle-wrap", {
+    scrollTrigger: {
+      trigger: ".subtitle-wrap",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    duration: 1,
+    x: 50,
+    ease: "power2.out",
+    stagger: .2,
+  });
+
+  gsap.from(".hobbies-list h5", {
+    scrollTrigger: {
+      trigger: ".hobbies-list",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    x: 50,
+    ease: "power2.out",
+    stagger: .2,
+  });
+
+  gsap.from(".project-thank img", {
+    scrollTrigger: {
+      trigger: ".project-thank",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    scale: .5,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#contact-form h4", {
+    scrollTrigger: {
+      trigger: "#contact-form",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  gsap.from("#contact-form p", {
+    scrollTrigger: {
+      trigger: "#contact-form",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    delay: .2,
+    ease: "power2.out",
+  });
+
+  gsap.from(".project-media-con img", {
+    scrollTrigger: {
+      trigger: ".project-media-con img",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none none",
+      markers: false,
+    },
+    opacity: 0,
+    y: 100,
+    duration: 1,
+    stagger: .2,
+    ease: "power2.out",
+  });
+
+  gsap.from(".bio-image p", {
+    scrollTrigger: {
+      trigger: ".bio-image p",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    duration: 1,
+    opacity: 0,
+    x: 50,
+    stagger: .2,
+    ease: "power2.out",
+  });
+
+})();
