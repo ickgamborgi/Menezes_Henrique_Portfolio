@@ -66,10 +66,6 @@
     align-items: center;
     gap: 5px;
 
-    a {
-        cursor: pointer;
-    }
-
     img {
         padding-left: 10%;
         padding-right: 10%;
@@ -77,7 +73,7 @@
         transition: a.$basic-transition;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.075);
         }
     }
 }

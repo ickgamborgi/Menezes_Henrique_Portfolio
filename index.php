@@ -6,7 +6,7 @@
 require_once('includes/connect.php');
 
 //create a query to run in SQL
-$query = 'SELECT project.id AS id, thumb, title, subtitle, date, areas, recap, title FROM project';
+$query = 'SELECT project.id AS id, thumb, title, subtitle, date, areas, recap, title FROM project ORDER BY date DESC';
 
  //run the query to get back the content
 $results = mysqli_query($connect,$query);
@@ -32,6 +32,8 @@ $results = mysqli_query($connect,$query);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Script tags with defer attribute -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> <!-- link to greensock main library and scroll plugin -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script defer src="js/main.js"></script>
 
@@ -195,7 +197,7 @@ $results = mysqli_query($connect,$query);
                     <h5 class="hidden">Portfolio item</h5>
 
                     <!-- thumbnail -->
-                    <a href="casestudy.php?id='.$row['id'].'">
+                    <a class"project-thumb-btn" href="casestudy.php?id='.$row['id'].'">
                         <img class="project-thumb" src="./images/'.$row['thumb'].'" alt="Project Thumbnail">
                     </a>
 

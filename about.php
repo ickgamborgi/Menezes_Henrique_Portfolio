@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Script tags with defer attribute -->
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> <!-- link to greensock main library and scroll plugin -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+    <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script defer src="js/main.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
