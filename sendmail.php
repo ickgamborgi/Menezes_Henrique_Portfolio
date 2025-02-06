@@ -2,7 +2,6 @@
 
 require_once('includes/connect.php');
 
-///gather the form content
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
 $phone = $_POST['phone'] ?? '';
@@ -10,31 +9,35 @@ $msg = $_POST['message'] ?? '';
 
 $errors = [];
 
-//validate and clean these values
-
 $name = trim($name);
 $email = trim($email);
 $phone = trim($phone);
 $msg = trim($msg);
 
-if(empty($name)) {
+if (empty($name)) {
     $errors['name'] = 'Your name cannot be empty';
 }
 
-if(empty($email)) {
+if (empty($email)) {
     $errors['email'] = 'Please provide an e-mail so I can reach you';
-} else if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors['legit_email'] = 'Please insert a REAL e-mail address';
 }
 
-if(empty($errors)) {
-    // Insert these values as a new row in the contacts table
-    $query = "INSERT INTO contact (name, email, phone, message) VALUES ('$name', '$email', '$phone', '$msg')";
+if (empty($errors)) {
+    try {
+        $query = "INSERT INTO contact (name, email, phone, message) VALUES (?, ?, ?, ?)";
+        $stmt = $connect->prepare($query);
+        $stmt->bindParam(1, $name, PDO::PARAM_STR);
+        $stmt->bindParam(2, $email, PDO::PARAM_STR);
+        $stmt->bindParam(3, $phone, PDO::PARAM_STR);
+        $stmt->bindParam(4, $msg, PDO::PARAM_STR);
+        $stmt->execute();
 
-    if(mysqli_query($connect, $query)) {
-        // Format and send these values in an email
         $to = 'h_gamborgimenezes@fanshaweonline.ca';
         $subject = 'New contact in your portfolio!';
+        $headers = "From: no-reply@yourdomain.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
 
         $message = "There is someone interested in your work! A new message has arrived in your portfolio:\n\n";
         $message .= "Name: " . $name . "\n";
@@ -44,11 +47,19 @@ if(empty($errors)) {
 
         if (mail($to, $subject, $message, $headers)) {
             header('Location: thankyou.php');
+            exit;
         } else {
-            for($i=0; $i < count($errors); $i++) {
-                echo $errors[$i].'<br>';
-            }
+            echo "Message could not be sent.";
         }
+
+        $stmt = null;
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+} else {
+    foreach ($errors as $error) {
+        echo $error . '<br>';
     }
 }
+
 ?>
