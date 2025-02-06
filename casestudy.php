@@ -2,21 +2,24 @@
 <html lang="en">
 
 <?php
-//conect to the running database server and the specific database EX: $connect = new mysqli('localhost','root','root','bookstore');
 require_once('includes/connect.php');
 
-//create a query to run in SQL
-$query = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
+// Fetch project details
+$query = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id = :projectId';
+$stmt = $connect->prepare($query);
+$projectId = $_GET['id'];
+$stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
- //run the query to get back the content
-$results = mysqli_query($connect,$query);
-// print_r($results);
+// Fetch media
+$mediaQuery = 'SELECT * FROM media WHERE project_id = :projectId';
+$mediaStmt = $connect->prepare($mediaQuery);
+$mediaStmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+$mediaStmt->execute();
+$mediaResults = $mediaStmt->fetchAll(PDO::FETCH_ASSOC);
 
-$row = mysqli_fetch_assoc($results);
-
-$mediaquery = 'SELECT * FROM project,media WHERE project_id = project.id AND project.id ='.$_GET['id'];
-$mediaresults = mysqli_query($connect, $mediaquery);
-
+$stmt = null;
 ?>
 
 <!-- Document Heading -->
@@ -163,12 +166,11 @@ $mediaresults = mysqli_query($connect, $mediaquery);
             <!-- Project Media -->
             <div class="col-span-full project-media-con">
 
-                <?php
-                while($media = mysqli_fetch_assoc($mediaresults)) {
-                echo '
-                <img src="./images/'.$media['url'].'" alt="Project Media Asset" class="project-media-image">
-                ';
-                }?>
+                <?php foreach ($mediaResults as $media): ?>
+                
+                <img src="./images/<?php echo htmlspecialchars($media['url']); ?>" alt="Project Media Asset" class="project-media-image">                ';
+                
+                <?php endforeach; ?>
             </div>
             
             <div class="col-span-full l-col-span-10 case-text-con">

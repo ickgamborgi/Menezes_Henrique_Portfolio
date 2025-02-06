@@ -2,16 +2,9 @@
 <html lang="en">
 
 <?php
-//conect to the running database server and the specific database EX: $connect = new mysqli('localhost','root','root','bookstore');
 require_once('includes/connect.php');
-
-//create a query to run in SQL
-$query = 'SELECT project.id AS id, thumb, title, subtitle, date, areas, recap, title FROM project ORDER BY date DESC';
-
- //run the query to get back the content
-$results = mysqli_query($connect,$query);
-// print_r($results);
-
+$stmt = $connect->prepare('SELECT project.id AS id, thumb, title, subtitle, date, areas, recap, title FROM project ORDER BY date DESC');
+$stmt->execute();
 ?>
 
 <!-- Document Heading -->
@@ -189,7 +182,7 @@ $results = mysqli_query($connect,$query);
 
                 <?php
 
-                while($row = mysqli_fetch_array($results)) {
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                 echo '
                 <!-- Project Item -->
@@ -221,7 +214,11 @@ $results = mysqli_query($connect,$query);
                     </div>
                 </div>';
 
-                }?>
+                }
+                
+                $stmt = null;
+                
+                ?>
 
             </article>
 
