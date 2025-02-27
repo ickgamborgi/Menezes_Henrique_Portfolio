@@ -314,11 +314,12 @@ $stmt = null;
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
                 <form class="form" method="post" action="sendmail.php">
-                    <input name="name" type="text" required placeholder="Full Name">
-                    <input name="email" type="email" required placeholder="E-mail Address">
+                    <input name="name" type="text" placeholder="Full Name">
+                    <input name="email" type="email" placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Subject">
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
+                <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
             </div>
         </section>
 

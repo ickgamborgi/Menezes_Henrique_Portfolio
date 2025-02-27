@@ -81,16 +81,17 @@
         <section class="grid-con" id="contact-form">
             <h3 class="hidden">Contact Form</h3>
             <h4 class="col-span-4 m-col-span-7">Fill the form below</h4>
-            <p class="col-span-4 m-col-span-7">Let's collaborate! Leave your ideas here, I'll get in touch as soon as possible! You can message me to discuss your project, opportunities or simply to connect.</p>
-            <p class="col-span-4 m-col-span-7"><span>Looking forward to hearing from you!</span></p>
+            <p class="contact-text col-span-4 m-col-span-7">Let's collaborate! Leave your ideas here, I'll get in touch as soon as possible! You can message me to discuss your project, opportunities or simply to connect.</p>
+            <p class="contact-text col-span-4 m-col-span-7"><span>Looking forward to hearing from you!</span></p>
 
             <div class="form-section col-span-4 m-col-span-8">
                 <h4 class="hidden">Contact Form</h4>
                 <form class="form" method="post" action="sendmail.php">
-                    <input name="name" type="text" required  placeholder="Full Name">
-                    <input name="email" type="email" required placeholder="E-mail Address">
+                    <input name="name" type="text"  placeholder="Full Name">
+                    <input name="email" type="email" placeholder="E-mail Address">
                     <input name="phone" type="tel"  placeholder="Phone Number">
                     <textarea name="message" placeholder="Insert your message or ideas here..."></textarea>
+                    <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
             </div>

@@ -27,19 +27,22 @@ textarea[name="message"] {
 
 
 .redux-form-section {
+
+    i {
+        margin-right: 10px;
+    }
     
     form {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        color: a.$light-cyan;
+
 
         input {
             background-color: white;
             border-radius: a.$round-border;
             height: 50px;
             padding: 15px 20px;
-            color: a.$primary-cyan;
             box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
         }
         input::placeholder {
@@ -85,7 +88,6 @@ textarea[name="message"] {
     }
 
     p {
-        color: a.$grey;
         font-size: a.$text;
         max-width: 650px;
 
@@ -95,13 +97,17 @@ textarea[name="message"] {
     }
 }
 
+.contact-text {
+    color: a.$grey;
+}
+
+
 .form-section {
 
     form {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        color: a.$light-cyan;
 
         input, textarea {
             background-color: white;
@@ -114,12 +120,17 @@ textarea[name="message"] {
             box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
         }
 
+        i {
+            margin-right: 10px;
+        }
+
         input::placeholder, textarea::placeholder {
             font-family: a.$ubuntu;
             font-size: a.$text;
             color: a.$grey;
             opacity: .75;
         }
+        
 
         button {
             background-color: a.$light-cyan;
@@ -220,6 +231,23 @@ textarea[name="message"] {
     &:hover i {
         color: a.$primary-cyan;
     }
+}
+
+#feedback {
+    margin-top: 25px;
+
+    p {
+        line-height: 175%;
+        font-weight: 600;
+    }
+}
+
+.success {
+    color: rgb(0, 106, 0);
+}
+
+.error {
+    color: rgb(192, 0, 0);
 }
 
 /* ---Tablet Styles--- */
