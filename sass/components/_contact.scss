@@ -1,336 +1,328 @@
 // Component for CONTACT PAGE and FORM
 
-@use '../abstracts/variables' as a;
+@use "../abstracts/variables" as a;
 
 /* --First: Mobile Styles--- */
 
 .contact-section {
-    padding-top: a.$section-gap;
-    padding-bottom: a.$section-gap;
-    text-align: center;
+  padding-top: a.$section-gap;
+  padding-bottom: a.$section-gap;
+  text-align: center;
 
-    h3 {
-        font-family: a.$ubuntu;
-        font-weight: 600;
-        font-size: a.$h2;
-        color: a.$primary-cyan;
-        margin-bottom: 25px;
-    }
+  h3 {
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    font-size: a.$h2;
+    color: a.$primary-cyan;
+    margin-bottom: 25px;
+  }
 }
 
 textarea[name="message"] {
-    height: auto;
-    min-height: 250px;
-    resize: none;
-    overflow: hidden;
+  height: auto;
+  min-height: 250px;
+  resize: none;
+  overflow: hidden;
 }
-
 
 .redux-form-section {
+  i {
+    margin-right: 10px;
+  }
 
-    i {
-        margin-right: 10px;
-    }
-    
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-
-        input {
-            background-color: white;
-            border-radius: a.$round-border;
-            height: 50px;
-            padding: 15px 20px;
-            box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
-        }
-        input::placeholder {
-            font-family: a.$ubuntu;
-            font-size: a.$text;
-            color: a.$grey;
-            opacity: .75;
-        }
-
-        button {
-            background-color: a.$light-cyan;
-            margin-top: 10px;
-            height: 50px;
-            border-radius: a.$round-border;
-            color: white;
-            font-size: a.$text;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: a.$blur-shadow;
-            transition: a.$basic-transition;
-            cursor: pointer;
-
-            &:hover {
-                background-color: a.$primary-cyan;
-                transform: scale(1.05);
-                box-shadow: a.$click-shadow;
-            }
-        }
-    }
-}
-
-#contact-form {
-    padding-top: 100px;
+  form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    text-align: center;
+    gap: 15px;
 
-    h4 {
-        color: a.$primary-cyan;
-        font-size: a.$h4;
+    input {
+      background-color: white;
+      border-radius: a.$round-border;
+      height: 50px;
+      padding: 15px 20px;
+    }
+    input::placeholder {
+      font-family: a.$ubuntu;
+      font-size: a.$text;
+      color: a.$grey;
+      opacity: 0.75;
     }
 
-    p {
-        font-size: a.$text;
-        max-width: 650px;
+    button {
+      background-color: a.$light-cyan;
+      margin-top: 10px;
+      height: 50px;
+      border-radius: a.$round-border;
+      color: white;
+      font-size: a.$text;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: a.$blur-shadow;
+      transition: a.$basic-transition;
+      cursor: pointer;
 
-        span {
-            font-weight: 800;
-        }
-    }
-}
-
-.contact-text {
-    color: a.$grey;
-}
-
-
-.form-section {
-
-    form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-
-        input, textarea {
-            background-color: white;
-            border-radius: a.$round-border;
-            height: 50px;
-            font-size: a.$text;
-            font-family: a.$ubuntu;
-            padding: 25px 25px;
-            color: a.$primary-cyan;
-            box-shadow: inset 1px -3px 8px 4px rgba(0, 0, 0, 0.15);
-        }
-
-        i {
-            margin-right: 10px;
-        }
-
-        input::placeholder, textarea::placeholder {
-            font-family: a.$ubuntu;
-            font-size: a.$text;
-            color: a.$grey;
-            opacity: .75;
-        }
-        
-
-        button {
-            background-color: a.$light-cyan;
-            margin-top: 10px;
-            height: 50px;
-            border-radius: a.$round-border;
-            color: white;
-            font-size: a.$text;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: a.$blur-shadow;
-            transition: a.$basic-transition;
-            cursor: pointer;
-
-            &:hover {
-                background-color: a.$primary-cyan;
-                transform: scale(1.05);
-                box-shadow: a.$click-shadow;
-            }
-        }
-    }
-}
-
-#contact-test {
-    margin-bottom: a.$section-gap;
-}
-
-#form-success {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.thank-php {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: center;
-
-    h4 {
-        font-size: a.$h3;
-        color: a.$light-cyan;
-    }
-
-    img {
-        width: 250px;
-        object-fit: contain;
-    }
-}
-
-.thank-php-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-
-    p {
-        font-size: a.$text;
-        color: a.$grey;
-        max-width: 500px;
-
-        span {
-            font-size: a.$h5;
-            color: a.$light-cyan;
-            font-weight: 800;
-        }
-    }
-}
-
-.thank-btn {
-    font-size: a.$h5;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: a.$light-cyan;
-    cursor: pointer;
-    transition: a.$basic-transition;
-    text-transform: uppercase;
-    letter-spacing: .75px;
-    width: fit-content;
-    padding: 10px 15px;
-    border-radius: a.$round-border;
-    box-shadow: a.$blur-shadow;
-
-    i {
-        color: a.$light-cyan;
-    }
-
-    &:hover {
+      &:hover {
         background-color: a.$primary-cyan;
         transform: scale(1.05);
         box-shadow: a.$click-shadow;
+      }
+    }
+  }
+}
+
+#contact-form {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+
+  h4 {
+    color: a.$primary-cyan;
+    font-size: a.$h4;
+  }
+
+  p {
+    font-size: a.$text;
+    max-width: 650px;
+
+    span {
+      font-weight: 800;
+    }
+  }
+}
+
+.contact-text {
+  color: a.$grey;
+}
+
+.form-section {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    input,
+    textarea {
+      background-color: white;
+      border-radius: a.$round-border;
+      height: 50px;
+      font-size: a.$text;
+      font-family: a.$ubuntu;
+      padding: 25px 25px;
+      color: a.$primary-cyan;
+      border: 2px solid a.$light-grey;
     }
 
-    &:hover i {
-        color: a.$primary-cyan;
+    i {
+      margin-right: 10px;
     }
+
+    input::placeholder,
+    textarea::placeholder {
+      font-family: a.$ubuntu;
+      font-size: a.$text;
+      color: a.$grey;
+      opacity: 0.75;
+    }
+
+    button {
+      background-color: a.$light-cyan;
+      margin-top: 10px;
+      height: 50px;
+      border-radius: a.$round-border;
+      color: white;
+      font-size: a.$text;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: a.$blur-shadow;
+      transition: a.$basic-transition;
+      cursor: pointer;
+
+      &:hover {
+        background-color: a.$primary-cyan;
+        transform: scale(1.05);
+        box-shadow: a.$click-shadow;
+      }
+    }
+  }
+}
+
+#contact-test {
+  margin-bottom: a.$section-gap;
+}
+
+#form-success {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.thank-php {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+
+  h4 {
+    font-size: a.$h3;
+    color: a.$light-cyan;
+  }
+
+  img {
+    width: 250px;
+    object-fit: contain;
+  }
+}
+
+.thank-php-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  p {
+    font-size: a.$text;
+    color: a.$grey;
+    max-width: 500px;
+
+    span {
+      font-size: a.$h5;
+      color: a.$light-cyan;
+      font-weight: 800;
+    }
+  }
+}
+
+.thank-btn {
+  font-size: a.$h5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: a.$light-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: a.$round-border;
+  box-shadow: a.$blur-shadow;
+
+  i {
+    color: a.$light-cyan;
+  }
+
+  &:hover {
+    background-color: a.$primary-cyan;
+    transform: scale(1.05);
+    box-shadow: a.$click-shadow;
+  }
+
+  &:hover i {
+    color: a.$primary-cyan;
+  }
 }
 
 #feedback {
-    margin-top: 25px;
+  margin-top: 25px;
 
-    p {
-        line-height: 175%;
-        font-weight: 600;
-    }
+  p {
+    line-height: 175%;
+    font-weight: 600;
+  }
 }
 
 .success {
-    color: rgb(0, 106, 0);
+  color: rgb(0, 106, 0);
 }
 
 .error {
-    color: rgb(192, 0, 0);
+  color: rgb(192, 0, 0);
 }
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
-    .contact-section {
-        text-align: left;
+  .contact-section {
+    text-align: left;
+  }
+
+  #contact-form {
+    text-align: left;
+  }
+
+  form {
+    button {
+      width: 40%;
+    }
+  }
+
+  .thank-php-wrap {
+    align-items: start;
+  }
+
+  .thank-php {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    text-align: left;
+
+    h4 {
+      font-size: a.$h3;
+      color: a.$light-cyan;
     }
 
-    #contact-form {
-        text-align: left;
+    img {
+      padding-left: 0;
+      padding-right: 0;
+      object-fit: contain;
     }
+  }
 
-    form {
-        button {
-            width: 40%;
-        }
-    }
+  .thank-btn {
+    align-items: left;
+    justify-content: left;
+  }
 
-    .thank-php-wrap {
-        align-items: start;
-    }
-
-    
-
-    .thank-php {
-        display: flex;
-        flex-direction: row;
-        gap: 50px;
-        text-align: left;
-    
-        h4 {
-            font-size: a.$h3;
-            color: a.$light-cyan;
-        }
-    
-        img {
-            padding-left: 0;
-            padding-right: 0;
-            object-fit: contain;
-        }
-    }
-
-    .thank-btn {
-        align-items: left;
-        justify-content: left;
-    }
-
-    #form-success {
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
+  #form-success {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
-
-    .redux-form-section {
-        form {
-            display: flex;
-            flex-direction: row;
-            gap: 15px;
-    
-            input {
-                background-color: white;
-                border-radius: a.$round-border;
-                padding: 15px 25px;
-                font-family: a.$ubuntu;
-                font-size: a.$text;
-                box-shadow: inset 2px 4px 4px 2px rgba(0, 0, 0, 0.15);
-                width: 100%;
-            }
-
-            button {
-                margin-top: 0;
-                width: 50%;
-                padding: 15px 10px;
-            }
-        }
-    }
-
+  .redux-form-section {
     form {
-        button {
-            width: 25%;
-        }
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+
+      input {
+        background-color: white;
+        border-radius: a.$round-border;
+        padding: 15px 25px;
+        font-family: a.$ubuntu;
+        font-size: a.$text;
+        border: 2px solid a.$light-grey;
+        width: 100%;
+      }
+
+      button {
+        margin-top: 0;
+        width: 50%;
+        padding: 15px 10px;
+      }
     }
+  }
+
+  form {
+    button {
+      width: 25%;
+    }
+  }
 }

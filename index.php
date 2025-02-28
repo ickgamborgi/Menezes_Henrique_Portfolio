@@ -136,7 +136,7 @@ $stmt->execute();
                     class="player" 
                     controls
                     loop
-                    autoplay
+                    poster="./images/demoreel_poster.jpg"
                     muted
                     preload="metadata"
                     >
@@ -200,9 +200,6 @@ $stmt->execute();
 
                         <!-- Areas -->
                         <p class="project-areas">'.$row['areas'].'</p>
-
-                        <!-- Date -->
-                        <p class="project-date">'.$row['date'].'</p>
 
                         <!-- Recap -->
                         <p class="project-recap">'.$row['recap'].'</p>
@@ -381,7 +378,7 @@ $stmt->execute();
                         </div>
                         <div class="tool">
                             <img src="./images/icon-js.svg" alt="Coding icon" class="skill-icon">
-                            <h6>Javascript</h6>
+                            <h6>Javascript &amp; AJAX</h6>
                         </div>
                         <div class="tool">
                             <img src="./images/icon-php.svg" alt="Coding icon" class="skill-icon">
