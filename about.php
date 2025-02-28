@@ -205,7 +205,7 @@
                         </div>
                         <div class="tool">
                             <img src="./images/icon-js.svg" alt="Coding icon" class="skill-icon">
-                            <h6>Javascript</h6>
+                            <h6>Javascript &amp; AJAX</h6>
                         </div>
                         <div class="tool">
                             <img src="./images/icon-php.svg" alt="Coding icon" class="skill-icon">

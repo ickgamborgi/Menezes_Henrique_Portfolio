@@ -197,8 +197,8 @@ const player = new Plyr("#demoreel"); // demoreel video plyr.io
       markers: false,
     },
     opacity: 0,
-    delay: 0.2,
-    ease: "ease2.in",
+    y: -50,
+    ease: "ease2.inOut",
   });
 
   gsap.from(".hero-bio", {
@@ -211,7 +211,7 @@ const player = new Plyr("#demoreel"); // demoreel video plyr.io
     },
     opacity: 0,
     x: 200,
-    duration: 1,
+    duration: 2,
     ease: "power2.out",
   });
 
@@ -259,7 +259,7 @@ const player = new Plyr("#demoreel"); // demoreel video plyr.io
     ease: "power2.out",
   });
 
-  gsap.to(".hero-social-media a", {
+  gsap.to(".hero-social-media a", 0.5, {
     scrollTrigger: {
       trigger: ".hero-social-media",
       start: "top 80%",
@@ -268,10 +268,10 @@ const player = new Plyr("#demoreel"); // demoreel video plyr.io
       markers: false,
     },
     opacity: 1,
-    y: -40,
-    ease: "ease2.in",
-    stagger: 0.1,
-    delay: 0.25,
+    y: -20,
+    ease: "ease1.inOut",
+    stagger: 0.2,
+    delay: 0.2,
   });
 
   gsap.from(".tools-item", {

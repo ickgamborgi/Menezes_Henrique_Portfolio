@@ -168,7 +168,7 @@ $stmt = null;
 
                 <?php foreach ($mediaResults as $media): ?>
                 
-                <img src="./images/<?php echo htmlspecialchars($media['url']); ?>" alt="Project Media Asset" class="project-media-image">                ';
+                <img src="./images/<?php echo htmlspecialchars($media['url']); ?>" alt="Project Media Asset" class="project-media-image">
                 
                 <?php endforeach; ?>
             </div>

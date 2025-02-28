@@ -1,127 +1,127 @@
 // Component for FOOTER
 
-@use '../abstracts/variables' as a;
+@use "../abstracts/variables" as a;
 
 /* --First: Mobile Styles--- */
 
 footer {
-    background-color: white;
-    padding-top: 75px;
-    padding-bottom: 75px;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  border: 2px solid a.$light-grey;
 }
 
 .footer-copy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    img {
-        width: 25px;
-        margin-bottom: 15px;
-        cursor: pointer;
-    }
+  img {
+    width: 20px;
+    margin-bottom: 6px;
+    cursor: pointer;
+  }
 
-    h5 {
-        color: a.$primary-cyan;
-        font-size: a.$text;
-        padding-bottom: 5px;
-    }
+  h5 {
+    color: a.$primary-cyan;
+    font-size: a.$text;
+    padding-bottom: 5px;
+  }
 }
 
 .footer-social-media {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
 
 .social-media-icon {
-    background-color: a.$light-cyan;
-    padding: 7px;
-    width: fit-content;
-    border-radius: 12px;
-    width: 35px;
-    height: 35px;
-    transition: a.$basic-transition;
+  background-color: a.$light-cyan;
+  padding: 7px;
+  width: fit-content;
+  border-radius: 12px;
+  width: 35px;
+  height: 35px;
+  transition: a.$basic-transition;
 
-    &:hover {
-        transform: scale(1.175);
-        box-shadow: a.$blur-shadow;
-        background-color: a.$primary-cyan;
-    }
+  &:hover {
+    transform: scale(1.175);
+    box-shadow: a.$blur-shadow;
+    background-color: a.$primary-cyan;
+  }
 }
 
 .resume {
-    margin-top: 25px;
-    font-size: a.$h5;
-    display: flex;
-    gap: 8px;
-    align-items: end;
-    justify-content: center;
+  margin-top: 25px;
+  font-size: a.$h5;
+  display: flex;
+  gap: 8px;
+  align-items: end;
+  justify-content: center;
+  color: a.$light-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+  text-transform: uppercase;
+  letter-spacing: 0.75p;
+
+  i {
     color: a.$light-cyan;
-    cursor: pointer;
-    transition: a.$basic-transition;
-    text-transform: uppercase;
-    letter-spacing: .75p;
+  }
 
-    i {
-        color: a.$light-cyan;
-    }
+  h5 {
+    padding-bottom: 1px;
+  }
 
-    h5 {
-        padding-bottom: 1px;
-    }
+  &:hover {
+    color: a.$primary-cyan;
+    gap: 16px;
+  }
 
-    &:hover {
-        color: a.$primary-cyan;
-        gap: 16px;
-    }
-
-    &:hover i {
-        color: a.$primary-cyan;
-    }
+  &:hover i {
+    color: a.$primary-cyan;
+  }
 }
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
-    .footer-copy {
-        flex-direction: row;
-        align-content: center;
-        gap: 7px;
+  .footer-copy {
+    flex-direction: row;
+    align-content: center;
+    gap: 7px;
 
-        h5 {
-            padding-bottom: 12px;
-        }
+    h5 {
+      padding-bottom: 12px;
     }
-    
-    .footer-social-media {
-        justify-content: start;
-    }
+  }
 
-    .resume {
-        justify-content: start;
-    }
+  .footer-social-media {
+    justify-content: start;
+  }
+
+  .resume {
+    justify-content: start;
+  }
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
-    footer {
-        align-items: start;
-    }
+  footer {
+    align-items: start;
+  }
 
-    .footer-social-media {
-        margin-top: 0px;
-    }
+  .footer-social-media {
+    margin-top: 0px;
+  }
 
-    .footer-social {
-        display: flex;
-        gap: 25px;
-        align-items: center;
-    }
+  .footer-social {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
 
-    .resume {
-        margin-top: 0px;
-    }
+  .resume {
+    margin-top: 0px;
+  }
 }

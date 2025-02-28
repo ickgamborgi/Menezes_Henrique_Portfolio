@@ -2,34 +2,35 @@
 
 //  Stores SASS variables like colors, font sizes, spacing, and other values that are likely to be reused.
 
-@use 'fonts';
+@use "fonts";
 
 // Colors
 $primary-cyan: #125668;
-$light-cyan: #39A3BC;
+$light-cyan: #39a3bc;
 $dark-cyan: #054b5b;
-$black-cyan:  #001014;
-$yellow: #F2B446;
-$light-yellow: #F9E193;
-$grey: #8E8E8E;
-$light-grey: #EFEFEF;
+$black-cyan: #001014;
+$yellow: #f2b446;
+$light-yellow: #f9e193;
+$grey: #8e8e8e;
+$light-grey: #efefef;
 
-$gradient: rgb(57,163,188) linear-gradient(90deg, rgba(57,163,188,1) 59%, rgba(242,180,70,1) 100%);
+$gradient: rgb(57, 163, 188)
+  linear-gradient(90deg, rgba(57, 163, 188, 1) 59%, rgba(242, 180, 70, 1) 100%);
 
 // Fonts
-$ubuntu: 'Ubuntu', 'Helvetica', 'Arial', sans-serif;
+$ubuntu: "Ubuntu", "Helvetica", "Arial", sans-serif;
 
-$h1: 62px;
-$h2: 46px;
-$h3: 36px;
-$h4: 28px;
-$h5: 22px;
-$text: 18px;
-$small-text: 16px;
+$h1: 56px;
+$h2: 42px;
+$h3: 32px;
+$h4: 26px;
+$h5: 20px;
+$text: 16px;
+$small-text: 14px;
 
 //Others
-$blur-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-$click-shadow: 0 3px 6px rgba(0,0,0,0.2);
+$blur-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$click-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
 $round-border: 35px;
 $section-gap: 150px;
