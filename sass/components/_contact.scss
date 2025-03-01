@@ -38,6 +38,7 @@ textarea[name="message"] {
     input {
       background-color: white;
       border-radius: a.$round-border;
+      border: 2px solid a.$light-grey;
       height: 50px;
       padding: 15px 20px;
     }
@@ -156,7 +157,7 @@ textarea[name="message"] {
 
 #form-success {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
 }
 
 .thank-php {
@@ -310,6 +311,10 @@ textarea[name="message"] {
         font-size: a.$text;
         border: 2px solid a.$light-grey;
         width: 100%;
+      }
+
+      #form-success {
+        padding-top: 1000px;
       }
 
       button {

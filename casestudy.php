@@ -43,7 +43,7 @@ $stmt = null;
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> <!-- link to greensock main library and scroll plugin -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script defer src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
@@ -76,7 +76,7 @@ $stmt = null;
                         <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
+                        <li><a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
 
                     </ul>
                 </div>
@@ -368,7 +368,7 @@ $stmt = null;
                 </div>
                 
                 <div class="footer-resume">
-                    <a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" class="resume" target="_blank">
+                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" class="resume" target="_blank">
                         <h5 class="small-button">Resume</h5>
                         <i class="fa-solid fa-square-caret-right arrow"></i>
                     </a>

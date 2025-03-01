@@ -22,7 +22,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script> <!-- link to greensock main library and scroll plugin -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
     <script defer src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-    <script defer src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
@@ -55,7 +55,7 @@
                         <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
+                        <li><a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
 
                     </ul>
                 </div>
@@ -76,7 +76,7 @@
                 <div class="col-span-full banner-title">
                     <h3 class="col-span-6"><span>About Me</span></h3>
                     <div class="col-span-6 banner-divisory" id="about-divisory"></div>
-                    <a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="banner-btn col-span-3">
+                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="banner-btn col-span-3">
                         <h4 class="small-button">Visit My Resume</h4>
                     </a>
                 </div>
@@ -245,7 +245,7 @@
                 <img src="./images/illustration-4.webp" alt="Thank You Humaaan" class="thank-you">
                 <div class=back-wrap>
                     <h4>Or if you prefer, here's a fancy piece of paper</h4>
-                    <a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" target="_blank" class="back-btn col-span-3">
+                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="back-btn col-span-3">
                             <h5 class="small-button">Visit My Resume</h5>
                     </a>
                 </div>
@@ -414,7 +414,7 @@
                 </div>
                 
                 <div class="footer-resume">
-                    <a href="https://drive.google.com/file/d/1IVieGaWlVBvap9UwNIM0GwgP0hnsdKhI/view?usp=sharing" class="resume" target="_blank">
+                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" class="resume" target="_blank">
                         <h5 class="small-button">Resume</h5>
                         <i class="fa-solid fa-square-caret-right arrow"></i>
                     </a>
