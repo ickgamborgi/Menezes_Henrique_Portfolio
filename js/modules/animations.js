@@ -58,20 +58,6 @@ export function initAnimations() {
     });
   });
 
-  gsap.from(".portfolio-item a", {
-    scrollTrigger: {
-      trigger: ".project-thumb",
-      start: "top bottom",
-      end: "bottom 50%",
-      toggleActions: "play none none reset",
-      markers: false,
-    },
-    opacity: 0,
-    scale: 0.5,
-    stagger: 0.15,
-    ease: "power2.out",
-  });
-
   gsap.to(".hero-social-media a", 0.5, {
     scrollTrigger: {
       trigger: ".hero-social-media",

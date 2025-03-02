@@ -2,6 +2,11 @@ export function initContactForm() {
   const form = document.querySelector(".form");
   const feedback = document.querySelector("#feedback");
 
+  if (!form || !feedback) {
+    console.warn("Form or feedback element not found.");
+    return;
+  }
+
   feedback.classList.add("hidden");
 
   function regForm(event) {

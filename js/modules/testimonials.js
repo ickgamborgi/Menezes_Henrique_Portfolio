@@ -4,6 +4,11 @@ export function initTestimonials() {
   let testimonialIndex = 0;
   const testimonialCards = document.querySelectorAll(".testimonial-card");
 
+  if (testimonialCards.length === 0) {
+    console.warn("No testimonial cards found.");
+    return;
+  }
+
   function showTestimonial(index) {
     testimonialCards.forEach((card, i) => {
       card.classList.remove("visible");

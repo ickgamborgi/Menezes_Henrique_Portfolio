@@ -54,7 +54,7 @@
                     <ul>
                         <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
+                        <li><a href="contact.php" class="nav-item current"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
                     </ul>
                 </div>

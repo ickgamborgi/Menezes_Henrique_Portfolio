@@ -11,6 +11,10 @@
   animation: headerSlide 1s forwards;
 }
 
+.current {
+  border-bottom: 3px solid a.$primary-cyan;
+}
+
 .navbar-header {
   display: flex;
   justify-content: space-between;
@@ -45,6 +49,10 @@
   color: a.$primary-cyan;
   background-color: white;
   transition: a.$basic-transition;
+
+  i {
+    margin-left: 10px;
+  }
 
   &:hover {
     text-decoration: underline;
@@ -81,9 +89,9 @@
   .links-header {
     width: 100%;
     z-index: 100;
-    height: 0;
+    height: 0px;
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
   }
 
   .links-header ul {
@@ -115,6 +123,10 @@
 
   #burger-button.active {
     transform: rotate(90deg);
+  }
+
+  .current {
+    border-bottom: 0px;
   }
 }
 
