@@ -1,14 +1,28 @@
 <?php
-require_once('../includes/connect.php');
-$query = 'SELECT * FROM users WHERE username = ? AND password = ?';
-$stmt = $connect->prepare($query);
-$stmt->bindParam(1, $_POST['username'], PDO::PARAM_STR);
-$stmt->bindParam(2, $_POST['password'], PDO::PARAM_STR);
-$stmt->execute();
+session_start(); // initiate session
+require_once('../includes/connect.php'); // connects to db
 
-header('Location: project_list.php');
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-// I left my login open so you professors can access the admin panel without having a username or password. I will close it later.
+    $query = 'SELECT * FROM users WHERE username = ? AND password = ?'; // search for users on db
+    $stmt = $connect->prepare($query);
+    $stmt->bindParam(1, $username, PDO::PARAM_STR);
+    $stmt->bindParam(2, $password, PDO::PARAM_STR);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC); // bind the parameters, execute and fetch users
 
-$stmt = null;
+    if ($user) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header('Location: project_list.php');
+        exit();
+    } else {
+        header('Location: login.php?error=invalid_credentials');
+        exit();
+    }
+
+    $stmt = null;
+}
 ?>

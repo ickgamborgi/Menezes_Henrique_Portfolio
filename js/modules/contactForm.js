@@ -4,42 +4,45 @@ export function initContactForm() {
 
   if (!form || !feedback) {
     console.warn("Form or feedback element not found.");
-    return;
+    return; // I added this because my console was showing an error in pages where there was no form.
   }
 
-  feedback.classList.add("hidden");
+  feedback.classList.add("hidden"); // started hiding the default feedback element that's already in HTML
 
   function regForm(event) {
-    event.preventDefault();
+    event.preventDefault(); // prevents the default behavior of the form
     feedback.classList.remove("hidden");
-    feedback.innerHTML = "";
+    feedback.innerHTML = ""; // clear the div with the default feedback
 
     const thisform = event.currentTarget;
     const url = "sendmail.php";
     const formdata = new URLSearchParams(new FormData(thisform)).toString();
 
     fetch(url, {
+      // fetch the URL from form
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: formdata,
     })
-      .then((response) => response.json())
+      .then((response) => response.json()) // convert the response to JSON
       .then((response) => {
         feedback.classList.remove("success", "error");
 
         if (response.errors) {
           response.errors.forEach((error) => {
+            // if there are errors, show them
             const errorElement = document.createElement("p");
             errorElement.textContent = error;
-            errorElement.classList.add("error");
-            const icon = document.createElement("i");
+            errorElement.classList.add("error"); // add classlist with red color
+            const icon = document.createElement("i"); // add icon to the error message
             icon.classList.add("fas", "fa-exclamation-circle");
-            errorElement.prepend(icon);
-            feedback.appendChild(errorElement);
+            errorElement.prepend(icon); // add icon before the error message
+            feedback.appendChild(errorElement); // append error
 
             gsap.fromTo(
+              // animation for error
               feedback,
               { opacity: 0 },
               {
@@ -62,8 +65,9 @@ export function initContactForm() {
             );
           });
         } else {
+          // if there are no errors, show success message
           form.reset();
-          const messageElement = document.createElement("p");
+          const messageElement = document.createElement("p"); // same logic as before, create <p>, style, add icon and append
           messageElement.textContent = response.message;
           messageElement.classList.add("success");
           const icon = document.createElement("i");
@@ -86,6 +90,7 @@ export function initContactForm() {
         feedback.scrollIntoView({ behavior: "smooth", block: "end" });
       })
       .catch((error) => {
+        // catch any unexpected errors
         feedback.classList.add("error");
         feedback.innerHTML =
           "<p>Sorry, something went wrong. Please, check your internet connection or if your browser is updated</p>";
@@ -98,7 +103,7 @@ export function initContactForm() {
       });
   }
 
-  form.addEventListener("submit", regForm);
+  form.addEventListener("submit", regForm); // add event listener to the form
 
   form.addEventListener("submit", (event) => {
     console.log("User submitted information on " + form.id); // console log it out

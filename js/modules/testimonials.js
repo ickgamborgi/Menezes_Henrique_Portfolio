@@ -6,7 +6,7 @@ export function initTestimonials() {
 
   if (testimonialCards.length === 0) {
     console.warn("No testimonial cards found.");
-    return;
+    return; // I added this because my console was showing an error in pages where there was no testimonial.
   }
 
   function showTestimonial(index) {
