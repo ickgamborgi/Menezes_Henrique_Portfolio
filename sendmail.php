@@ -38,10 +38,12 @@ try {
     $stmt->execute(); // execute query
 
     // email information
-    $to = 'h_gamborgimenezes@fanshaweonline.ca';
+    $from = 'automatic@henriquegamborgi.com';
+    $to = 'henrique@henriquegamborgi.com, henriquegamborgi@gmail.com';
     $subject = 'New contact in your portfolio!';
-    $headers = "From: no-reply@yourdomain.com\r\n";
+    $headers = "From: $from\r\n";
     $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
     $message = "A new message has arrived in your portfolio:\n\n";
     $message .= "Name: " . $name . "\n";
@@ -53,7 +55,7 @@ try {
 
     echo json_encode(["message" => "Message submitted! I'll get back to you super fast — that's a promise!"]); // if it is successful, show this message
 } catch (PDOException $e) {
-    echo json_encode(["error" => "Database error: " . $e->getMessage()]);
-} // if there is an error, catch it
+    echo json_encode(["error" => "There was an error sending the message. Please try again later."]);
+} // if there is an error, catch it and show this message
 
 ?>
