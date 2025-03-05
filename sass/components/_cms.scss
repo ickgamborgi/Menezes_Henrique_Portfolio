@@ -21,7 +21,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 
   i {
     margin-right: 15px;
@@ -42,6 +42,10 @@
     width: 100%;
     margin-top: 7px;
     padding: 15px 20px;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    color: #12556897;
+    line-height: 150%;
 
     &::placeholder {
       font-family: a.$ubuntu;
@@ -51,10 +55,14 @@
     }
   }
 
+  .form-restriction-text {
+    color: a.$grey;
+    font-family: a.$ubuntu;
+  }
+
   p {
     font-family: a.$ubuntu;
     font-size: a.$small-text;
-    color: a.$grey;
     margin-top: 10px;
 
     a {
@@ -292,6 +300,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   box-shadow: a.$blur-shadow;
+  margin-top: 15px;
   margin-bottom: 0px;
   transition: a.$basic-transition;
   cursor: pointer;

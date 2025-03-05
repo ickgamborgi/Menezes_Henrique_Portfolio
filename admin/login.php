@@ -72,9 +72,11 @@
                     <label class="form-label" for="password">Password: </label>
                     <input type="password" name="password" id="password"><br>
 
+                    <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
                     <input type="submit" value="Access" id="submit-button">
                 </form>
-                <p>This is a restricted area of my website. If you need any help, reach me in my <a href="../contact.php" target="_blank">Contact Page</a></p>
+                
+                <p class="form-restriction-text">This is a restricted area of my website. If you need any help, reach me in my <a href="../contact.php" target="_blank">Contact Page</a></p>
             </div>
 
             <div class="logout-button col-span-full">
