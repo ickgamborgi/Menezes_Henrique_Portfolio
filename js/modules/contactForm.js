@@ -1,30 +1,30 @@
 export function initContactForm() {
-  const form = document.querySelector(".form");
+  const formCon = document.querySelector(".form");
   const feedback = document.querySelector("#feedback");
 
-  if (!form || !feedback) {
+  if (!formCon || !feedback) {
     console.warn("Form or feedback element not found.");
     return; // I added this because my console was showing an error in pages where there was no form.
   }
 
   feedback.classList.add("hidden"); // started hiding the default feedback element that's already in HTML
 
-  function regForm(event) {
+  function sendContactForm(event) {
     event.preventDefault(); // prevents the default behavior of the form
     feedback.classList.remove("hidden");
     feedback.innerHTML = ""; // clear the div with the default feedback
 
-    const thisform = event.currentTarget;
-    const url = "sendmail.php";
-    const formdata = new URLSearchParams(new FormData(thisform)).toString();
+    const contactForm = event.currentTarget;
+    const sendFile = "sendmail.php";
+    const formData = new URLSearchParams(new FormData(contactForm)).toString();
 
-    fetch(url, {
+    fetch(sendFile, {
       // fetch the URL from form
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: formdata,
+      body: formData,
     })
       .then((response) => response.json()) // convert the response to JSON
       .then((response) => {
@@ -66,7 +66,7 @@ export function initContactForm() {
           });
         } else {
           // if there are no errors, show success message
-          form.reset();
+          contactForm.reset();
           const messageElement = document.createElement("p"); // same logic as before, create <p>, style, add icon and append
           messageElement.textContent = response.message;
           messageElement.classList.add("success");
@@ -103,9 +103,9 @@ export function initContactForm() {
       });
   }
 
-  form.addEventListener("submit", regForm); // add event listener to the form
+  formCon.addEventListener("submit", sendContactForm); // add event listener to the form
 
-  form.addEventListener("submit", (event) => {
-    console.log("User submitted information on " + form.id); // console log it out
+  formCon.addEventListener("submit", (event) => {
+    console.log("User submitted information on " + formCon.id); // console log it out
   });
 }

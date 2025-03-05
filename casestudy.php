@@ -330,7 +330,7 @@ $stmt = null;
             <div class="footer-copy col-span-full m-col-start-1 l-col-start-1 l-col-end-6">
                 <h4 class="hidden">Copyright Information</h4>
                 <a href="index.php"><img src="./images/icon-white.svg" alt="Henrique Gamborgi Symbol"></a>
-                <h5>2024 Copyright &copy;</h5>
+                <a href="admin/login.php"><h5>2024 Copyright    &copy;</h5></a>
                 <h5>Henrique Gamborgi Design</h5>
             </div>
 
