@@ -153,6 +153,7 @@
   height: fit-content;
   width: 100%;
   display: flex;
+  flex-direction: row;
   flex-direction: column;
   gap: 15px;
 
@@ -175,8 +176,9 @@
 
 .project-list-crud-item {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  align-items: start;
   border: 1px solid a.$light-grey;
   padding: 15px 20px;
   border-radius: 5px;
@@ -428,6 +430,7 @@
 
 #delete-media {
   border: 1px solid rgb(255, 105, 105);
+  background-color: a.$light-grey;
   margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
@@ -504,6 +507,16 @@
 
   .current-cover {
     width: 60%;
+  }
+
+  .project-list-crud-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid a.$light-grey;
+    padding: 15px 20px;
+    border-radius: 5px;
   }
 }
 
