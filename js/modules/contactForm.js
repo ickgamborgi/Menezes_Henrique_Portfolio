@@ -87,7 +87,7 @@ export function initContactForm() {
           );
         }
 
-        feedback.scrollIntoView({ behavior: "smooth", block: "end" });
+        feedback.scrollIntoView({ behavior: "smooth", block: "center" });
       })
       .catch((error) => {
         // catch any unexpected errors
