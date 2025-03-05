@@ -2,13 +2,13 @@
 <html lang="en">
 
 <?php
-require_once('../includes/connect.php');
-$query = 'SELECT * FROM project WHERE project.id = :projectId';
+require_once('../includes/connect.php'); // connects to db
+$query = 'SELECT * FROM project WHERE project.id = :projectId'; // select details from projects where the project id matches the selected project
 $stmt = $connect->prepare($query);
-$projectId = $_GET['id'];
-$stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT);
+$projectId = $_GET['id']; // get the selected id
+$stmt->bindParam(':projectId', $projectId, PDO::PARAM_INT); // bind parameters
 $stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
+$row = $stmt->fetch(PDO::FETCH_ASSOC); // fetch all details
 
 // I have built this to make the ENUM possible to be used in the form as project type
 $enumQuery = $connect->prepare("SHOW COLUMNS FROM project LIKE 'type'");

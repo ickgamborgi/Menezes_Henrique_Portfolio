@@ -3,8 +3,8 @@
 
 <?php
 
-require_once('../includes/connect.php');
-$stmt = $connect->prepare('SELECT * FROM project ORDER BY date DESC');
+require_once('../includes/connect.php'); // connects to db
+$stmt = $connect->prepare('SELECT * FROM project ORDER BY date DESC'); // select all projects and order them by last updated
 $stmt->execute();
 
 // I have built this to make the ENUM possible to be used in the form as project type
@@ -85,11 +85,12 @@ if ($enumRow) {
         <section class="grid-con project-list-section">
 
             <div class="col-span-full admin-welcome">
-                <h3>Hello, admin!</h3>
-                <p>This is my portfolio management system. Here you you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> projects, including files on the media table.</p>
+                <h3><i class="fas fa-gear icon-gear"></i>Hello, admin!</h3>
+                <p>This is my portfolio management system. Here you you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> projects, including files on the media table.</p><bR>
+                <p><span>Please, be careful: deletes and updates cannot be reversed!</span></p>
             </div>
             <div class="project-list-crud col-span-full">
-               <h3 class="col-span-full"><i class="fas fa-list icon-list"></i>Projects List</h3>
+               <h3 class="col-span-full"><i class="fas fa-list icon-list"></i>All Projects</h3>
                     <?php
 
                     // List of Projects
@@ -101,7 +102,8 @@ if ($enumRow) {
                             </div>
                             <div class="crud-item-action">
                                 <a class="edit-button" href="edit_project_form.php?id='.$row['id'].'">edit</a>
-                                <a class="delete-button" href="delete_project.php?id='.$row['id'].'" onclick="return confirm(\'Are you sure you want to delete this project?\');">delete</a>                            </div>
+                                <a class="delete-button" href="delete_project.php?id='.$row['id'].'" onclick="return confirm(\'Are you sure you want to delete this project?\');">delete</a>
+                            </div>
                             </div>';
                     }
 

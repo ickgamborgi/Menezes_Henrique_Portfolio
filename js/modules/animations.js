@@ -1,6 +1,8 @@
 export function initAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
+  // all gsap animations
+
   gsap.from(".hero-image", 2, {
     scrollTrigger: {
       trigger: ".home-hero",

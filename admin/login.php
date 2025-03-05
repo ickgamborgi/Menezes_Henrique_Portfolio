@@ -64,7 +64,7 @@
     <main>
        <section class="admin-section grid-con">
             <div class="login-form col-span-full">
-                <h2 class="col-span-full"><i class="fas fa-unlock icon-unlock"></i>Admin Login</h2>
+                <h2 class="col-span-full"><i class="fas fa-unlock icon-unlock"></i>Log-in</h2>
                 <form action="log.php" method="post">
                     <label class="form-label" for="username">Username: </label>
                     <input type="text" name="username" id="username"><br>
@@ -72,9 +72,9 @@
                     <label class="form-label" for="password">Password: </label>
                     <input type="password" name="password" id="password"><br>
 
-                    <input type="submit" value="login" id="submit-button">
+                    <input type="submit" value="Access" id="submit-button">
                 </form>
-                <p>Need help? Please reach me out at my <a href="../contact.php" target="_blank">Contact Page</a></p>
+                <p>This is a restricted area of my website. If you need any help, reach me in my <a href="../contact.php" target="_blank">Contact Page</a></p>
             </div>
 
             <div class="logout-button col-span-full">

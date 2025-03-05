@@ -2,7 +2,7 @@ import { initHeader } from "./modules/header.js";
 import { initTestimonials } from "./modules/testimonials.js";
 import { initTools } from "./modules/tools.js";
 import { initContactForm } from "./modules/contactForm.js";
-import { initAnimations } from "./modules/animations.js";
+import { initAnimations } from "./modules/animations.js"; // import all js modules
 
 console.log("javascript file is linked");
 
@@ -12,4 +12,4 @@ initHeader();
 initTestimonials();
 initTools();
 initContactForm();
-initAnimations();
+initAnimations(); // initializa all js modules

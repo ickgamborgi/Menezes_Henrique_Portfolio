@@ -1,88 +1,94 @@
-@use '../abstracts/variables' as a;
+@use "../abstracts/variables" as a;
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    list-style: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 a {
-    transition: a.$basic-transition;
-    text-decoration: none;
-    cursor: pointer;
+  transition: a.$basic-transition;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-input, textarea {
-    display: block;
-    margin: 0;
-    padding: 0;
+input,
+textarea {
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    overflow-x: hidden;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 p {
-    font-family: a.$ubuntu;
-    line-height: 150%;
-    font-weight: 400;
-    max-width: 800px;
+  font-family: a.$ubuntu;
+  line-height: 170%;
+  font-weight: 400;
+  max-width: 800px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: a.$ubuntu;
-    line-height: 120%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: a.$ubuntu;
+  line-height: 120%;
 }
 
- main {
-    margin: 0;
+main {
+  margin: 0;
 }
 
 footer {
-    width: 100%;
+  width: 100%;
 }
 
 .arrow {
-    color: a.$light-cyan;
+  color: a.$light-cyan;
 }
 
 // Video Player
 
 :root {
-    --plyr-color-main: #39a3bc;
-    --plyr-control-icon-size: 1rem;
-    --plyr-control-radius: 35px;
-    --plyr-video-controls-background: rgba(255, 255, 255, 0);
-    --plyr-font-family: "Ubuntu", sans-serif;
+  --plyr-color-main: #39a3bc;
+  --plyr-control-icon-size: 1rem;
+  --plyr-control-radius: 35px;
+  --plyr-video-controls-background: rgba(255, 255, 255, 0);
+  --plyr-font-family: "Ubuntu", sans-serif;
 }
 
 .video-holder {
-    height: fit-content;
-    box-shadow: a.$blur-shadow;
-    padding: 0;
-    border-radius: a.$round-border;
-    overflow: hidden;
+  height: fit-content;
+  box-shadow: a.$blur-shadow;
+  padding: 0;
+  border-radius: a.$round-border;
+  overflow: hidden;
 }
 
 .video-holder .plyr__controls {
-    margin: 15px;
-    cursor: pointer;
+  margin: 15px;
+  cursor: pointer;
 }
 
 // ---Desktop Styles---
