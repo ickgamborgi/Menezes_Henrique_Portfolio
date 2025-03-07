@@ -12,6 +12,13 @@ if (!isset($_SESSION['user_id'])) {
 <?php
 
 require_once('../includes/connect.php'); // connects to db
+
+$userQuery = 'SELECT username FROM users WHERE id = :userId';
+$userStmt = $connect->prepare($userQuery);
+$userStmt->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
+$userStmt->execute();
+$user = $userStmt->fetch(PDO::FETCH_ASSOC);
+
 $stmt = $connect->prepare('SELECT * FROM project ORDER BY date DESC'); // select all projects and order them by last updated
 $stmt->execute();
 
@@ -93,7 +100,7 @@ if ($enumRow) {
         <section class="grid-con project-list-section">
 
             <div class="col-span-full admin-welcome">
-                <h3><i class="fas fa-gear icon-gear"></i>Hello, admin!</h3>
+                <h3><i class="fas fa-gear icon-gear"></i>Hello, <?php echo $user['username']; ?></h3>
                 <p>This is my portfolio management system. Here you you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> projects, including files on the media table.</p><bR>
                 <p><span>Please, be careful: deletes and updates cannot be reversed!</span></p>
             </div>
