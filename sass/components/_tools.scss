@@ -1,160 +1,159 @@
 // Component for TOOLS and SKILLS
 
-@use '../abstracts/variables' as a;
+@use "../abstracts/variables" as a;
 
 /* --First: Mobile Styles--- */
 
 .home-tools {
-    padding-top: a.$section-gap;
+  padding-top: a.$section-gap;
 
-    h3 {
-        font-family: a.$ubuntu;
-        font-weight: 600;
-        font-size: a.$h3;
-        color: a.$primary-cyan;
-        margin-bottom: 75px;
-        text-align: center;
-    }
+  h3 {
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    font-size: a.$h3;
+    color: a.$primary-cyan;
+    margin-bottom: 75px;
+    text-align: center;
+  }
 }
 
 .mug-image {
-    padding-left: 20%;
-    padding-right: 20%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .tools-list {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .tools-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tools-btn {
-    font-size: a.$h4;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    justify-content: center;
+  font-size: a.$h4;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: a.$light-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  transition: a.$basic-transition;
+
+  i {
     color: a.$light-cyan;
-    cursor: pointer;
-    transition: a.$basic-transition;
-    text-transform: uppercase;
-    letter-spacing: .75px;
-    transition: a.$basic-transition;
+    transition: all 0.5s cubic-bezier(0.71, 0.43, 0.55, 0.97);
+  }
 
-    i {
-        color: a.$light-cyan;
-        transition: all .5s cubic-bezier(.71,.43,.55,.97);
-    }
+  &:hover {
+    color: a.$primary-cyan;
+    gap: 16px;
+    transition: all 0.5s cubic-bezier(0.71, 0.43, 0.55, 0.97);
+  }
 
-    &:hover {
-        color: a.$primary-cyan;
-        gap: 16px;
-        transition: all .5s cubic-bezier(.71,.43,.55,.97);
-    }
-
-    &:hover i {
-        color: a.$primary-cyan;
-        transform: rotate(90deg);
-    }
+  &:hover i {
+    color: a.$primary-cyan;
+    transform: rotate(90deg);
+  }
 }
 
 .tools-item:has(.tools-open.open) .tools-btn {
-    color: a.$primary-cyan;
-    gap: 16px;
+  color: a.$primary-cyan;
+  gap: 16px;
 }
 
 .tools-item:has(.tools-open.open) .tools-btn i {
-    color: a.$primary-cyan;
-    transform: rotate(90deg);
+  color: a.$primary-cyan;
+  transform: rotate(90deg);
 }
 
 .tools-open {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    max-height: 0px;
-    opacity: 0;
-    transition: max-height .3s ease-in-out, opacity .3s ease-in-out;
-    overflow: hidden;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  max-height: 0px;
+  opacity: 0;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .tools-open.open {
-    max-height: 500px;
-    opacity: 1;
+  max-height: 500px;
+  opacity: 1;
 }
 
 .tool {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 
-    h6 {
-        font-size: a.$small-text;
-        color: a.$grey;
-        font-weight: 400;
-    }
+  h6 {
+    font-size: a.$small-text;
+    color: a.$grey;
+    font-weight: 400;
+  }
 }
 
 .tool:last-of-type {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .skill-icon {
-    background-color: rgba(128, 128, 128, 0.2);
-    padding: 4px;
-    width: fit-content;
-    border-radius: 10px;
-    width: 30px;
-    height: 30px;
+  background-color: rgba(128, 128, 128, 0.2);
+  padding: 4px;
+  width: fit-content;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
 }
 
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
-    .home-tools {
-        h3 {
-            text-align: left;
-            font-size: a.$h2;
-        }
+  .home-tools {
+    h3 {
+      text-align: left;
+      font-size: a.$h2;
     }
+  }
 
-    .mug-image {
-        padding-left: 0;
-        padding-right: 5%;
-    }
+  .mug-image {
+    padding-left: 0;
+    padding-right: 10%;
+  }
 
-    .tools-list {
-        margin-top: 25px;
-        align-items: start;
-    }
+  .tools-list {
+    margin-top: 25px;
+    align-items: start;
+  }
 
-    .tools-item {
-        align-items: start;
-    }
+  .tools-item {
+    align-items: start;
+  }
 
-    .tools-btn {
-        align-items: start;
-        justify-content: start;
-    }
+  .tools-btn {
+    align-items: start;
+    justify-content: start;
+  }
 
-    .tools-open {
-        align-items: start;
-    }
-
+  .tools-open {
+    align-items: start;
+  }
 }
 
 // ---Desktop Styles---
 @media screen and (min-width: 1200px) {
-    .tools-list {
-        margin-top: 60px;
-    }
+  .tools-list {
+    margin-top: 60px;
+  }
 
-    .mug-image {
-        max-width: 300px;
-    }
+  .mug-image {
+    max-width: 300px;
+  }
 }

@@ -75,6 +75,26 @@ export function initAnimations() {
     delay: 0.2,
   });
 
+  const mugTimeline = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
+  mugTimeline.to(".mug-image", {
+    y: -25,
+    x: 25,
+    rotation: -30,
+    duration: 4,
+    ease: "power2.inOut",
+    yoyo: true,
+  });
+
+  mugTimeline.to(".mug-image", {
+    x: 0,
+    y: 0,
+    rotation: 0,
+    duration: 2,
+    ease: "power2.inOut",
+    yoyo: true,
+  });
+
   gsap.from(".tools-item", {
     scrollTrigger: {
       trigger: ".tools-item",

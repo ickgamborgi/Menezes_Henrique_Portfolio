@@ -150,7 +150,7 @@
 
         <!-- Tools Section -->
         <section class="home-tools grid-con">
-            <h3 class="col-span-full">My Favorite Tools</h3>
+            <h3 class="col-span-full">Favorite Tools</h3>
 
             <img class="mug-image col-span-4 l-col-span-3" src="./images/mug-best-boss.svg" alt="World's Best Designer Coffee Mug">
 
@@ -355,7 +355,7 @@
 
        <!-- Contact Section -->
        <section class="contact-section grid-con">
-            <h3 class="col-span-full">Let's bring your ideas to life?</h3>
+            <h3 class="col-span-full">Let's bring your ideas to life!</h3>
     
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
@@ -424,6 +424,8 @@
         </footer>
 
     </main>
+
+    
 </body>
 
 </html>
