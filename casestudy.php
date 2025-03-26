@@ -309,7 +309,7 @@ $stmt = null;
 
         <!-- Contact Section -->
         <section class="contact-section grid-con">
-            <h3 class="col-span-full">Let's bring your ideas to life?</h3>
+            <h3 class="col-span-full">Let's bring your ideas to life!</h3>
     
             <div class="redux-form-section col-span-full">
                 <h4 class="hidden">Contact Form</h4>
