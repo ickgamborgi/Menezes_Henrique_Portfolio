@@ -165,58 +165,22 @@ $stmt->execute();
 
             <div class="portfolio-title col-span-full">
                 <h4>Discover my portfolio!</h4>
-                <!-- <div>
-                    <h5 class="hidden">Design area filters</h5>
-                    <ul class="portfolio-tags">
-                        <li><a><h6 class="portfolio-tag selected">All Projects</h6></a></li>
-                        <li><a><h6 class="portfolio-tag">Ux | Web</h6></a></li>
-                        <li><a><h6 class="portfolio-tag">Branding</h6></a></li>
-                        <li><a><h6 class="portfolio-tag">Product</h6></a></li>
-                        <li><a><h6 class="portfolio-tag">Editorial</h6></a></li>
-                    </ul>
-                </div> -->
+                    <div>
+                        <h5 class="hidden">Design area filters</h5>
+                        <ul class="portfolio-tags">
+                            <li><a href="#" class="tag selected" data-tag="all">All Projects</a></li>
+                            <li><a href="#" class="tag" data-tag="ux">Ux / Web</a></li>
+                            <li><a href="#" class="tag" data-tag="branding">Branding</a></li>
+                            <li><a href="#" class="tag" data-tag="product">Product</a></li>
+                            <li><a href="#" class="tag" data-tag="editorial">Editorial</a></li>
+                        </ul>
+
+                    </div>
             </div>
 
             <!-- Portfolio Gallery -->
             <article class="portfolio-gallery col-span-full">
                 <h4 class="hidden">Projects gallery</h4>
-
-                <?php
-
-                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-
-                echo '
-                <!-- Project Item -->
-                <div class="portfolio-item">
-                    <h5 class="hidden">Portfolio item</h5>
-
-                    <!-- thumbnail -->
-                    <a class"project-thumb-btn" href="casestudy.php?id='.$row['id'].'">
-                        <img class="project-thumb" src="./images/'.$row['thumb'].'" alt="Project Thumbnail">
-                    </a>
-
-                    <div class="portfolio-item-info">
-                        <!-- Title and Subtitle -->
-                        <h6 class="project-title"><span>'.$row['title'].'</span> '.$row['subtitle'].'</h6>
-
-                        <!-- Areas -->
-                        <p class="project-areas">'.$row['areas'].'</p>
-
-                        <!-- Recap -->
-                        <p class="project-recap">'.$row['recap'].'</p>
-                    
-                        <a href="casestudy.php?id='.$row['id'].'" class="intro-btn">
-                            <h5 class="small-button">Case Study</h5>
-                            <i class="fa-solid fa-square-caret-right arrow"></i>
-                        </a>
-                    </div>
-                </div>';
-
-                }
-                
-                $stmt = null;
-                
-                ?>
 
             </article>
 

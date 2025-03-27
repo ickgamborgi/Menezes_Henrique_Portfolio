@@ -12,7 +12,7 @@ export function initAnimations() {
       markers: false,
     },
     opacity: 0,
-    y: -50,
+    x: -50,
     ease: "ease2.inOut",
   });
 
@@ -44,22 +44,6 @@ export function initAnimations() {
     ease: "power2.out",
   });
 
-  gsap.utils.toArray(".portfolio-item").forEach((item) => {
-    gsap.from(item.querySelector(".portfolio-item-info"), {
-      scrollTrigger: {
-        trigger: item,
-        start: "top bottom",
-        end: "bottom 50%",
-        toggleActions: "play none none reset",
-        markers: false,
-      },
-      opacity: 0,
-      x: 200,
-      duration: 1,
-      ease: "power2.out",
-    });
-  });
-
   gsap.to(".hero-social-media a", 0.5, {
     scrollTrigger: {
       trigger: ".hero-social-media",
@@ -78,10 +62,10 @@ export function initAnimations() {
   const mugTimeline = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
   mugTimeline.to(".mug-image", {
-    y: -25,
-    x: 25,
-    rotation: -30,
-    duration: 4,
+    y: 25,
+    x: 10,
+    rotation: 30,
+    duration: 3,
     ease: "power2.inOut",
     yoyo: true,
   });
@@ -90,7 +74,7 @@ export function initAnimations() {
     x: 0,
     y: 0,
     rotation: 0,
-    duration: 2,
+    duration: 1,
     ease: "power2.inOut",
     yoyo: true,
   });
