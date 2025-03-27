@@ -53,7 +53,7 @@
                     <ul>
                         <li><a href="../index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="../contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="project_list.php" class="nav-item"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
+                        <li><a href="cms_admin.php" class="nav-item"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
                         <li><a href="logout.php" class="nav-item"><h5>Logout <i class="fas fa-sign-out icon-logout"></i></h5></a></li>
                     </ul>
                 </div>
