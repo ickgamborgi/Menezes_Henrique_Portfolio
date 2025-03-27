@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+require_once('includes/connect.php');
+
+// Fetch testimonials ordered by date (new code)
+$stmtTestimonials = $connect->prepare('SELECT name, position, picture, quote FROM testimonials ORDER BY date DESC');
+$stmtTestimonials->execute();
+$testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!-- Document Heading -->
 <head>
@@ -279,87 +287,27 @@
 
             <div class="testimonial col-span-full">
 
-                <div class="testimonial-card visible">
-                    <h5 class="hidden">Testimonial Card 1</h5>
-                    <h6 class="testimonial-quote-mark">"</h6>
-                    <p>Henrique is a distinguished professional. His approach to challenges is always positive and stimulating. We worked together through several projects, including university, junior enterprise and market. He is extremely dedicated and engaged, always eager to learn and reach high-quality results.</p>
-                    <div class="testimonial-bio">
-                        <div class="testimonial-pic">
-                            <img src="./images/test-gabriel.jpeg" alt="Testimonial Giver">
-                        </div>
-                        <div class="testimonial-name">
-                            <h6>Gabriel Albrecht</h6>
-                            <h7>Colleague and business partner</h7>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <h5 class="hidden">Testimonial Card 2</h5>
-                    <h6 class="testimonial-quote-mark">"</h6>
-                    <p>Working with Henrique has always been a great pleasure. His type of work is rare: fast, precise and high-quality. Not only we made dozens of university projects together, we also shared many professional experiences. I always felt (and still do) that Henrique is the type of person you can rely any project on. He is not only an awesome designer, but a remarkable human being!</p>
-    
-                    <div class="testimonial-bio">
-                        <div class="testimonial-pic">
-                            <img src="./images/test-joaopedro.jpeg" alt="Testimonial Giver">
-                        </div>
-                        <div class="testimonial-name">
-                            <h6>João Pedro Ribas</h6>
-                            <h7>Colleague and former client</h7>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <h5 class="hidden">Testimonial Card 3</h5>
-                    <h6 class="testimonial-quote-mark">"</h6>
-
-                    <p>I had the opportunity to work with Henrique in different situations. First, when I was his professor at UFSC, where he already showed to be intelligent, committed, creative and with an excellent business thinking. After that, we worked together in an international project. On that occasion, in the addition of the requirements for the position: design, marketing and english communication, Henrique also demonstrated to be very professional, a people person and with great proactivity.</p>
-    
-                    <div class="testimonial-bio">
-                        <div class="testimonial-pic">
-                            <img src="./images/test-julio.jpeg" alt="Testimonial Giver">
-                        </div>
-                        <div class="testimonial-name">
-                            <h6>Júlio Monteiro</h6>
-                            <h7>Former client and professor</h7>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <h5 class="hidden">Testimonial Card 4</h5>
-                    <h6 class="testimonial-quote-mark">"</h6>
-
-                    <p>Working with Henrique has been a source of great pride and knowledge! Besides being an unique person, he is experienced in lots of areas, including design, UX/UI, marketing and strategy — he takes care of his client's business as if it were his own. The numbers and results we eventually achieved can prove Henrique's performance and dedication.</p>
-    
-                    <div class="testimonial-bio">
-                        <div class="testimonial-pic">
-                            <img src="./images/test-rafael.jpeg" alt="Testimonial Giver">
-                        </div>
-                        <div class="testimonial-name">
-                            <h6>Rafael Del Frari</h6>
-                            <h7>Colleague and Business partner</h7>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <h5 class="hidden">Testimonial Card 5</h5>
-                    <h6 class="testimonial-quote-mark">"</h6>
-
-                    <p>Henrique was always very talented and engaged! During the time we worked together, both at University and in business, it was easy to witness the quality of his work: polished, well-thought and incredible. All fruit os his effort and dedication to design. He is very open and can navigate with knowledge the unpredictable paths of the deep creative processes of any project!</p>
-    
-                    <div class="testimonial-bio">
-                        <div class="testimonial-pic">
-                            <img src="./images/test-gustavo.jpeg" alt="Testimonial Giver">
-                        </div>
-                        <div class="testimonial-name">
-                            <h6>Gustavo Silva</h6>
-                            <h7>Colleague and former client</h7>
-                        </div>
-                    </div>
-                </div>
+            <?php
+                $firstTestimonial = true;
+                foreach ($testimonials as $testimonial) {
+                    $visibleClass = $firstTestimonial ? 'visible' : ''; // Add 'visible' class to the first testimonial
+                    $firstTestimonial = false; // Set flag to false after the first iteration
+                    echo "<div class='testimonial-card $visibleClass'>";
+                    echo "<h5 class='hidden'>Testimonial Card</h5>";
+                    echo "<h6 class='testimonial-quote-mark'>\"</h6>";
+                    echo "<p>{$testimonial['quote']}</p>";
+                    echo "<div class='testimonial-bio'>";
+                    echo "<div class='testimonial-pic'>";
+                    echo "<img src='./images/{$testimonial['picture']}' alt='Testimonial Giver'>";
+                    echo "</div>";
+                    echo "<div class='testimonial-name'>";
+                    echo "<h6>{$testimonial['name']}</h6>";
+                    echo "<h7>{$testimonial['position']}</h7>";
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                ?>
 
                 <div class="testimonial-controls col-span-full">
                     <h5 class="hidden">Testimonial Navigation</h5>

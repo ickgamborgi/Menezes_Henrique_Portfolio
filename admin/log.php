@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user && $password === $user['password']) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
-        $response = ['success' => true, 'redirect' => 'project_list.php']; // if the user connects, show success
+        $response = ['success' => true, 'redirect' => 'cms_admin.php']; // if the user connects, show success
     } else {
         $response['errors'] = ['Invalid credentials. Are you authorized to access this page?']; // if the user does not connect, show this error
     }

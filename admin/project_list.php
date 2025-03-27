@@ -86,7 +86,7 @@ if ($enumRow) {
                     <ul>
                         <li><a href="../index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="../contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="project_list.php" class="nav-item current"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
+                        <li><a href="cms_admin.php" class="nav-item"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
                         <li><a href="logout.php" class="nav-item"><h5>Logout <i class="fas fa-sign-out icon-logout"></i></h5></a></li>
                     </ul>
                 </div>
@@ -99,11 +99,14 @@ if ($enumRow) {
 
         <section class="grid-con project-list-section">
 
-            <div class="col-span-full admin-welcome">
-                <h3><i class="fas fa-gear icon-gear"></i>Hello, <?php echo $user['username']; ?></h3>
-                <p>This is my portfolio management system. Here you you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> projects, including files on the media table.</p><bR>
-                <p><span>Please, be careful: deletes and updates cannot be reversed!</span></p>
-            </div>
+        <a href="cms_admin.php" class="col-span-full cms-back-button"><h3>< Back to Admin Main Page</h3></a>
+
+        <div class="col-span-full admin-welcome">
+                <h3><i class="fas fa-solid fa-object-group"></i>Edit Projects</h3>
+                <p>Here you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> projects from the website.</p><br>
+                <p><span>Be careful, any changes or updates are DEFINITVE!</span></p>
+        </div>
+
             <div class="project-list-crud col-span-full">
                <h3 class="col-span-full"><i class="fas fa-list icon-list"></i>All Projects</h3>
                     <?php
