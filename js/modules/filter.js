@@ -5,7 +5,6 @@ export function initFilter() {
 
   // Verifica se os elementos necessários existem no DOM
   if (!filterButtons || !portfolioGallery) {
-    console.error("Filter buttons or portfolio gallery not found.");
     return;
   }
 

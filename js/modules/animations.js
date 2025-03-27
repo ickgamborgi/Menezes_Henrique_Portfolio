@@ -79,6 +79,18 @@ export function initAnimations() {
     yoyo: true,
   });
 
+  gsap.from(".tag", {
+    scrollTrigger: {
+      trigger: ".portfolio-tags",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    duration: 1,
+  });
+
   gsap.from(".tools-item", {
     scrollTrigger: {
       trigger: ".tools-item",

@@ -27,6 +27,22 @@ $stmt = null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Meta Descriptions -->
+    <meta name="description" content="<?php echo $row['recap']?>">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Case Study: <?php echo $row['title']?> <?php echo $row['subtitle']?>">
+    <meta property="og:description" content="<?php echo $row['recap']?>">
+    <meta property="og:image" content="https://henriquegamborgi.com/images/<?php echo $row['cover']?>"> <!-- Substitua pelo caminho da sua imagem -->
+    <meta property="og:url" content="https://henriquegamborgi.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: <?php echo $row['title']?> <?php echo $row['subtitle']?>">
+    <meta name="twitter:description" content="<?php echo $row['recap']?>">
+    <meta name="twitter:image" content="https://henriquegamborgi.com/images/<?php echo $row['cover']?>"> <!-- Substitua pelo caminho da sua imagem -->
+
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
@@ -49,12 +65,12 @@ $stmt = null;
     <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
 
     <!-- Document Title -->
-    <title>Henrique Gamborgi: Case Study</title> 
+    <title>Case Study: <?php echo $row['title']?> <?php echo $row['subtitle']?></title> 
 </head>
 
 <!-- Documemnt Body -->
 <body>
-    <h1 class="hidden">Henrique Gamborgi: Case Study</h1>
+    <h1 class="hidden">Case Study: <?php echo $row['title']?> <?php echo $row['subtitle']?></h1>
 
     <!-- Header -->
     <div id="sticky-nav-con">

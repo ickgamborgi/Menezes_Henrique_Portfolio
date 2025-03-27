@@ -14,13 +14,13 @@ $msg = trim($_POST['message'] ?? '');
 $errors = []; // make a container array to store errors
 
 if (empty($name)) {
-    $errors[] = "Please, provide your FULL NAME for contact";
+    $errors[] = "Please enter FULL NAME";
 } // if the user does not fill name, show this
 
 if (empty($email)) {
-    $errors[] = "Please, provide your E-MAIL so I can reach out";
+    $errors[] = "Please enter your EMAIL";
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Please, provide a REAL e-mail address";
+    $errors[] = "Please enter a REAL email";
 } // if the user does not fill email, show this or if the email is not valid, show the second
 
 if (!empty($errors)) {
