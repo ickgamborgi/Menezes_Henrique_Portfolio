@@ -5,6 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Descriptions -->
+    <meta name="description" content="Welcome to my About Page! Get to know more about me, my journey and my skills!">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Henrique Gamborgi: About Me">
+    <meta property="og:description" content="Welcome to my About Page! Get to know more about me, my journey and my skills!">
+    <meta property="og:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
+    <meta property="og:url" content="https://henriquegamborgi.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Henrique Gamborgi: About Me">
+    <meta name="twitter:description" content="Welcome to my About Page! Get to know more about me, my journey and my skills!">
+    <meta name="twitter:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
 
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
@@ -108,7 +124,7 @@
             <div class="col-span-full l-col-end-7 bio-text">
                 <h4>Hello there, I'm Henrique!</h4>
                 <p>
-                    <span>I'm a passionate designer from Brasil, who not only loves studying, but never forgot that child whose drawings would change the world.</span> My creative dreams always empowered me to bring ideas to life, and I absolutely love understanding why and how people interact with products, technologies and media. While my curious mindset wonders about these experiences, my designer side wants to create. And before I even knew it had a name, I fell in love and grew fascinated with design. Today, I have more than 6 years of experience in the design market. I started my studies at the Federal University of Santa Catarina (UFSC), where I graduated as a graphic designer, with main focus on building and managing brands.
+                    <span>I'm a designer from Brasil, who not only loves studying, but never forgot that child whose drawings would change the world.</span> My creative dreams always empowered me to bring ideas to life, and I absolutely love understanding why and how people interact with products, technologies and media. While my curious mindset wonders about these experiences, my designer side wants to create. And before I even knew it had a name, I fell in love and grew fascinated with design. Today, I have more than 6 years of experience in the design market. I started my studies at the Federal University of Santa Catarina (UFSC), where I graduated as a graphic designer, with main focus on building and managing brands.
                 </p>
             </div>
 

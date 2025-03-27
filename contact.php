@@ -6,6 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Meta Descriptions -->
+    <meta name="description" content="Welcome to my Contact Page! Get in touch with me and let's bring your ideas to life!">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Henrique Gamborgi: Contact Me">
+    <meta property="og:description" content="Welcome to my Contact Page! Get in touch with me and let's bring your ideas to life!">
+    <meta property="og:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
+    <meta property="og:url" content="https://henriquegamborgi.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Henrique Gamborgi: Contact Me">
+    <meta name="twitter:description" content="Welcome to my Contact Page! Get in touch with me and let's bring your ideas to life!">
+    <meta name="twitter:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
+
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
@@ -28,12 +44,12 @@
     <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
 
     <!-- Document Title -->
-    <title>Henrique Gamborgi: Contact</title> 
+    <title>Henrique Gamborgi: Contact Me</title> 
 </head>
 
 <!-- Documemnt Body -->
 <body>
-    <h1 class="hidden">Henrique Gamborgi: Contact</h1>
+    <h1 class="hidden">Henrique Gamborgi: Contact Me</h1>
 
     <!-- Header -->
     <div id="sticky-nav-con">

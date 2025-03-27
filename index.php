@@ -12,6 +12,22 @@ $stmt->execute();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Meta Descriptions -->
+    <meta name="description" content="Welcome to my Portfolio! Check out my work and let's bring your ideas to life!">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Henrique Gamborgi: Portfolio">
+    <meta property="og:description" content="Welcome to my Portfolio! Check out my work and let's bring your ideas to life!">
+    <meta property="og:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
+    <meta property="og:url" content="https://henriquegamborgi.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Henrique Gamborgi: Portfolio">
+    <meta name="twitter:description" content="Welcome to my Portfolio! Check out my work and let's bring your ideas to life!">
+    <meta name="twitter:image" content="https://henriquegamborgi.com/images/demoreel_poster.webp"> <!-- Substitua pelo caminho da sua imagem -->
+
     <link href="css/grid.css" rel="stylesheet"> <!-- Link to CSS grid -->
     <link href="css/main.css" rel="stylesheet"> <!-- Link to Main CSS file -->
 
@@ -58,7 +74,7 @@ $stmt->execute();
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.php" class="nav-item current"><h5>Portfolio</h5></a></li>
+                        <li><a href="index.php" class="nav-item current"><h5>Home</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
@@ -138,7 +154,7 @@ $stmt->execute();
                     class="player" 
                     controls
                     loop
-                    poster="./images/demoreel_poster.jpg"
+                    poster="./images/demoreel_poster.webp"
                     preload="metadata"
                     >
                     <source src="videos/demoreel.mp4" type="video/mp4">
@@ -148,7 +164,7 @@ $stmt->execute();
             <div class="intro-text col-span-full m-col-start-1 m-col-end-9 l-col-start-8 l-col-end-13">
                 <h4>Welcome to my little corner of the world!</h4>
                 <p>
-                    I'm a designer passionate about how people connect with brands, products, and media. With 6+ years of experience, I've contributed to various projects, and I might be just who you're looking for in your next design journey. <br>
+                    I'm a designer that loves understanding how people connect with brands, products, and media. With 6+ years of experience, I've contributed to various projects, and I might be just who you're looking for in your next design journey. <br>
                     <br>
                     Scroll down to explore my portfolio, I hope you enjoy it!
                 </p>
@@ -321,6 +337,10 @@ $stmt->execute();
                         <div class="tool">
                             <img src="./images/icon-c4d.svg" alt="Software icon" class="skill-icon">
                             <h6>Cinema 4D &amp; Blender</h6>
+                        </div>
+                        <div class="tool">
+                            <img src="./images/icon-vscode.svg" alt="Software icon" class="skill-icon">
+                            <h6>Visual Studio Code</h6>
                         </div>
                     </div>
                 </div>
