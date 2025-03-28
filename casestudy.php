@@ -105,7 +105,7 @@ $stmt = null;
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.php" class="nav-item current"><h5>Home</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Home</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
@@ -288,6 +288,14 @@ $stmt = null;
                     <input name="name" type="text" placeholder="Full Name">
                     <input name="email" type="email" placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Subject">
+
+                    <!-- Honeypot Field (Hidden from Users) -->
+                    <input type="text" name="honeypot" id="honeypot">
+
+                    <!-- Math Question -->
+                    <input type="number" id="math-answer" name="math_answer" placeholder="">
+                    <input type="hidden" id="math-expected" name="math_expected">
+                    
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
                 <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>

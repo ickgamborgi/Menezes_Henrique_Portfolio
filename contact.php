@@ -87,9 +87,9 @@ foreach ($links as $link) {
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.php" class="nav-item current"><h5>Home</h5></a></li>
+                        <li><a href="index.php" class="nav-item"><h5>Home</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
+                        <li><a href="contact.php" class="nav-item current"><h5>Contact</h5></a></li>
                         <li><a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
                     </ul>
                 </div>
@@ -122,10 +122,18 @@ foreach ($links as $link) {
             <div class="form-section col-span-4 m-col-span-8">
                 <h4 class="hidden">Contact Form</h4>
                 <form class="form" method="post" action="sendmail.php">
-                    <input name="name" type="text"  placeholder="Full Name">
+                    <input name="name" type="text" placeholder="Full Name">
                     <input name="email" type="email" placeholder="E-mail Address">
-                    <input name="phone" type="tel"  placeholder="Phone Number">
+                    <input name="phone" type="tel" placeholder="Phone Number">
                     <textarea name="message" placeholder="Insert your message or ideas here..."></textarea>
+
+                    <!-- Honeypot Field (Hidden from Users) -->
+                    <input type="text" name="honeypot" id="honeypot" style="display: none;">
+
+                    <!-- Math Question -->
+                    <input type="number" id="math-answer" name="math_answer" placeholder="">
+                    <input type="hidden" id="math-expected" name="math_expected">
+
                     <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>

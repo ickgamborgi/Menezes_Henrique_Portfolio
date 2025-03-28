@@ -65,14 +65,17 @@
        <section class="admin-section grid-con">
             <div class="login-form col-span-full">
                 <h2 class="col-span-full"><i class="fas fa-unlock icon-unlock"></i>Log-in</h2>
-                <form action="log.php" method="post">
+                <form action="log.php" method="post" id="login-form">
                     <label class="form-label" for="username">Username: </label>
                     <input type="text" name="username" id="username"><br>
 
                     <label class="form-label" for="password">Password: </label>
                     <input type="password" name="password" id="password"><br>
 
-                    <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
+                     <!-- Honeypot Field (Hidden from Users) -->
+                    <input type="text" name="honeypot" id="honeypot">
+
+                    <div id="feedback" class="hidden col-span-full"><p>Please fill out all required sections</p></div>
                     <input type="submit" value="Access" id="submit-button">
                 </form>
                 
