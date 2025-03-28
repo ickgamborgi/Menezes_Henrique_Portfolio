@@ -368,6 +368,14 @@ foreach ($links as $link) {
                     <input name="name" type="text" placeholder="Full Name">
                     <input name="email" type="email" placeholder="E-mail Address">
                     <input name="message" type="text"  placeholder="Subject">
+
+                    <!-- Honeypot Field (Hidden from Users) -->
+                    <input type="text" name="honeypot" id="honeypot">
+
+                    <!-- Math Question -->
+                    <input type="number" id="math-answer" name="math_answer" placeholder="">
+                    <input type="hidden" id="math-expected" name="math_expected">
+                    
                     <button name="submit" type="submit" value="Send"><span>Submit</span></button>
                 </form>
                 <div id="feedback" class="col-span-full"><p>Please fill out all required sections</p></div>
