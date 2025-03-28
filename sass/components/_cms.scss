@@ -14,7 +14,7 @@
 
 .login-form {
   background-color: white;
-  border-radius: a.$round-border;
+  border-radius: 25px;
   padding: 30px;
   box-shadow: a.$blur-shadow;
   height: fit-content;
@@ -86,7 +86,7 @@
   margin-top: 10px;
   height: 50px;
   width: 100%;
-  border-radius: a.$round-border;
+  border-radius: 5px;
   color: white;
   font-size: a.$text;
   font-weight: 600;
@@ -105,9 +105,39 @@
 .admin-link-item {
   border: 2px solid a.$light-cyan;
   padding: 15px 30px;
-  border-radius: a.$round-border;
+  border-radius: 25px;
   transition: a.$basic-transition;
   cursor: pointer;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+    color: a.$light-cyan;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    h4 {
+      font-size: a.$h5;
+    }
+
+    p {
+      opacity: 0.75;
+      line-height: 110%;
+      font-size: a.$small-text;
+    }
+  }
 
   &:hover {
     background-color: a.$light-cyan;
@@ -117,31 +147,21 @@
       color: white;
     }
   }
-
-  a {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: a.$light-cyan;
-
-    h4 {
-      font-size: a.$h5;
-    }
-
-    p {
-      opacity: 0.75;
-    }
-  }
 }
 
 // Project List
 
 .admin-welcome {
-  margin-bottom: 60px;
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
+
+  h4 {
+    color: green;
+    font-size: a.$h5;
+    padding-top: 25px;
+  }
 
   i {
     margin-right: 15px;
@@ -180,9 +200,10 @@
 
 .project-list-crud {
   background-color: white;
-  border-radius: a.$round-border;
+  border-radius: 25px;
   padding: 30px;
   box-shadow: a.$blur-shadow;
+  margin-bottom: 15px;
   height: fit-content;
   width: 100%;
   display: flex;
@@ -199,6 +220,83 @@
     font-size: a.$h4;
     margin-bottom: 25px;
   }
+}
+
+.crud-table form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid a.$light-grey;
+  margin-bottom: 30px;
+
+  input,
+  textarea,
+  select {
+    background-color: white;
+    border-radius: 5px;
+    color: #12556897;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    line-height: 150%;
+    border: 2px solid a.$light-grey;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    &::placeholder {
+      font-family: a.$ubuntu;
+      font-size: 13px;
+      font-weight: 400;
+      color: a.$grey;
+      opacity: 0.75;
+    }
+  }
+
+  div {
+    display: flex;
+    gap: 5px;
+
+    input,
+    button {
+      height: 30px;
+    }
+
+    input {
+      width: 80%;
+    }
+
+    button {
+      background-color: white;
+      width: 20%;
+      color: a.$light-cyan;
+      border: 1px solid a.$light-cyan;
+      border-radius: 5px;
+      font-family: a.$ubuntu;
+      font-size: a.$small-text;
+      font-weight: 600;
+      transition: a.$basic-transition;
+      cursor: pointer;
+
+      &:hover {
+        background-color: a.$light-cyan;
+        box-shadow: a.$click-shadow;
+      }
+    }
+  }
+}
+
+.message-feedback {
+  h4 {
+    margin-bottom: 15px;
+    color: green;
+    font-family: a.$ubuntu;
+    font-size: a.$h5;
+  }
+}
+
+.crud-table form:nth-last-of-type(1) {
+  border-bottom: 0;
 }
 
 .form-comment {
@@ -235,14 +333,13 @@
   gap: 15px;
 
   a {
-    border-radius: a.$round-border;
+    border-radius: 5px;
     padding: 5px 15px;
     text-transform: capitalize;
     font-family: a.$ubuntu;
     font-size: a.$small-text;
 
     &:hover {
-      transform: scale(1.1);
       box-shadow: a.$click-shadow;
     }
   }
@@ -272,7 +369,7 @@
 
 .project-add-crud-con {
   background-color: white;
-  border-radius: a.$round-border;
+  border-radius: 25px;
   padding: 30px;
   box-shadow: a.$blur-shadow;
   height: fit-content;
@@ -409,7 +506,7 @@
 
 .edit-project-con {
   background-color: white;
-  border-radius: a.$round-border;
+  border-radius: 25px;
   padding: 30px;
   box-shadow: a.$blur-shadow;
   height: fit-content;
@@ -512,7 +609,7 @@
 }
 
 .logout-button {
-  border: 1px solid a.$grey;
+  border: 1.5px solid a.$grey;
   margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
@@ -551,6 +648,10 @@
   background-color: a.$light-grey;
 }
 
+.message {
+  color: red;
+}
+
 /* ---Tablet Styles--- */
 @media screen and (min-width: 768px) {
   #choose-file {
@@ -567,6 +668,13 @@
 
   .current-cover {
     width: 60%;
+  }
+
+  .admin-link-item {
+    a {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 }
 
