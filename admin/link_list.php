@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-// Verifica se o usuário está logado
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
@@ -9,18 +7,31 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once('../includes/connect.php');
 
-// Busca o nome de usuário do banco de dados
-$userQuery = 'SELECT username FROM users WHERE id = :userId';
-$userStmt = $connect->prepare($userQuery);
-$userStmt->bindParam(':userId', $_SESSION['user_id'], PDO::PARAM_INT);
-$userStmt->execute();
-$user = $userStmt->fetch(PDO::FETCH_ASSOC);
+// Atualiza o link se o formulário for enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $linkId = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+    $url = trim($_POST['url']);
 
-// Verifica se o usuário foi encontrado
-if (!$user) {
-    echo "Error: User not found.";
-    exit();
+    if ($linkId && !empty($url)) {
+        $updateQuery = "UPDATE link SET url = :url WHERE id = :id";
+        $updateStmt = $connect->prepare($updateQuery);
+        $updateStmt->bindParam(':url', $url, PDO::PARAM_STR);
+        $updateStmt->bindParam(':id', $linkId, PDO::PARAM_INT);
+
+        if ($updateStmt->execute()) {
+            $message = "Link updated successfully!";
+        } else {
+            $message = "Error updating the link.";
+        }
+    } else {
+        $message = "Invalid data. Please try again.";
+    }
 }
+
+// Busca todos os links da tabela
+$stmtLinks = $connect->prepare('SELECT id, name, url FROM link ORDER BY name ASC');
+$stmtLinks->execute();
+$links = $stmtLinks->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -53,27 +64,32 @@ if (!$user) {
     <link rel="icon" type="image/x-icon" href="../images/icon-white.svg">
 
     <!-- Document Title -->
-    <title>Edit Project Page</title> 
+    <title>Portfolio Links List</title> 
 </head>
 
 <body>
-    <h1 class="hidden">Admin Dashboard</h1>
+    <h1 class="hidden">Manage Links</h1>
 
+    <!-- Header -->
     <div id="sticky-nav-con">
         <h2 class="hidden">Header</h2>
         <header>
+            <!-- Main Navigation -->
             <nav class="navbar-header grid-con">
                 <h3 class="hidden">Main Navigation</h3>
+    
                 <div class="logo-header col-start-1">
                     <a href="../index.php"><img src="../images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
+    
                 <button id="burger-button"></button>
+    
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
                         <li><a href="../index.php" class="nav-item"><h5>Portfolio</h5></a></li>
                         <li><a href="../contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="cms_admin.php" class="nav-item current"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
+                        <li><a href="cms_admin.php" class="nav-item"><h5>Admin <i class="fas fa-gear icon-gear"></i></h5></a></li>
                         <li><a href="logout.php" class="nav-item"><h5>Logout <i class="fas fa-sign-out icon-logout"></i></h5></a></li>
                     </ul>
                 </div>
@@ -84,43 +100,39 @@ if (!$user) {
     <main>
         <h2 class="hidden">Main Content</h2>
 
-        <section class="grid-con edit-project-section">
+        <section class="grid-con project-list-section">
+
+            <a href="cms_admin.php" class="col-span-full cms-back-button"><h3>< Back to Admin Main Page</h3></a>
+
             <div class="col-span-full admin-welcome">
-                <h3><i class="fas fa-gear icon-gear"></i> Hello, <?php echo htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                <p>Welcome to My Portfolio Content Management System. Here you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> content from my website.</p><br>
-                <p>Use the links below to navigate, but<span> be careful, all changes are definite!</span></p>
+                <h3><i class="fas fa-solid fa-link"></i>Manage Links</h3>
+                <p>Here you can <span>READ</span> and <span>UPDATE</span> important links from the website.</p>
             </div>
 
-            <div class="col-span-full project-list-crud">
-                <div class="admin-link-item">
-                    <a href="project_list.php">
-                        <div>
-                            <i class="fas fa-list fa-object-group"></i>
-                            <h4>Manage Projects</h4>
-                        </div>
-                    </a>
+            <div class="project-list-crud col-span-full">
+                <h3 class="col-span-full"><i class="fas fa-list icon-list"></i> All Links</h3>
+                <div class="message-feedback">
+                    <?php if (!empty($message)): ?>
+                        <h4 id="feedback"><?php echo $message; ?></h4>
+                    <?php endif; ?>
                 </div>
-                <div class="admin-link-item">
-                    <a href="testimonial_list.php">
-                        <div>
-                            <i class="fas fa-comments fa-users"></i>
-                            <h4>Manage Testimonials</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="admin-link-item">
-                    <a href="link_list.php">
-                        <div>
-                            <i class="fas fa-comments fa-link"></i>
-                            <h4>Manage Links</h4>
-                        </div>
-                    </a>
+                <div class="crud-table">
+                    <?php foreach ($links as $link): ?>
+                        <form action="" method="POST" class="crud-table-row">
+                            <input type="hidden" name="id" value="<?php echo $link['id']; ?>">
+                                <label class="form-label"><?php echo $link['name'];?></label>
+                                <div>
+                                    <input type="text" name="url" value="<?php echo $link['url']; ?>" required>
+                                    <button type="submit" class="edit-button">Save</button>
+                                </div>
+                        </form>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
         <section class="grid-con" id="project-list-logout">
             <div class="logout-button col-span-full">
-             <a href="logout.php"><h5>Logout <i class="fas fa-sign-out icon-logout"></i></h5></a>
+                <a href="logout.php"><h5>Logout <i class="fas fa-sign-out icon-logout"></i></h5></a>
             </div>
         </section>
     </main>

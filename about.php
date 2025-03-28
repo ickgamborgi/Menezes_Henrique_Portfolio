@@ -7,6 +7,17 @@ require_once('includes/connect.php');
 $stmtTestimonials = $connect->prepare('SELECT name, position, picture, quote FROM testimonials ORDER BY date DESC');
 $stmtTestimonials->execute();
 $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
+
+// Consulta para buscar os links necessários
+$stmtLinks = $connect->prepare('SELECT name, url FROM link WHERE name IN ("Resume", "Github", "Instagram", "Behance", "Linkedin", "Whatsapp")');
+$stmtLinks->execute();
+$links = $stmtLinks->fetchAll(PDO::FETCH_ASSOC);
+
+// Cria um array associativo para facilitar o acesso aos links
+$linkUrls = [];
+foreach ($links as $link) {
+    $linkUrls[$link['name']] = $link['url'];
+}
 ?>
 
 <!-- Document Heading -->
@@ -76,11 +87,10 @@ $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.php" class="nav-item"><h5>Portfolio</h5></a></li>
-                        <li><a href="about.php" class="nav-item current"><h5>About</h5></a></li>
+                        <li><a href="index.php" class="nav-item current"><h5>Home</h5></a></li>
+                        <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
                         <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
-                        <li><a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
-
+                        <li><a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
                     </ul>
                 </div>
             </nav>
@@ -100,7 +110,7 @@ $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-span-full banner-title">
                     <h3 class="col-span-6"><span>About Me</span></h3>
                     <div class="col-span-6 banner-divisory" id="about-divisory"></div>
-                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="banner-btn col-span-3">
+                    <a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="banner-btn col-span-3">
                         <h4 class="small-button">Visit My Resume</h4>
                     </a>
                 </div>
@@ -269,7 +279,7 @@ $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
                 <img src="./images/illustration-4.webp" alt="Thank You Humaaan" class="thank-you">
                 <div class=back-wrap>
                     <h4>Or if you prefer, here's a fancy piece of paper</h4>
-                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" target="_blank" class="back-btn col-span-3">
+                    <a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="back-btn col-span-3">
                             <h5 class="small-button">Visit My Resume</h5>
                     </a>
                 </div>
@@ -348,28 +358,28 @@ $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
                 <h4 class="hidden">Links</h4>
 
                 <div class="footer-social-media">
-                    <a href="https://github.com/ickgamborgi/" target="_blank">
+                    <a href="<?php echo $linkUrls['Github'] ?? '#'; ?>" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">GitHub</h5>
                             <img src="./images/github.svg" alt="GitHub icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://behance.com/ickgamborgi" target="_blank">
+                    <a href="<?php echo $linkUrls['Behance'] ?? '#'; ?>" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">Behance</h5>
                             <img src="./images/behance.svg" alt="Behance icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://instagram.com/inkgamborgi" target="_blank">
+                    <a href="<?php echo $linkUrls['Instagram'] ?? '#'; ?>" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">Instagram</h5>
                             <img src="./images/instagram.svg" alt="Instagram icon" class="social-media-icon">
                         </div>
                     </a>
     
-                    <a href="https://linkedin.com/in/ickgamborgi/" target="_blank">
+                    <a href="<?php echo $linkUrls['Linkedin'] ?? '#'; ?>" target="_blank">
                         <div class="social-media-item">
                             <h5 class="hidden">LinkedIn</h5>
                             <img src="./images/linkedin.svg" alt="LinkedIn icon" class="social-media-icon">
@@ -378,7 +388,7 @@ $testimonials = $stmtTestimonials->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 
                 <div class="footer-resume">
-                    <a href="https://drive.google.com/file/d/1ps_DVK_coUimL572XoaiFhsoBNfpm-FH/view?usp=sharing" class="resume" target="_blank">
+                    <a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" class="resume" target="_blank">
                         <h5 class="small-button">Resume</h5>
                         <i class="fa-solid fa-square-caret-right arrow"></i>
                     </a>

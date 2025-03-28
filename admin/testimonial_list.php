@@ -88,9 +88,8 @@ $stmt->execute();
         <a href="cms_admin.php" class="col-span-full cms-back-button"><h3>< Back to Admin Main Page</h3></a>
 
         <div class="col-span-full admin-welcome">
-                <h3><i class="fas fa-solid fa-users"></i>Edit Testimonials</h3>
-                <p>Here you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> testimonials from the website.</p><br>
-                <p><span>Be careful, any changes or updates are DEFINITVE!</span></p>
+                <h3><i class="fas fa-solid fa-users"></i>Manage Testimonials</h3>
+                <p>Here you can <span>CREATE, READ, UPDATE</span> and <span>DELETE</span> testimonials from the website.</p>
         </div>
         
             <div class="project-list-crud col-span-full">
