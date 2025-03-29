@@ -1,99 +1,152 @@
 export function initFilter() {
-  // Seleciona os botões de filtro e a galeria de projetos
   const filterButtons = document.querySelectorAll(".tag");
   const portfolioGallery = document.querySelector(".portfolio-gallery");
 
-  // Verifica se os elementos necessários existem no DOM
   if (!filterButtons || !portfolioGallery) {
     return;
   }
 
-  // Função para inicializar as animações do GSAP apenas para os projetos
   const initPortfolioAnimations = () => {
-    // Remove os ScrollTriggers antigos apenas para os elementos da galeria
-    ScrollTrigger.getAll()
-      .filter(
-        (trigger) =>
-          trigger.trigger && trigger.trigger.closest(".portfolio-gallery")
-      )
-      .forEach((trigger) => trigger.kill());
+    gsap.utils.toArray(".portfolio-item").forEach((item, index) => {
+      const overlay = item.querySelector(".project-overlay");
+      const thumb = item.querySelector(".project-thumb");
+      const arrow = item.querySelector(".project-btn");
+      const title = item.querySelector(".project-title");
+      const recap = item.querySelector(".project-recap");
+      const areas = item.querySelector(".project-areas");
 
-    // Adiciona animações para os novos elementos
-    gsap.utils.toArray(".portfolio-item").forEach((item) => {
-      gsap.from(item.querySelector(".portfolio-item-info"), {
+      // Animação de entrada para o container inteiro
+      gsap.from(item, {
+        opacity: 0, // Começa invisível
+        y: 50, // Move para cima
+        duration: 0.5, // Duração da animação
+        ease: "ease2.inOut", // Efeito de suavização
         scrollTrigger: {
-          trigger: item,
-          start: "top bottom",
-          end: "bottom 50%",
-          toggleActions: "play none none reset",
-          markers: false,
+          trigger: item, // Ativa a animação quando o item entra na viewport
+          toggleActions: "play none none reverse", // Apenas executa a animação uma vez
         },
-        opacity: 0,
-        x: 50,
-        duration: 1,
-        ease: "power2.out",
       });
 
-      gsap.from(item.querySelector(".project-thumb"), {
-        scrollTrigger: {
-          trigger: item,
-          start: "top bottom",
-          end: "bottom 50%",
-          toggleActions: "play none none reset",
-          markers: false,
-        },
-        opacity: 0,
-        x: -50,
-        duration: 1,
-        ease: "power2.out",
-      });
+      if (overlay && thumb && arrow) {
+        // Define o gradiente inicial no overlay
+        gsap.set(overlay, {
+          background: `linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5) 0%,
+            rgba(0, 0, 0, 0) 100%
+          )`,
+        });
+
+        // Função para ativar as animações de hover
+        const activateAnimations = () => {
+          gsap.to(thumb, {
+            scale: 1.05, // Faz zoom na imagem
+            duration: 0.5,
+            ease: "ease2.inOut",
+          });
+
+          gsap.to(arrow, {
+            opacity: 1, // Torna a seta totalmente visível
+            duration: 0.5,
+            rotate: "45deg",
+            ease: "ease2.inOut",
+            overwrite: "auto",
+          });
+
+          gsap.to(overlay, {
+            background: `linear-gradient(
+              0deg,
+              rgba(0, 0, 0, 0.8) 0%,
+              rgba(0, 0, 0, 0.2) 100%
+            )`, // Escurece o overlay
+            duration: 0.5,
+            ease: "ease2.inOut",
+          });
+        };
+
+        // Função para desativar as animações de hover
+        const deactivateAnimations = () => {
+          gsap.to(thumb, {
+            scale: 1, // Volta ao tamanho original
+            duration: 0.5,
+            ease: "ease2.inOut",
+          });
+
+          gsap.to(arrow, {
+            opacity: 0.5, // Volta à opacidade original da seta
+            duration: 0.5,
+            ease: "ease2.inOut",
+            rotate: "0deg",
+            overwrite: "auto",
+          });
+
+          gsap.to(overlay, {
+            background: `linear-gradient(
+              0deg,
+              rgba(0, 0, 0, 0.5) 0%,
+              rgba(0, 0, 0, 0) 100%
+            )`, // Volta ao gradiente original
+            duration: 0.5,
+            ease: "ease2.inOut",
+          });
+        };
+
+        // Adiciona eventos de hover ao overlay
+        overlay.addEventListener("mouseenter", activateAnimations);
+        overlay.addEventListener("mouseleave", deactivateAnimations);
+
+        // Adiciona eventos de hover ao botão (arrow)
+        arrow.addEventListener("mouseenter", activateAnimations);
+        arrow.addEventListener("mouseleave", deactivateAnimations);
+
+        // Adiciona eventos de hover e clique aos elementos filhos
+        [title, recap, areas].forEach((element) => {
+          if (element) {
+            element.addEventListener("mouseenter", activateAnimations);
+            element.addEventListener("mouseleave", deactivateAnimations);
+            element.addEventListener("click", activateAnimations);
+          }
+        });
+      }
     });
-
-    // Atualiza o ScrollTrigger após adicionar novos elementos
-    ScrollTrigger.refresh();
   };
 
-  // Função para buscar e exibir projetos com base no filtro
   const fetchProjects = (filterTag) => {
     fetch("admin/filter_projects.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `filterTag=${filterTag}`, // Envia o filtro selecionado para o servidor
+      body: `filterTag=${filterTag}`,
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
-        return response.json(); // Retorna o JSON dos projetos
+        return response.json();
       })
       .then((data) => {
-        portfolioGallery.innerHTML = ""; // Limpa a galeria existente
+        portfolioGallery.innerHTML = "";
 
-        // Cria e adiciona novos elementos de projeto
         data.forEach((project) => {
           const projectItem = document.createElement("div");
           projectItem.classList.add("portfolio-item");
           projectItem.innerHTML = `
-                <h5 class="hidden">Portfolio item</h5>
-                <a class="project-thumb-btn" href="casestudy.php?id=${project.id}">
-                  <img class="project-thumb" src="./images/${project.thumb}" alt="Project Thumbnail">
+                <a class="portfolio-item-con" href="casestudy.php?id=${project.id}">
+                  <div class="project-overlay"></div>
+                  <img class="project-thumb" src="./images/${project.cover}" alt="Project Thumbnail">
+                  <div class="project-arrow">
+                    <img class="project-btn" src="./images/diagonal-arrow.svg" alt="Project Button">  
+                  </div>
+                  <div class="portfolio-item-info">
+                    <h6 class="project-title"><span>${project.title}</span> ${project.subtitle}</h6>
+                    <p class="project-areas">${project.areas}</p>
+                  </div>
                 </a>
-                <div class="portfolio-item-info">
-                  <h6 class="project-title"><span>${project.title}</span> ${project.subtitle}</h6>
-                  <p class="project-areas">${project.areas}</p>
-                  <p class="project-recap">${project.recap}</p>
-                  <a href="casestudy.php?id=${project.id}" class="intro-btn">
-                    <h5 class="small-button">Case Study</h5>
-                    <i class="fa-solid fa-square-caret-right arrow"></i>
-                  </a>
-                </div>
               `;
           portfolioGallery.appendChild(projectItem);
         });
 
-        // Re-inicializa as animações do GSAP após o conteúdo ser atualizado
         initPortfolioAnimations();
       })
       .catch((error) => {
@@ -101,25 +154,17 @@ export function initFilter() {
       });
   };
 
-  // Adiciona eventos de clique aos botões de filtro
   filterButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      event.preventDefault(); // Evita o comportamento padrão do link
+      event.preventDefault();
 
-      // Remove a classe "selected" de todos os botões
       filterButtons.forEach((btn) => btn.classList.remove("selected"));
-
-      // Adiciona a classe "selected" ao botão clicado
       button.classList.add("selected");
 
-      // Obtém o filtro do atributo data-tag
       const filterTag = button.dataset.tag;
-
-      // Busca e exibe os projetos com base no filtro
       fetchProjects(filterTag);
     });
   });
 
-  // Inicializa as animações e exibe todos os projetos ao carregar a página
   fetchProjects("all");
 }

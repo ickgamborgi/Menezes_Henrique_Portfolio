@@ -61,6 +61,30 @@
   }
 }
 
+// Word Scramble
+.hero-scramble {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  h6 {
+    font-size: a.$h5;
+    color: a.$light-cyan;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.text-scramble {
+  font-family: a.$ubuntu;
+  font-size: a.$h5;
+  color: a.$light-cyan;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .hero-availability {
   background-color: white;
   border: 2px solid a.$light-grey;

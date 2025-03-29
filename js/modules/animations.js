@@ -88,7 +88,6 @@ export function initAnimations() {
       markers: false,
     },
     opacity: 0,
-    duration: 1,
   });
 
   gsap.from(".tools-item", {
@@ -233,6 +232,21 @@ export function initAnimations() {
     duration: 1,
     opacity: 0,
     x: 50,
+    stagger: 0.2,
+    ease: "power2.out",
+  });
+
+  gsap.from(".service-con", {
+    scrollTrigger: {
+      trigger: ".services",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    duration: 2,
+    opacity: 0,
+    y: 50,
     stagger: 0.2,
     ease: "power2.out",
   });
