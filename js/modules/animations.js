@@ -3,7 +3,7 @@ export function initAnimations() {
 
   // all gsap animations
 
-  gsap.from(".hero-image", 2, {
+  gsap.from(".hero-image", 1, {
     scrollTrigger: {
       trigger: ".home-hero",
       start: "top bottom",
@@ -12,8 +12,23 @@ export function initAnimations() {
       markers: false,
     },
     opacity: 0,
-    x: -50,
+    y: -50,
     ease: "ease2.inOut",
+  });
+
+  gsap.from(".hero-circle", 1, {
+    scrollTrigger: {
+      trigger: ".home-hero",
+      start: "top bottom",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      markers: false,
+    },
+    opacity: 0,
+    scale: 0,
+    y: 50,
+    delay: 0.2,
+    ease: "power.inOut",
   });
 
   gsap.from(".hero-bio", {
@@ -53,10 +68,10 @@ export function initAnimations() {
       markers: false,
     },
     opacity: 1,
-    y: -20,
-    ease: "ease1.inOut",
+    ease: "ease2.inOut",
     stagger: 0.2,
-    delay: 0.2,
+    y: -25,
+    delay: 0.25,
   });
 
   const mugTimeline = gsap.timeline({ repeat: -1, repeatDelay: 1 });

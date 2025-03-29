@@ -112,7 +112,8 @@ foreach ($links as $link) {
             
             <div class="hero-image-con col-span-full m-col-span-4 m-col-start-1">
                 <h4 class="hidden">Profile Image</h4>
-                <img class="hero-image" src="./images/hero-picture.webp" alt="Profile Image">
+                <img class="hero-image" src="./images/hero-picture.svg" alt="Profile Image">
+                <img class="hero-circle" src="./images/hero-circle.svg" alt="Profile Circle">
 
                 <div class="hero-social-media">
                     <h5 class="hidden">Social Media Links</h5>

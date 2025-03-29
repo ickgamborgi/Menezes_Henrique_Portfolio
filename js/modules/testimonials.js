@@ -24,7 +24,7 @@ export function initTestimonials() {
     gsap.fromTo(
       newCard,
       { opacity: 0, x: 200 },
-      { opacity: 1, x: 0, duration: 1, ease: "power2.out" }
+      { opacity: 1, x: 0, duration: 1, ease: "ease2.inOt" }
     );
   }
 
