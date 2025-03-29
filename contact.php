@@ -151,7 +151,76 @@ foreach ($links as $link) {
 
         </section>
 
-                <!-- Testimonials Section -->
+        <!-- Services Section -->
+        <section class="services grid-con">
+            <h3 class="hidden">Services Section</h3>
+
+            <div class="testimonial-title col-span-full">
+                <h4>Freelance Services</h4>
+            </div>
+
+            <div class="service-con col-span-4 m-col-span-4 l-col-span-4">
+                <img src="./images/package-brand.svg" alt="Service Icon" class="service-icon">
+                <div class="service-title">
+                    <h5>Brand Package</h5>
+                    <p class="service-brief">More than just a logo, discover a new soul and face for your project</p>
+                </div>
+                <div class="service-process">
+                    <h6>Process</h6>
+                    <p class="service-p">Briefing - Discovery - Exploration - Conceptualization - Execution - Management</p>
+                </div>
+                <div class="service-deliverables">
+                    <h6>Deliverables</h6>
+                    <p class="service-p">Logo versions - Typography - Colors -  Brand book - Material applications</p>
+                </div>
+                <a href="contact.php" class="service-btn">
+                    <h5 class="small-button">I am Interested!</h5>
+                    <i class="fa-solid fa-square-caret-right"></i>
+                </a>
+            </div>
+
+            <div class="service-con col-span-4 m-col-span-4 l-col-span-4">
+                <img src="./images/package-digital.svg" alt="Service Icon" class="service-icon">
+                <div class="service-title">
+                    <h5>Digital Package</h5>
+                    <p class="service-brief">Enhance your online presence with a new experience for your website</p>
+                </div>
+                <div class="service-process">
+                    <h6>Process</h6>
+                    <p class="service-p"> Briefing - Discovery - Exploration - Wireframing - Prototyping - Implementation - Management</p>
+                </div>
+                <div class="service-deliverables">
+                    <h6>Deliverables</h6>
+                    <p class="service-p">Wireframes - Interactive Prototype - Front-End - CMS - SEO</p>
+                </div>
+                <a href="contact.php" class="service-btn">
+                    <h5 class="small-button">I am Interested!</h5>
+                    <i class="fa-solid fa-square-caret-right"></i>
+                </a>
+            </div>
+
+            <div class="service-con col-span-4 m-col-span-4 l-col-span-4">
+                <img src="./images/package-product.svg" alt="Service Icon" class="service-icon">
+                <div class="service-title">
+                    <h5>Product Package</h5>
+                    <p class="service-brief">Turn your ideas into reality with a unique design for your product</p>
+                </div>
+                <div class="service-process">
+                    <h6>Process</h6>
+                    <p class="service-p">Briefing - Discovery - Exploration - Conceptualization - Execution - Prototyping - Implementation - Support</p>
+                </div>
+                <div class="service-deliverables">
+                    <h6>Deliverables</h6>
+                    <p class="service-p">Concept Art - Renders - Prototype - Final Files for Production - Production Support</p>
+                </div>
+                <a href="contact.php" class="service-btn">
+                    <h5 class="small-button">I am Interested!</h5>
+                    <i class="fa-solid fa-square-caret-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
         <section class="testimonials grid-con" id="contact-test">
             <h3 class="hidden">Testimonial Section</h3>
 

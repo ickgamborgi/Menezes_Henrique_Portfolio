@@ -8,7 +8,7 @@ $filterTag = isset($_POST['filterTag']) ? $_POST['filterTag'] : 'all';
 
 try {
     // Base SQL query
-    $sql = 'SELECT project.id AS id, thumb, title, subtitle, date, areas, recap FROM project';
+    $sql = 'SELECT project.id AS id, thumb, cover, title, subtitle, date, areas, recap FROM project';
 
     // Add the WHERE clause if the filter is not "all"
     if ($filterTag !== 'all') {
