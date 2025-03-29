@@ -60,7 +60,7 @@ foreach ($links as $link) {
     <script type="module" src="js/main.js"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
+    <link rel="icon" type="image/x-icon" href="./images/icon-white.svg">
 
     <!-- Document Title -->
     <title>Henrique Gamborgi: Contact Me</title> 

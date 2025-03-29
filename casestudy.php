@@ -78,7 +78,7 @@ $stmt = null;
     <script type="module" src="js/main.js"></script>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/icon-white.svg">
+    <link rel="icon" type="image/x-icon" href="./images/icon-white.svg">
 
     <!-- Document Title -->
     <title>Case Study: <?php echo $row['title']?> <?php echo $row['subtitle']?></title> 
