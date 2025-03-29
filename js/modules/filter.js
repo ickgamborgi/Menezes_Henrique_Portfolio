@@ -134,7 +134,7 @@ export function initFilter() {
           projectItem.innerHTML = `
                 <a class="portfolio-item-con" href="casestudy.php?id=${project.id}">
                   <div class="project-overlay"></div>
-                  <img class="project-thumb" src="./images/${project.cover}" alt="Project Thumbnail">
+                  <img class="project-thumb" src="./images/${project.thumb}" alt="Project Thumbnail">
                   <div class="project-arrow">
                     <img class="project-btn" src="./images/diagonal-arrow.svg" alt="Project Button">  
                   </div>
