@@ -3,6 +3,31 @@
 <?php
 require_once('includes/connect.php');
 
+// Language Switcher
+$current_uri = $_SERVER['REQUEST_URI'];
+$parsed_url = parse_url($current_uri);
+$path = $parsed_url['path'];
+$query = isset($parsed_url['query']) ? '?' . $parsed_url['query'] : '';
+
+// Check if we're in the /br/ directory
+$is_br = strpos($path, '/br/') !== false || preg_match('#/br$#', $path);
+
+// Normalize the base path (works with subfolders like /Menezes_Henrique_Portfolio/)
+$script_name = $_SERVER['SCRIPT_NAME'];
+$script_dir = dirname($script_name); // e.g., /Menezes_Henrique_Portfolio or /Menezes_Henrique_Portfolio/br
+
+// Logic to handle the URLs dynamically
+if ($is_br) {
+    // If we're in /br, remove "/br" from the path for the English version
+    $en_url = str_replace('/br', '', $path); // Remove '/br' for English version
+    $pt_url = $current_uri; // Stay on the Portuguese page
+} else {
+    // If we're in the root, we need to add "/br" to the path for the Portuguese version
+    $base_path = rtrim($script_dir, '/'); // Normalize the base path
+    $pt_url = $base_path . '/br' . str_replace($base_path, '', $path) . $query; // Add '/br' to the path for Portuguese version
+    $en_url = $current_uri; // Stay on the English page
+}
+
 // Fetch testimonials ordered by date (new code)
 $stmtTestimonials = $connect->prepare('SELECT name, position, picture, quote FROM testimonials ORDER BY date DESC');
 $stmtTestimonials->execute();
@@ -77,21 +102,36 @@ foreach ($links as $link) {
             <!-- Main Navigation -->
             <nav class="navbar-header grid-con">
                 <h3 class="hidden">Main Navigation</h3>
-    
+
                 <div class="logo-header col-start-1">
                     <a href="index.php"><img src="./images/horizontal-color.svg" alt="Henrique Gamborgi Logo"></a>
                 </div>
-    
+
                 <button id="burger-button"></button>
-    
+
                 <div class="links-header">
                     <h4 class="hidden">Links Header</h4>
                     <ul>
-                        <li><a href="index.php" class="nav-item"><h5>Home</h5></a></li>
+                        <li><a href="index.php" class="nav-item current"><h5>Home</h5></a></li>
                         <li><a href="about.php" class="nav-item"><h5>About</h5></a></li>
-                        <li><a href="contact.php" class="nav-item current"><h5>Contact</h5></a></li>
+                        <li><a href="contact.php" class="nav-item"><h5>Contact</h5></a></li>
                         <li><a href="<?php echo $linkUrls['Resume'] ?? '#'; ?>" target="_blank" class="nav-item"><h5>Resume</h5></a></li>
                     </ul>
+
+                    <!-- Language Switcher -->
+                    <div class="lang-switcher">
+                        <?php if ($is_br): ?>
+                            <img src="./images/brazil-flag.svg" alt="Português" class="flag active" />
+                            <a href="<?= $en_url ?>">
+                                <img src="./images/uk-flag.svg" alt="English" class="flag inactive" />
+                            </a>
+                        <?php else: ?>
+                            <a href="<?= $pt_url ?>">
+                                <img src="./images/brazil-flag.svg" alt="Português" class="flag inactive" />
+                            </a>
+                            <img src="./images/uk-flag.svg" alt="English" class="flag active" />
+                        <?php endif; ?>
+                    </div>
                 </div>
             </nav>
         </header>

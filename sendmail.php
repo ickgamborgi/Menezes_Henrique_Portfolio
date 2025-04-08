@@ -34,12 +34,6 @@ if ($mathAnswer !== $mathExpected) {
     $errors[] = "Please solve SECURITY question correctly";
 }
 
-if (empty($phone)) {
-    $errors[] = "Please provide your PHONE number";
-} else if (!preg_match('/^\+?[0-9\s\-]{7,15}$/', $phone)) {
-    $errors[] = "Please enter a VALID PHONE number";
-}
-
 // Retorna erros, se houver
 if (!empty($errors)) {
     echo json_encode(["errors" => $errors]);
@@ -57,7 +51,7 @@ try {
     $stmt->execute();
 
     // Informações do email
-    $to = 'henrique@henriquegamborgi.com';
+    $to = 'henrique@henriquegamborgi.com, henriquegamborgi@gmail.com';
     $subject = 'New contact in your portfolio!';
     $headers = "From: no-reply@henriquegamborgi.com\r\n";
     $headers .= "Reply-To: $email\r\n";
@@ -65,7 +59,7 @@ try {
     $emailMessage = "A new message has arrived in your portfolio:\n\n";
     $emailMessage .= "Name: " . $name . "\n";
     $emailMessage .= "Email: " . $email . "\n";
-    $emailMessage .= "Phone: " . $phone . "\n"; // Adiciona o telefone ao e-mail
+    $emailMessage .= "Phone: " . ($phone ?: "Not provided") . "\n"; // Adiciona o telefone ao e-mail
     $emailMessage .= "Message: " . ($message ?: "No message provided.") . "\n";
 
     mail($to, $subject, $emailMessage, $headers); // Envia o email

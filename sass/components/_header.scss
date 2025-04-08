@@ -28,11 +28,15 @@
   padding-bottom: 15px;
 }
 
+.links-header {
+  display: flex;
+  align-items: center;
+}
+
 .links-header ul {
   margin: 0;
   padding: 5px 0 0 0;
   display: flex;
-  width: fit-content;
 }
 
 .links-header ul li {
@@ -59,6 +63,37 @@
     border-radius: 0px;
     background-color: #39a4bc28;
   }
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.lang-switcher .flag {
+  width: 20px;
+  height: 20px;
+  border-radius: a.$round-border;
+  border: 2px solid a.$primary-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+}
+
+.lang-switcher .inactive {
+  opacity: 0.5;
+
+  &:hover {
+    transform: scale(1.25);
+  }
+}
+
+.lang-switcher .active {
+  opacity: 1;
+  transform: scale(1.25);
+  box-shadow: a.$blur-shadow;
+  pointer-events: none; /* Prevent click on current */
 }
 
 .navbar-header button {
@@ -92,6 +127,10 @@
     height: 0px;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
   }
 
   .links-header ul {
@@ -100,6 +139,11 @@
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .lang-switcher {
+    margin-left: 0px;
+    margin-top: 15px;
   }
 
   .links-header ul li {
@@ -112,7 +156,7 @@
   }
 
   .links-header.active {
-    height: 240px;
+    height: 290px;
     display: flex;
   }
 
