@@ -1,0 +1,59 @@
+// Fonts
+
+// Includes font imports and font-face declarations.
+
+// Ubuntu
+
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../fonts/ubuntu-regular.woff2') format('woff2'),
+         url('../fonts/ubuntu-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntuitalic';
+    src: url('../fonts/ubuntu-italic.woff2') format('woff2'),
+         url('../fonts/ubuntu-italic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntubold';
+    src: url('../fonts/ubuntu-bold.woff2') format('woff2'),
+         url('../fonts/ubuntu-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntubold_italic';
+    src: url('../fonts/ubuntu-bolditalic.woff2') format('woff2'),
+         url('../fonts/ubuntu-bolditalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntulight';
+    src: url('../fonts/ubuntu-light.woff2') format('woff2'),
+         url('../fonts/ubuntu-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntulight_italic';
+    src: url('../fonts/ubuntu-lightitalic.woff2') format('woff2'),
+         url('../fonts/ubuntu-lightitalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

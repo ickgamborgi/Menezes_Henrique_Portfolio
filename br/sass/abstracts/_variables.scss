@@ -1,0 +1,37 @@
+// Variables
+
+//  Stores SASS variables like colors, font sizes, spacing, and other values that are likely to be reused.
+
+@use "fonts";
+
+// Colors
+$primary-cyan: #125668;
+$light-cyan: #39a3bc;
+$dark-cyan: #054b5b;
+$black-cyan: #001014;
+$yellow: #f2b446;
+$light-yellow: #f9e193;
+$grey: #8e8e8e;
+$light-grey: #efefef;
+
+$gradient: rgb(57, 163, 188)
+  linear-gradient(90deg, rgba(57, 163, 188, 1) 59%, rgba(242, 180, 70, 1) 100%);
+
+// Fonts
+$ubuntu: "Ubuntu", "Helvetica", "Arial", sans-serif;
+
+$h1: 56px;
+$h2: 42px;
+$h3: 32px;
+$h4: 26px;
+$h5: 20px;
+$text: 16px;
+$small-text: 14px;
+
+//Others
+$blur-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+$click-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+$round-border: 35px;
+$section-gap: 150px;
+$basic-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);

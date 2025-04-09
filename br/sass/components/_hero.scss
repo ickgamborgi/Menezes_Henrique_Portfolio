@@ -1,0 +1,202 @@
+// Component for HOMEPAGE HERO
+
+@use "../abstracts/variables" as a;
+
+/* --First: Mobile Styles--- */
+.home-hero {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 50px;
+}
+
+.hero-image-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 60%;
+  align-self: center;
+}
+
+.hero-image {
+  z-index: 2;
+}
+
+.hero-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.hero-social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+  margin-top: -25px;
+
+  a {
+    opacity: 0;
+  }
+}
+
+.hero-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  h5 {
+    font-size: a.$h3;
+    color: a.$light-cyan;
+    font-weight: 400;
+    max-width: 400px;
+
+    span {
+      font-weight: 800;
+    }
+  }
+
+  p {
+    color: a.$grey;
+    font-size: a.$h5;
+    font-weight: 400;
+
+    span {
+      font-weight: 800;
+    }
+  }
+}
+
+// Word Scramble
+.hero-scramble {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  h6 {
+    font-size: a.$h5;
+    color: a.$light-cyan;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+.text-scramble {
+  font-family: a.$ubuntu;
+  font-size: a.$h5;
+  color: a.$light-cyan;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-availability {
+  background-color: white;
+  border: 2px solid a.$light-grey;
+  padding: 15px 25px;
+  border-radius: a.$round-border;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transform: a.$basic-transition;
+
+  div {
+    width: 9px;
+    height: 9px;
+    background-color: rgb(18, 217, 18);
+    border-radius: 100%;
+    position: relative;
+
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(18, 217, 18);
+      border-radius: 100%;
+      animation: availabityPulse 1.75s infinite;
+    }
+  }
+
+  h6 {
+    font-size: a.$text;
+    color: a.$grey;
+    font-weight: 500;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: a.$click-shadow;
+  }
+}
+
+// Animation
+@keyframes availabityPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(7);
+    opacity: 0;
+  }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+  .home-hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 75px;
+    gap: 50px;
+    text-align: left;
+  }
+
+  .hero-image-con {
+    width: 35%;
+    align-self: start;
+  }
+
+  .hero-bio {
+    align-items: start;
+
+    h5 {
+      max-width: fit-content;
+    }
+  }
+
+  .hero-availability {
+    h6 {
+      font-size: a.$h5;
+      font-weight: 500;
+    }
+  }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+  .home-hero {
+    margin-top: 5%;
+    gap: 75px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-image-con {
+    max-width: 350px;
+  }
+
+  .hero-bio {
+    align-self: end;
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+}

@@ -1,0 +1,163 @@
+// Component for BANNERS
+
+@use '../abstracts/variables' as a;
+
+/* --First: Mobile Styles--- */
+
+.banner {
+    width: 100%;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    z-index: 99;
+    position: relative;
+    background-size: cover;
+    background-position: right;
+}
+
+.banner-cover {
+    background-color: a.$black-cyan;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: absolute;
+}
+
+#contact-banner {
+    background-image: url(../images/banner-contact.webp);
+}
+
+#about-banner {
+    background-image: url(../images/banner-about.webp);
+}
+
+.project-cover {
+    position: absolute;
+    object-fit: cover;
+    object-position: right;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+}
+
+.banner-title {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    z-index: 101;
+    text-align: center;
+    align-items: center;
+
+    h3 {
+        font-size: a.$h2; 
+        color: white;
+        font-weight: 300;
+
+        span {
+            font-weight: 800;
+        }
+    }
+}
+
+.banner-divisory {
+    background-color: white;
+    height: 2px;
+    opacity: .25;
+    box-shadow: a.$blur-shadow;
+}
+
+#contact-divisory, #about-divisory {
+    width: 150px;
+}
+
+.banner-btn {
+        background-color: #05303a4f;
+        border: 2px solid white;
+        box-shadow: a.$click-shadow;
+        padding: 15px 25px;
+        border-radius: a.$round-border;
+        display: flex;
+        justify-content: start;
+        width: max-content;
+        box-shadow: a.$blur-shadow;
+        transition: a.$basic-transition;
+
+    
+        h4 {
+            font-size: a.$small-text;
+            color: white;
+            font-weight: 500;
+            margin-right: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &:hover {
+            background-color: a.$primary-cyan;
+            transform: scale(1.05);
+            box-shadow: a.$click-shadow;
+        }
+}
+
+.banner-about-wrap {
+    z-index: 102;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        object-fit: cover;
+        border-radius: 100%;
+        box-shadow: a.$click-shadow;
+        width: 200px;
+    }
+}
+
+.case-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.case-type {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+
+    h4 {
+        font-weight: 400;
+        font-size: a.$text;
+        letter-spacing: 2px;
+    }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+    .banner-title {
+        align-items: start;
+        text-align: left;
+    }
+
+    .banner-about-wrap {
+        z-index: 102;
+        flex-direction: row;
+        gap: 50px;
+        align-items: center;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .case-wrap {
+        flex-direction: row;
+    }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+}

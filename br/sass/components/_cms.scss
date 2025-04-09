@@ -1,0 +1,699 @@
+// Component for CMS and ADMIN PAGES
+
+@use "../abstracts/variables" as a;
+
+/* --First: Mobile Styles--- */
+
+// Login
+
+.admin-section {
+  padding-top: 75px;
+  padding-bottom: 40px;
+  background-color: a.$light-grey;
+}
+
+.login-form {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: a.$blur-shadow;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  i {
+    margin-right: 15px;
+  }
+
+  h2 {
+    color: a.$light-cyan;
+    font-family: a.$ubuntu;
+    font-size: a.$h4;
+    margin-bottom: 25px;
+  }
+
+  input {
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid a.$light-grey;
+    height: 35px;
+    width: 100%;
+    margin-top: 7px;
+    padding: 15px 20px;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    color: #12556897;
+    line-height: 150%;
+
+    &::placeholder {
+      font-family: a.$ubuntu;
+      font-size: a.$text;
+      color: a.$grey;
+      opacity: 0.75;
+    }
+  }
+
+  .form-restriction-text {
+    color: a.$grey;
+    font-family: a.$ubuntu;
+  }
+
+  p {
+    font-family: a.$ubuntu;
+    font-size: a.$small-text;
+    margin-top: 10px;
+
+    a {
+      color: a.$primary-cyan;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+.form-label {
+  font-family: a.$ubuntu;
+  font-size: a.$text;
+  color: a.$primary-cyan;
+  font-weight: 800;
+  margin-bottom: 0px;
+}
+
+#login-submit {
+  background-color: a.$light-cyan;
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: a.$text;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: a.$blur-shadow;
+  transition: a.$basic-transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: a.$primary-cyan;
+    box-shadow: a.$click-shadow;
+  }
+}
+
+.admin-link-item {
+  border: 2px solid a.$light-cyan;
+  padding: 15px 30px;
+  border-radius: 25px;
+  transition: a.$basic-transition;
+  cursor: pointer;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+    color: a.$light-cyan;
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    h4 {
+      font-size: a.$h5;
+    }
+
+    p {
+      opacity: 0.75;
+      line-height: 110%;
+      font-size: a.$small-text;
+    }
+  }
+
+  &:hover {
+    background-color: a.$light-cyan;
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+// Project List
+
+.admin-welcome {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  h4 {
+    color: green;
+    font-size: a.$h5;
+    padding-top: 25px;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+
+  h3 {
+    color: a.$primary-cyan;
+    font-family: a.$ubuntu;
+    font-size: a.$h3;
+    margin-bottom: 25px;
+    line-height: 140%;
+  }
+
+  p {
+    color: black;
+    opacity: 0.5;
+    font-family: a.$ubuntu;
+    font-size: a.$text;
+    max-width: 600px;
+
+    span {
+      font-weight: 800;
+    }
+  }
+}
+
+.project-list-section {
+  padding-top: 50px;
+  background-color: a.$light-grey;
+}
+
+.project-add-crud {
+  padding-top: 0px;
+  padding-bottom: 25px;
+  background-color: a.$light-grey;
+}
+
+.project-list-crud {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: a.$blur-shadow;
+  margin-bottom: 15px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  i {
+    margin-right: 15px;
+  }
+
+  h3 {
+    color: a.$light-cyan;
+    font-family: a.$ubuntu;
+    font-size: a.$h4;
+    margin-bottom: 25px;
+  }
+}
+
+.crud-table form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid a.$light-grey;
+  margin-bottom: 30px;
+
+  input,
+  textarea,
+  select {
+    background-color: white;
+    border-radius: 5px;
+    color: #12556897;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    line-height: 150%;
+    border: 2px solid a.$light-grey;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 10px;
+
+    &::placeholder {
+      font-family: a.$ubuntu;
+      font-size: 13px;
+      font-weight: 400;
+      color: a.$grey;
+      opacity: 0.75;
+    }
+  }
+
+  div {
+    display: flex;
+    gap: 5px;
+
+    input,
+    button {
+      height: 30px;
+    }
+
+    input {
+      width: 80%;
+    }
+
+    button {
+      background-color: white;
+      width: 20%;
+      color: a.$light-cyan;
+      border: 1px solid a.$light-cyan;
+      border-radius: 5px;
+      font-family: a.$ubuntu;
+      font-size: a.$small-text;
+      font-weight: 600;
+      transition: a.$basic-transition;
+      cursor: pointer;
+
+      &:hover {
+        background-color: a.$light-cyan;
+        box-shadow: a.$click-shadow;
+      }
+    }
+  }
+}
+
+.message-feedback {
+  h4 {
+    margin-bottom: 15px;
+    color: green;
+    font-family: a.$ubuntu;
+    font-size: a.$h5;
+  }
+}
+
+.crud-table form:nth-last-of-type(1) {
+  border-bottom: 0;
+}
+
+.form-comment {
+  font-size: a.$small-text;
+  color: a.$grey;
+}
+
+.project-list-crud-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid a.$light-grey;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.crud-item-title {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  color: a.$primary-cyan;
+
+  h4 {
+    font-weight: 400;
+
+    span {
+      font-weight: 800;
+    }
+  }
+}
+
+.crud-item-action {
+  display: flex;
+  gap: 15px;
+
+  a {
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-transform: capitalize;
+    font-family: a.$ubuntu;
+    font-size: a.$small-text;
+
+    &:hover {
+      box-shadow: a.$click-shadow;
+    }
+  }
+}
+
+.edit-button {
+  border: 1px solid a.$light-cyan;
+  color: a.$light-cyan;
+
+  &:hover {
+    background-color: a.$light-cyan;
+    color: white;
+  }
+}
+
+.delete-button {
+  border: 1px solid rgb(255, 105, 105);
+  color: rgb(255, 105, 105);
+  transition: a.$basic-transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(255, 105, 105);
+    color: white;
+  }
+}
+
+.project-add-crud-con {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: a.$blur-shadow;
+  height: fit-content;
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  i {
+    margin-right: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    color: a.$light-cyan;
+    font-family: a.$ubuntu;
+    font-size: a.$h4;
+    margin-bottom: 25px;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: white;
+    border-radius: 5px;
+    color: #12556897;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    line-height: 150%;
+    border: 2px solid a.$light-grey;
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 25px;
+    padding: 10px;
+
+    &::placeholder {
+      font-family: a.$ubuntu;
+      font-size: 13px;
+      font-weight: 400;
+      color: a.$grey;
+      opacity: 0.75;
+    }
+  }
+}
+
+#submit-button {
+  background-color: a.$light-cyan;
+  height: fit-content;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  font-size: a.$text;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: a.$blur-shadow;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  transition: a.$basic-transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: a.$primary-cyan;
+    box-shadow: a.$click-shadow;
+  }
+}
+
+// Edit Projects
+
+.form-label {
+  font-family: a.$ubuntu;
+  font-size: a.$text;
+  color: a.$primary-cyan;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.cms-title {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-family: a.$ubuntu;
+  font-size: a.$h3;
+  color: a.$dark-cyan;
+  width: fit-content;
+  margin-bottom: 30px;
+}
+
+.cms-back-button {
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 1px solid a.$grey;
+  border-radius: 5px;
+  color: a.$grey;
+  transition: a.$basic-transition;
+  cursor: pointer;
+  width: fit-content;
+  padding: 10px 20px;
+  font-family: a.$ubuntu;
+  box-shadow: a.$blur-shadow;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 30px;
+
+  a {
+    color: a.$grey;
+    text-align: center;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  &:hover {
+    background-color: a.$grey;
+    color: white;
+    box-shadow: a.$click-shadow;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+.edit-project-section {
+  padding-top: 75px;
+  padding-bottom: 25px;
+  background-color: a.$light-grey;
+}
+
+.edit-project-con {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: a.$blur-shadow;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  i {
+    margin-right: 15px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h4 {
+    color: a.$light-cyan;
+    font-family: a.$ubuntu;
+    font-size: a.$h4;
+    margin-bottom: 25px;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: white;
+    border-radius: 5px;
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    border: 2px solid a.$light-grey;
+    color: #12556897;
+    width: 100%;
+    line-height: 150%;
+
+    margin-bottom: 25px;
+    padding: 10px;
+
+    &::placeholder {
+      font-family: a.$ubuntu;
+      font-size: 13px;
+      color: a.$grey;
+      opacity: 0.75;
+      font-weight: 400;
+    }
+  }
+}
+
+#choose-file,
+#choose-file-2 {
+  border-top: 0px;
+  width: 100%;
+  border-radius: 0px 0px 5px 5px;
+}
+
+#choose-file-3 {
+  margin-top: 10px;
+}
+
+.current-thumb,
+.current-cover {
+  margin-top: 10px;
+  border-top: 2px solid a.$light-grey;
+  border-left: 2px solid a.$light-grey;
+  border-right: 2px solid a.$light-grey;
+  border-radius: 0px 0px 5px 5px;
+  padding: 10px;
+}
+
+.current-thumb {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.current-cover {
+  width: 100%;
+}
+
+#delete-media {
+  border: 1px solid rgb(255, 105, 105);
+  margin-top: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 5px;
+  color: rgb(255, 105, 105);
+  transition: a.$basic-transition;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: a.$ubuntu;
+  box-shadow: a.$blur-shadow;
+
+  &:hover {
+    background-color: rgb(255, 105, 105);
+    color: white;
+    box-shadow: a.$click-shadow;
+  }
+}
+
+.logout-button {
+  border: 1.5px solid a.$grey;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+  border-radius: 5px;
+  color: a.$grey;
+  transition: a.$basic-transition;
+  cursor: pointer;
+  width: 50%;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: a.$ubuntu;
+  box-shadow: a.$blur-shadow;
+
+  a {
+    color: a.$grey;
+    text-align: center;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  &:hover {
+    background-color: a.$grey;
+    color: white;
+    box-shadow: a.$click-shadow;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+#project-list-logout {
+  background-color: a.$light-grey;
+}
+
+.message {
+  color: red;
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+  #choose-file {
+    width: 30%;
+  }
+
+  #choose-file-2 {
+    width: 60%;
+  }
+
+  .current-thumb {
+    width: 30%;
+  }
+
+  .current-cover {
+    width: 60%;
+  }
+
+  .admin-link-item {
+    a {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+  .login-form {
+    padding: 40px 60px;
+  }
+
+  .project-list-crud {
+    padding: 40px 60px;
+  }
+
+  .project-add-crud-con {
+    padding: 40px 60px;
+  }
+
+  .edit-project-con {
+    padding: 40px 60px;
+  }
+}

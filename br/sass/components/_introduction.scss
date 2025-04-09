@@ -1,0 +1,86 @@
+// Component for HOMEPAGE INTRODUCTION
+
+@use "../abstracts/variables" as a;
+
+/* --First: Mobile Styles--- */
+
+.home-intro {
+  margin-top: 150px;
+}
+
+.intro-text {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  gap: 15px;
+
+  h4 {
+    font-size: a.$h4;
+    color: a.$primary-cyan;
+  }
+
+  p {
+    margin-top: 15px;
+    font-family: a.$ubuntu;
+    line-height: 1.5em;
+    font-size: a.$text;
+    color: a.$grey;
+  }
+}
+
+.intro-btn {
+  margin-top: 20px;
+  font-size: a.$h5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: a.$light-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  transition: a.$basic-transition;
+
+  i {
+    color: a.$light-cyan;
+  }
+
+  &:hover {
+    color: a.$primary-cyan;
+    gap: 16px;
+  }
+
+  &:hover i {
+    color: a.$primary-cyan;
+  }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+  .intro-text {
+    align-content: left;
+    text-align: left;
+
+    h4 {
+      max-width: 300px;
+    }
+  }
+
+  .intro-btn {
+    align-items: left;
+    justify-content: left;
+  }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+  .home-intro {
+    align-items: center;
+  }
+  .intro-text {
+    margin-top: 0px;
+  }
+}

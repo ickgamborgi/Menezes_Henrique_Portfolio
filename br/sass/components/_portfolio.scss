@@ -1,0 +1,397 @@
+// Component for PORTFOLIO elements and CASE STUDY PAGE
+
+@use "../abstracts/variables" as a;
+
+/* --First: Mobile Styles--- */
+
+#portfolio-sec {
+  padding-top: a.$section-gap;
+}
+
+.portfolio-title {
+  margin-bottom: 15px;
+
+  h4 {
+    font-family: a.$ubuntu;
+    font-weight: 600;
+    font-size: a.$h3;
+    color: a.$primary-cyan;
+    text-align: center;
+  }
+}
+
+.portfolio-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 15px;
+  gap: 15px;
+  margin-top: 30px;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.tag {
+  background-color: white;
+  border: 2px solid a.$light-cyan;
+  color: a.$light-cyan;
+  padding: 5px 15px;
+  border-radius: a.$round-border;
+  font-family: a.$ubuntu;
+  font-size: a.$small-text;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: a.$light-cyan;
+    color: white;
+    box-shadow: a.$click-shadow;
+  }
+}
+
+.tag.selected {
+  background-color: a.$light-cyan;
+  color: white;
+}
+
+.portfolio-gallery {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 25px;
+}
+
+.portfolio-item {
+  width: 100%;
+  position: relative;
+  height: 400px;
+}
+
+.portfolio-item-con {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: a.$round-border;
+  box-shadow: a.$blur-shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project-thumb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  cursor: pointer;
+  transition: a.$basic-transition;
+}
+
+.project-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.portfolio-item-info {
+  position: absolute;
+  z-index: 10;
+  color: white;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.project-title {
+  font-family: a.$ubuntu;
+  font-weight: 200;
+  font-size: a.$h4;
+  color: white;
+
+  span {
+    font-weight: 600;
+  }
+}
+
+.project-areas {
+  font-family: a.$ubuntu;
+  font-weight: 200;
+  font-size: 12px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  width: fit-content;
+}
+
+.project-recap {
+  font-family: a.$ubuntu;
+  font-weight: 200;
+  font-size: 10px;
+  color: white;
+  max-width: 80%;
+  opacity: 1;
+}
+
+.project-arrow {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+
+  .project-btn {
+    width: 30px; // Ajuste o tamanho da seta conforme necessário
+    height: 30px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    box-shadow: a.$click-shadow;
+    border-radius: 100%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Case Study
+.project-date {
+  color: a.$grey;
+  font-size: a.$small-text;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  background-color: rgba(205, 205, 205, 0.299);
+  padding: 7px 14px;
+  border-radius: a.$round-border;
+  width: fit-content;
+}
+
+.project-recap {
+  color: a.$grey;
+  font-size: a.$small-text;
+}
+
+.case-text {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  text-align: center;
+
+  h4 {
+    font-size: a.$h3;
+    color: a.$primary-cyan;
+  }
+
+  p {
+    color: a.$grey;
+
+    span {
+      color: a.$light-cyan;
+      font-weight: 600;
+    }
+  }
+}
+
+.case-title-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+
+  i {
+    color: a.$light-cyan;
+  }
+
+  h4 {
+    font-size: a.$h4;
+    color: a.$light-cyan;
+  }
+}
+
+.project-media-con {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  background-color: #39a4bc2e;
+  background: 0.5;
+  padding: 5px;
+  border-radius: a.$round-border;
+  box-shadow: a.$click-shadow;
+}
+
+.project-media-image {
+  object-fit: cover;
+}
+
+.project-media-image:first-of-type {
+  border-top-left-radius: a.$round-border;
+  border-top-right-radius: a.$round-border;
+}
+
+.project-media-image:last-of-type {
+  border-bottom-left-radius: a.$round-border;
+  border-bottom-right-radius: a.$round-border;
+}
+
+.project-thank {
+  margin-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+
+  h4 {
+    font-size: a.$h4;
+    color: a.$light-cyan;
+  }
+
+  img {
+    width: 250px;
+    object-fit: contain;
+  }
+}
+
+.back-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.back-btn {
+  font-size: a.$h5;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: a.$light-cyan;
+  cursor: pointer;
+  transition: a.$basic-transition;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: a.$round-border;
+  box-shadow: a.$blur-shadow;
+
+  i {
+    color: a.$light-cyan;
+  }
+
+  &:hover {
+    background-color: a.$primary-cyan;
+    transform: scale(1.05);
+    box-shadow: a.$click-shadow;
+  }
+
+  &:hover i {
+    color: a.$primary-cyan;
+  }
+}
+
+/* ---Tablet Styles--- */
+@media screen and (min-width: 768px) {
+  .portfolio-title {
+    h4 {
+      text-align: start;
+    }
+  }
+
+  .portfolio-tags {
+    justify-content: start;
+  }
+
+  .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 2 colunas de tamanhos iguais
+    gap: 25px;
+
+    .portfolio-item:nth-last-child(1):nth-child(odd) {
+      grid-column: span 2; // Faz o item ocupar as 2 colunas
+    }
+  }
+
+  .portfolio-item {
+    height: 400px;
+  }
+
+  .portfolio-item-info {
+    align-items: start;
+    text-align: left;
+    bottom: 30px;
+    left: 30px;
+    padding-left: 0px;
+    padding-right: 15px;
+  }
+
+  .case-text {
+    text-align: left;
+    align-items: start;
+  }
+
+  .project-thank {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 50px;
+    text-align: left;
+
+    h4 {
+      font-size: a.$h4;
+      color: a.$light-cyan;
+      margin-bottom: 30px;
+      align-self: end;
+      max-width: 350px;
+    }
+
+    img {
+      padding-left: 0;
+      padding-right: 0;
+      object-fit: contain;
+    }
+  }
+
+  .project-media-con {
+    padding: 15px;
+  }
+
+  .back-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: start;
+    justify-items: end;
+    margin-bottom: 15px;
+  }
+}
+
+// ---Desktop Styles---
+@media screen and (min-width: 1200px) {
+  .case-text-con {
+    display: flex;
+    gap: 75px;
+  }
+
+  .project-media-con {
+    padding: 20px;
+  }
+
+  .portfolio-item {
+    height: 350px;
+  }
+}
